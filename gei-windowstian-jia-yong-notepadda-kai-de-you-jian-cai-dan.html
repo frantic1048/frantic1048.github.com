@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Frantic World</title>
+    <title>给windows添加用Notepad++打开的右键菜单</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Frantic1048">
@@ -70,7 +70,7 @@
 						<i class="icon-folder-open icon-large"></i>Blog
 					</a>
                   </li>
-                                <li >
+                                <li class="active">
                     <a href="/category/misc.html">
 						<i class="icon-folder-open icon-large"></i>Misc
 					</a>
@@ -90,9 +90,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-                            <div class="article">
-                <h1><a href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html">给windows添加用Notepad++打开的右键菜单</a></h1>
-                <div class="well small"><footer class="post-info">
+            <section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to 给windows添加用Notepad++打开的右键菜单">
+                                        给windows添加用Notepad++打开的右键菜单
+                                </a>
+                                                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+                        <footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2013-06-17T00:00:00">
         <i class="icon-calendar"></i>Mon 17 June 2013
@@ -105,8 +116,8 @@
 
 <span class="label">Tags</span>
 	<a href="/tag/windows.html"><i class="icon-tag"></i>Windows</a>
-</footer><!-- /.post-info --></div>
-                <div class="summary"><p>操作很简单:</p>
+</footer><!-- /.post-info -->                </div>
+                <p>操作很简单:</p>
 <p>创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可</p>
 <p>注意:<em>最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置</em></p>
 <blockquote>
@@ -121,54 +132,24 @@
 
 
 </blockquote>
-                        <a class="btn primary xsmall" href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html">more ...</a>
+                </div><!-- /.entry-content -->
+                                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://frantic1048.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
                 </div>
-        </div>
-        <hr />
-                <div class="article">
-                <h1><a href="/windowsxia-an-zhuang-he-shi-yong-pelican.html">Windows下安装和使用Pelican</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2013-06-17T00:00:00">
-        <i class="icon-calendar"></i>Mon 17 June 2013
-</abbr>
-<span class="label">By</span>
-<a href="/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
-<span class="label">Category</span>
-<a href="/category/blog.html"><i class="icon-folder-open"></i>Blog</a>.
-
-
-<span class="label">Tags</span>
-	<a href="/tag/blog.html"><i class="icon-tag"></i>Blog</a>
-	<a href="/tag/life.html"><i class="icon-tag"></i>Life</a>
-	<a href="/tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
-</footer><!-- /.post-info --></div>
-                <div class="summary"><p>最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：</p>
-<ul>
-<li><a href="https://pypi.python.org/pypi/blinker">blinker</a></li>
-<li><a href="https://pypi.python.org/pypi/docutils">docutils</a></li>
-<li><a href="https://pypi.python.org/pypi/feedgenerator">feedgenerator</a></li>
-<li><a href="https://pypi.python.org/pypi/Jinja2">jinja2</a></li>
-<li><a href="https://pypi.python.org/pypi/Markdown">markdown</a></li>
-<li><a href="https://pypi.python.org/pypi/Pygments">pygments</a></li>
-<li><a href="https://pypi.python.org/pypi/pytz">pytz</a></li>
-<li><a href="https://pypi.python.org/pypi/setuptools">setuptools</a></li>
-<li><a href="https://pypi.python.org/pypi/pelican">pelican</a></li>
-</ul>
-<p>一起下载下来解压到同一个文件夹，写个简单的批处理就一并安装了。另外我还发现Python3运行Pelican有点问题，解决所有依赖关系后运行pelican会出现 <a href="http://stackoverflow.com/questions/17124129/cannot-import-name-signals-when-importing-pelican-on-windows" title="Stack Overflow 上该问题的详细描述">TypeError</a>，后来我另外安装了Python2去运行就没有发现问题，目前还没能找到原因。</p>
-<p>如果你发现你在命令行中键入Pelican提示找不到命令，检查一下Python安装目录下的<em>Scripts</em>子目录是否已经添加进了%Path%中。</p>
-<p>如果你已经有Pelican搭建的博客了，<em>记得确保你所使用的博客主题也已经安装在电脑上</em>，否则Pelican会在编译的时候会出错，提示找不到主题。</p>
-<p>在Windows下面使用Pelican感觉编译之前的等待时间多了不少。</p>
-                        <a class="btn primary xsmall" href="/windowsxia-an-zhuang-he-shi-yong-pelican.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        
-                                <section id="content" class="body">
-                <h1>Pages</h1>
-                                        <li><a href="/pages/about.html">About</a></li>
-                                </section>
-                </div><!--/span-->
+                        </article>
+</section>
+        </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
             <ul class="nav nav-list">
