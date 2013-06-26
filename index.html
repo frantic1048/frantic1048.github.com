@@ -96,6 +96,31 @@
       <div class="row">
         <div class="span9" id="content">
                             <div class="article">
+                <h1><a href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">手动删除Windows上的服务程序</a></h1>
+                <div class="well small"><footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-06-26T00:00:00">
+        <i class="icon-calendar"></i>Wed 26 June 2013
+</abbr>
+<span class="label">By</span>
+<a href="http://frantic1048.com/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
+<span class="label">Category</span>
+<a href="http://frantic1048.com/category/misc.html"><i class="icon-folder-open"></i>Misc</a>.
+
+
+<span class="label">Tags</span>
+	<a href="http://frantic1048.com/tag/windows.html"><i class="icon-tag"></i>Windows</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。</p>
+<p>我先用<code>iobit unistaller</code>把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！</p>
+<p>二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。</p>
+<p>之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。</p>
+<p>在注册表<code>LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>中找到你要删除的服务程序，直接删掉即可。</p>
+                        <a class="btn primary xsmall" href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
+                </div>
+        </div>
+        <hr />
+                <div class="article">
                 <h1><a href="http://frantic1048.com/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html">博客诞生记:基于GitHub+Pelican创建博客的整个过程</a></h1>
                 <div class="well small"><footer class="post-info">
 <span class="label">Date</span>
@@ -271,6 +296,21 @@
 </li>
 
 <li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/windows.html">
+        <i class="icon-tag icon-large"></i>Windows
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/blog.html">
+        <i class="icon-tag icon-large"></i>Blog
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/life.html">
+        <i class="icon-tag icon-large"></i>Life
+    </a>
+</li>
 <li class="tag-4">
     <a href="http://frantic1048.com/tag/github.html">
         <i class="icon-tag icon-large"></i>Github
@@ -279,21 +319,6 @@
 <li class="tag-2">
     <a href="http://frantic1048.com/tag/pelican.html">
         <i class="icon-tag icon-large"></i>Pelican
-    </a>
-</li>
-<li class="tag-2">
-    <a href="http://frantic1048.com/tag/windows.html">
-        <i class="icon-tag icon-large"></i>Windows
-    </a>
-</li>
-<li class="tag-1">
-    <a href="http://frantic1048.com/tag/life.html">
-        <i class="icon-tag icon-large"></i>Life
-    </a>
-</li>
-<li class="tag-1">
-    <a href="http://frantic1048.com/tag/blog.html">
-        <i class="icon-tag icon-large"></i>Blog
     </a>
 </li>
 

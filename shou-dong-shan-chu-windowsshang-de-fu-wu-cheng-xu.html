@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>Frantic World - Misc</title>
+    <title>手动删除Windows上的服务程序</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Frantic1048">
@@ -95,9 +95,20 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-                            <div class="article">
-                <h1><a href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">手动删除Windows上的服务程序</a></h1>
-                <div class="well small"><footer class="post-info">
+            <section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to 手动删除Windows上的服务程序">
+                                        手动删除Windows上的服务程序
+                                </a>
+                                                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+                        <footer class="post-info">
 <span class="label">Date</span>
 <abbr class="published" title="2013-06-26T00:00:00">
         <i class="icon-calendar"></i>Wed 26 June 2013
@@ -110,57 +121,30 @@
 
 <span class="label">Tags</span>
 	<a href="http://frantic1048.com/tag/windows.html"><i class="icon-tag"></i>Windows</a>
-</footer><!-- /.post-info --></div>
-                <div class="summary"><p>好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。</p>
+</footer><!-- /.post-info -->                </div>
+                <p>好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。</p>
 <p>我先用<code>iobit unistaller</code>把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！</p>
 <p>二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。</p>
 <p>之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。</p>
 <p>在注册表<code>LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>中找到你要删除的服务程序，直接删掉即可。</p>
-                        <a class="btn primary xsmall" href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
+                </div><!-- /.entry-content -->
+                                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://frantic1048.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
                 </div>
-        </div>
-        <hr />
-                <div class="article">
-                <h1><a href="http://frantic1048.com/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html">给windows添加用Notepad++打开的右键菜单</a></h1>
-                <div class="well small"><footer class="post-info">
-<span class="label">Date</span>
-<abbr class="published" title="2013-06-17T00:00:00">
-        <i class="icon-calendar"></i>Mon 17 June 2013
-</abbr>
-<span class="label">By</span>
-<a href="http://frantic1048.com/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
-<span class="label">Category</span>
-<a href="http://frantic1048.com/category/misc.html"><i class="icon-folder-open"></i>Misc</a>.
-
-
-<span class="label">Tags</span>
-	<a href="http://frantic1048.com/tag/windows.html"><i class="icon-tag"></i>Windows</a>
-</footer><!-- /.post-info --></div>
-                <div class="summary"><p>操作很简单:</p>
-<p>创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可</p>
-<p>注意:<em>最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置</em></p>
-<blockquote>
-<div class="highlight"><pre>Windows Registry Editor Version 5.00
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;Edit with Notepad++&quot;</span>
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++\command]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;C:\\Program Files (x86)\\notepad++\\notepad++.exe\&quot; %1&quot;</span>
-</pre></div>
-
-
-</blockquote>
-                        <a class="btn primary xsmall" href="http://frantic1048.com/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html">more ...</a>
-                </div>
-        </div>
-        <hr />
-        
-                                <section id="content" class="body">
-                <h1>Pages</h1>
-                                        <li><a href="http://frantic1048.com/pages/about.html">About</a></li>
-                                </section>
-                </div><!--/span-->
+                        </article>
+</section>
+        </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
             <ul class="nav nav-list">
