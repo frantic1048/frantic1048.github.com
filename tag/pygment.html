@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>给windows添加用Notepad++打开的右键菜单</title>
+    <title>Frantic World - pygment</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Frantic1048">
@@ -75,7 +75,7 @@
 						<i class="icon-folder-open icon-large"></i>Life
 					</a>
                   </li>
-                                <li class="active">
+                                <li >
                     <a href="http://frantic1048.com/category/misc.html">
 						<i class="icon-folder-open icon-large"></i>Misc
 					</a>
@@ -95,66 +95,45 @@
     <div class="container-fluid">
       <div class="row">
         <div class="span9" id="content">
-            <section id="content">
-        <article>
-                <header>
-                        <h1>
-                                <a href=""
-                                        rel="bookmark"
-                                        title="Permalink to 给windows添加用Notepad++打开的右键菜单">
-                                        给windows添加用Notepad++打开的右键菜单
-                                </a>
-                                                        </h1>
-                </header>
-                <div class="entry-content">
-                <div class="well">
-                        <footer class="post-info">
+                            <div class="article">
+                <h1><a href="http://frantic1048.com/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html">去掉Pelican生成的代码区块中的红框</a></h1>
+                <div class="well small"><footer class="post-info">
 <span class="label">Date</span>
-<abbr class="published" title="2013-06-17T00:00:00">
-        <i class="icon-calendar"></i>Mon 17 June 2013
+<abbr class="published" title="2013-07-10T00:00:00">
+        <i class="icon-calendar"></i>Wed 10 July 2013
 </abbr>
 <span class="label">By</span>
 <a href="http://frantic1048.com/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
 <span class="label">Category</span>
-<a href="http://frantic1048.com/category/misc.html"><i class="icon-folder-open"></i>Misc</a>.
+<a href="http://frantic1048.com/category/blog.html"><i class="icon-folder-open"></i>Blog</a>.
 
 
 <span class="label">Tags</span>
-	<a href="http://frantic1048.com/tag/windows.html"><i class="icon-tag"></i>Windows</a>
-</footer><!-- /.post-info -->                </div>
-                <p>操作很简单:</p>
-<p>创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可</p>
-<p>注意:<em>最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置</em></p>
+	<a href="http://frantic1048.com/tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
+	<a href="http://frantic1048.com/tag/css.html"><i class="icon-tag"></i>CSS</a>
+	<a href="http://frantic1048.com/tag/pygment.html"><i class="icon-tag"></i>pygment</a>
+</footer><!-- /.post-info --></div>
+                <div class="summary"><p>这几天折腾博客主题，无意间找到了最开始弄博客的时候代码区块中的一些字符会有红框框住的问题的原因。</p>
+<p>因为Pelican是使用pygment处理代码高亮的，而pygment的高亮颜色定义就在当前使用的主题目录中的<code>pygment.css</code>这个文件里，<strong>要修改代码高亮的配色就要通过修改这个文件来实现</strong>。现在打开它，可以看到里面是对代码的各种类型的内容的风格定义，其中有一行如下：</p>
 <blockquote>
-<div class="highlight"><pre>Windows Registry Editor Version 5.00
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;Edit with Notepad++&quot;</span>
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++\command]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;C:\\Program Files (x86)\\notepad++\\notepad++.exe\&quot; %1&quot;</span>
+<p>.highlight .err { border: 1px solid #FF0000 } /<em> Error </em>/</p>
+</blockquote>
+<p>根据内容可以看出这是规定书写错误的代码的文本样式，可是平时代码中有的字符也会被识别成错误的代码，比如下面这句中的<code>@</code>:</p>
+<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span>
 </pre></div>
 
 
-</blockquote>
-                </div><!-- /.entry-content -->
-                                <div class="comments">
-                <h2>Comments !</h2>
-                        <div id="disqus_thread"></div>
-                        <script type="text/javascript">
-                           var disqus_identifier = "gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html";
-                           (function() {
-                                var dsq = document.createElement('script');
-                                dsq.type = 'text/javascript'; dsq.async = true;
-                                dsq.src = 'http://frantic1048.disqus.com/embed.js';
-                                (document.getElementsByTagName('head')[0] ||
-                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
-                          })();
-                        </script>
+<p>所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的<code>border</code>样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。</p>
+                        <a class="btn primary xsmall" href="http://frantic1048.com/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html">more ...</a>
                 </div>
-                        </article>
-</section>
-        </div><!--/span-->
+        </div>
+        <hr />
+        
+                                <section id="content" class="body">
+                <h1>Pages</h1>
+                                        <li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+                                </section>
+                </div><!--/span-->
 
                 <div class="span3 well sidebar-nav" id="sidebar">
             <ul class="nav nav-list">
