@@ -100,7 +100,7 @@ em{font-style:italic;}
 .muted{color:#999999;}
 abbr[title]{border-bottom:1px dotted #ddd;cursor:help;}
 abbr.initialism{font-size:90%;text-transform:uppercase;}
-blockquote{background-color:#333333;padding:0 0 0 15px;margin:0 0 18px;border-left:5px solid #a6dc3b;}blockquote p{margin-bottom:0;font-size:14px;font-weight:300;line-height:20px;}
+blockquote{background-color:#333333;padding:0 0 0 15px;margin:0 0 18px;border-left:2px solid #a6dc3b;}blockquote p{margin-bottom:0;font-size:12px;font-weight:300;line-height:20px;}
 blockquote small{display:block;line-height:18px;color:#999999;}blockquote small:before{content:'\2014 \00A0';}
 blockquote.pull-right{float:right;padding-left:0;padding-right:15px;border-left:0;border-right:5px solid #eeeeee;}blockquote.pull-right p,blockquote.pull-right small{text-align:right;}
 q:before,q:after,blockquote:before,blockquote:after{content:"";}
@@ -687,7 +687,7 @@ a.thumbnail:hover{border-color:#0088cc;-webkit-box-shadow:0 1px 4px rgba(0, 105,
 .hide{display:none;}
 .show{display:block;}
 .invisible{visibility:hidden;}
-
+.highlight{border-left:2px solid #ae81ff;}
 @keyframes bkgflash
 {
 0%   {background-color:#333333}
