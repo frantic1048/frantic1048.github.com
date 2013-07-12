@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>pelican-themes官方文档翻译</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Frantic1048">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="http://frantic1048.com/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="http://frantic1048.com/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="http://frantic1048.com/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="http://frantic1048.com/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://frantic1048.com/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://frantic1048.com/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://frantic1048.com/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://frantic1048.com/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="http://frantic1048.com/" type="application/atom+xml" rel="alternate" title="Frantic World ATOM Feed" />
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="http://frantic1048.com/index.html">Frantic World </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                          <li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+                                        <li class="divider-vertical"></li>
+                                              <li class="active">
+                    <a href="http://frantic1048.com/category/blog.html">
+						<i class="icon-folder-open icon-large"></i>Blog
+					</a>
+                  </li>
+                                <li >
+                    <a href="http://frantic1048.com/category/life.html">
+						<i class="icon-folder-open icon-large"></i>Life
+					</a>
+                  </li>
+                                <li >
+                    <a href="http://frantic1048.com/category/misc.html">
+						<i class="icon-folder-open icon-large"></i>Misc
+					</a>
+                  </li>
+              
+                          <ul class="nav pull-right">
+                                <li><a href="http://frantic1048.com/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+            <section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to pelican-themes官方文档翻译">
+                                        pelican-themes官方文档翻译
+                                </a>
+                                                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+                        <footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-07-12T00:00:00">
+        <i class="icon-calendar"></i>Fri 12 July 2013
+</abbr>
+<span class="label">By</span>
+<a href="http://frantic1048.com/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
+<span class="label">Category</span>
+<a href="http://frantic1048.com/category/blog.html"><i class="icon-folder-open"></i>Blog</a>.
+
+
+<span class="label">Tags</span>
+	<a href="http://frantic1048.com/tag/blog.html"><i class="icon-tag"></i>Blog</a>
+	<a href="http://frantic1048.com/tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
+	<a href="http://frantic1048.com/tag/translation.html"><i class="icon-tag"></i>Translation</a>
+</footer><!-- /.post-info -->                </div>
+                <p>这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说道主题，还是得先读文档，由于经常用到 <strong>pelican-themes</strong>，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，第一次做翻译内容如有不当之处欢迎指正~</p>
+<h1>pelican-themes</h1>
+<h2>描述</h2>
+<p><strong>pelican-themes</strong> 是一个用来管理Pelican主题的命令行工具。</p>
+<h3>用法</h3>
+<div class="highlight"><pre><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">theme</span> <span class="n">path</span> <span class="p">[</span><span class="n">theme</span> <span class="n">path</span> <span class="p">...]]</span>
+<span class="p">[</span><span class="o">-</span><span class="n">r</span> <span class="n">theme</span> <span class="n">name</span> <span class="p">[</span><span class="n">theme</span> <span class="n">name</span> <span class="p">...]]</span>
+<span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">theme</span> <span class="n">path</span> <span class="p">[</span><span class="n">theme</span> <span class="n">path</span> <span class="p">...]]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="err">–</span><span class="n">version</span><span class="p">]</span>
+</pre></div>
+
+
+<h3>可选参数</h3>
+<ul>
+<li><code>-h</code>,<code>--help</code> 显示帮助</li>
+<li><code>-l</code>, <code>--list</code> 显示已安装的主题</li>
+<li><code>-i theme_path</code> , <code>--install theme_path</code> 安装一个或多个主题</li>
+<li><code>-r theme_name</code> , <code>--remove theme_name</code> 卸载一个或多个主题</li>
+<li><code>-s theme_path</code> , <code>--symlink theme_path</code> 和 <code>–install</code> 一样都是安装,但是只创建一个符号链接，并不会复制主题目录，对主题开发很有用</li>
+<li><code>-v</code> , <code>--verbose</code> 显示详细输出信息</li>
+<li><code>--version</code> 显示版本</li>
+</ul>
+<blockquote>
+<p>译者补充</p>
+<p>平常用 <code>-i theme_path</code> 安装主题的时候，<em>theme_path</em> 整个目录会被复制到pelican的目录下，并且pelican编译时使用的主题也是pelican目录下那份，如果用 <code>-s theme_path</code> 安装主题的话，就不会有复&gt;制的过程，pelican编译时直接使用 <em>theme_path</em> 中的主题文件，显然这样对于一个正在制作过程中的主题进行“调试”与修改来得方便的多。</p>
+</blockquote>
+<h2>示例</h2>
+<h3>列出已安装的主题</h3>
+<p>使用 <code>pelican-themes</code> 命令，通过 <code>-l</code> 或 <code>--list</code> 选项可以列出已经安装的主题</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+
+
+<blockquote>
+<p>notmyidea<br />
+two-column@<br />
+simple  </p>
+</blockquote>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="o">--</span><span class="n">list</span>
+</pre></div>
+
+
+<blockquote>
+<p>notmyidea<br />
+two-column@<br />
+simple  </p>
+</blockquote>
+<p>在本例中，我们可以看到有三个可用的主题： <code>notmyidea</code> , <code>simple</code>  和 <code>two-column</code>。</p>
+<p><code>two-column</code> 被添加了一个前缀 <code>@</code> ,因为这个主题没有被复制到pelican的主题目录，而是仅仅创建了一个符号链接（详见后文 <strong>创建符号链接</strong>）。</p>
+<p>注意，你可以把 <code>--list</code> 与 <code>-v</code> 或与 <code>--verbose</code> 选项结合起来以获得更加详细的输出，像这样：</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="o">-</span><span class="n">v</span> <span class="o">-</span><span class="n">l</span>
+</pre></div>
+
+
+<blockquote>
+<p>/usr/local/lib/python2.6/dist-packages/pelican-2.6.0-py2.6.egg/pelican/themes/notmyidea<br />
+/usr/local/lib/python2.6/dist-packages/pelican-2.6.0-py2.6.egg/pelican/themes/two-column (symbolic link to `/home/skami/Dev/Python/pelican-themes/two-column')<br />
+/usr/local/lib/python2.6/dist-packages/pelican-2.6.0-py2.6.egg/pelican/themes/simple  </p>
+</blockquote>
+<h3>安装主题</h3>
+<p>你可以使用 <code>-i</code> 或 <code>--install</code> 选项来安装一个或多个主题。这个选项需要你想安装的主题的目录作为参数，而且可以与 <code>--verbose</code> 或 <code>-v</code> 选项结合使用。</p>
+<div class="highlight"><pre><span class="cp"># pelican-themes --install ~/Dev/Python/pelican-themes/notmyidea-cms --verbose</span>
+
+<span class="cp"># pelican-themes --install ~/Dev/Python/pelican-themes/notmyidea-cms\</span>
+<span class="cp">                           ~/Dev/Python/pelican-themes/martyalchin \</span>
+<span class="cp">                           --verbose</span>
+
+<span class="cp"># pelican-themes -vi ~/Dev/Python/pelican-themes/two-column</span>
+</pre></div>
+
+
+<h3>卸载主题</h3>
+<p><code>pelican-themes</code> 命令还可以卸载安装在pelican主题目录中的主题。使用 <code>-r</code> 或 <code>-remove</code> 选项并提供要卸载的主题名字作为参数来卸载一个或多个主题，该选项也可以与 <code>--verbose</code> 或 <code>-v</code> 选项结合使用。</p>
+<div class="highlight"><pre><span class="c"># pelican-themes --remove two-column</span>
+</pre></div>
+
+
+</pre>
+
+<div class="highlight"><pre><span class="c"># pelican-themes -r martyachin notmyidea-cmd -v</span>
+</pre></div>
+
+
+<h3>创建符号链接</h3>
+<p><code>pelican-themes</code> 可以通过创建符号链接来安装主题，这样就不需要将需要安装的主题整个复制到pelican主题的目录下。</p>
+<p>你可以用 <code>-s</code> 或 <code>-symlink</code> 选项来对一个主题进行符号链接，这样安装的主题使用起来与用 <code>--install</code> 选项安装的主题没啥区别。</p>
+<div class="highlight"><pre><span class="c"># pelican-themes --symlink ~/Dev/Python/pelican-themes/two-column</span>
+</pre></div>
+
+
+<p>本例中，<code>two-column</code> 这个主题被符号链接到了pelican主题目录，所以现在就能直接使用了，而且我们还能在调整这个主题的同时不需要反复重新安装它。</p>
+<p>这对主题开发很有用。</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">sudo</span> <span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="n">Dev</span><span class="o">/</span><span class="n">Python</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span><span class="o">/</span><span class="n">two</span><span class="o">-</span><span class="n">column</span>
+<span class="err">$</span> <span class="n">pelican</span> <span class="o">~/</span><span class="n">Blog</span><span class="o">/</span><span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">out</span> <span class="o">-</span><span class="n">t</span> <span class="n">two</span><span class="o">-</span><span class="n">column</span>
+<span class="err">$</span> <span class="n">firefox</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">out</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span>
+<span class="err">$</span> <span class="n">vim</span> <span class="o">~/</span><span class="n">Dev</span><span class="o">/</span><span class="n">Pelican</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span><span class="o">/</span><span class="n">two</span><span class="o">-</span><span class="n">coumn</span><span class="o">/</span><span class="k">static</span><span class="o">/</span><span class="n">css</span><span class="o">/</span><span class="n">main</span><span class="p">.</span><span class="n">css</span>
+<span class="err">$</span> <span class="n">pelican</span> <span class="o">~/</span><span class="n">Blog</span><span class="o">/</span><span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">out</span> <span class="o">-</span><span class="n">t</span> <span class="n">two</span><span class="o">-</span><span class="n">column</span>
+<span class="err">$</span> <span class="n">cp</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">bg</span><span class="p">.</span><span class="n">png</span> <span class="o">~/</span><span class="n">Dev</span><span class="o">/</span><span class="n">Pelican</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span><span class="o">/</span><span class="n">two</span><span class="o">-</span><span class="n">coumn</span><span class="o">/</span><span class="k">static</span><span class="o">/</span><span class="n">img</span><span class="o">/</span><span class="n">bg</span><span class="p">.</span><span class="n">png</span>
+<span class="err">$</span> <span class="n">pelican</span> <span class="o">~/</span><span class="n">Blog</span><span class="o">/</span><span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">out</span> <span class="o">-</span><span class="n">t</span> <span class="n">two</span><span class="o">-</span><span class="n">column</span>
+<span class="err">$</span> <span class="n">vim</span> <span class="o">~/</span><span class="n">Dev</span><span class="o">/</span><span class="n">Pelican</span><span class="o">/</span><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span><span class="o">/</span><span class="n">two</span><span class="o">-</span><span class="n">coumn</span><span class="o">/</span><span class="n">templates</span><span class="o">/</span><span class="n">index</span><span class="p">.</span><span class="n">html</span>
+<span class="err">$</span> <span class="n">pelican</span> <span class="o">~/</span><span class="n">Blog</span><span class="o">/</span><span class="n">content</span> <span class="o">-</span><span class="n">o</span> <span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">out</span> <span class="o">-</span><span class="n">t</span> <span class="n">two</span><span class="o">-</span><span class="n">column</span>
+</pre></div>
+
+
+<h3>在一条命令中执行多个操作</h3>
+<p><code>--install</code> , <code>--remove</code> 和 <code>--symlink</code> 选项不是互斥的，所以你可以在一条命令中把它们结合起来，从而在一条命令中干更多的事情。像这样：</p>
+<div class="highlight"><pre><span class="cp"># pelican-themes --remove notmyidea-cms two-column \</span>
+<span class="cp">                 --install ~/Dev/Python/pelican-themes/notmyidea-cms-fr \</span>
+<span class="cp">                 --symlink ~/Dev/Python/pelican-themes/two-column \</span>
+<span class="cp">                 --verbose</span>
+</pre></div>
+
+
+<p>在这个例子中，主题 <code>notmyidea-cms</code> 被 <code>notmyidea-cms-fr</code>替代了。</p>
+<h2>参见</h2>
+<ul>
+<li><a href="http://docs.notmyidea.org/alexis/pelican/">http://docs.notmyidea.org/alexis/pelican/</a></li>
+<li><code>/usr/share/doc/pelican/</code> 如果你用 <a href="http://skami18.github.com/pelican-packages/">APT repository</a> 安装了Pelican</li>
+<li>原版文档：<a href="http://docs.getpelican.com/en/latest/pelican-themes.html" title="pelican-themes documentation">http://docs.getpelican.com/en/latest/pelican-themes.html</a></li>
+</ul>
+                </div><!-- /.entry-content -->
+                                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "pelican-themesguan-fang-wen-dang-fan-yi.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://frantic1048.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
+                </div>
+                        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://linuxzen.com/"><i class="icon-external-link"></i>cold</a></li>
+    <li><a href="http://www.dongxf.com/"><i class="icon-external-link"></i>晓风‘Blog</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="http://frantic1048.com/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="http://tudou.com/home/FranticBlack"><i class="icon-Tudou-sign icon-large"></i>Tudou</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="http://frantic1048.com/category/blog.html">
+    <i class="icon-folder-open icon-large"></i>Blog
+</a>
+</li>
+<li>
+<a href="http://frantic1048.com/category/life.html">
+    <i class="icon-folder-open icon-large"></i>Life
+</a>
+</li>
+<li>
+<a href="http://frantic1048.com/category/misc.html">
+    <i class="icon-folder-open icon-large"></i>Misc
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/pelican.html">
+        <i class="icon-tag icon-large"></i>Pelican
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/life.html">
+        <i class="icon-tag icon-large"></i>Life
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/tag/translation.html">
+        <i class="icon-tag icon-large"></i>Translation
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/tag/pygment.html">
+        <i class="icon-tag icon-large"></i>pygment
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/tag/github.html">
+        <i class="icon-tag icon-large"></i>Github
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/windows.html">
+        <i class="icon-tag icon-large"></i>Windows
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/tag/css.html">
+        <i class="icon-tag icon-large"></i>CSS
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/tag/blog.html">
+        <i class="icon-tag icon-large"></i>Blog
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            <script type="text/javascript">
+    var disqus_shortname = 'frantic1048';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://frantic1048.com/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="http://frantic1048.com/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
