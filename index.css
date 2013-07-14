@@ -1,0 +1,13 @@
+body{
+background-color:#333;
+}
+
+#sakuno{
+border:0;
+padding:0;
+left:50%;
+margin-left:-303px;
+top:50%;
+margin-top:-229px;
+position:fixed;
+}
