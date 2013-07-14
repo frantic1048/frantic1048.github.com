@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>去掉Pelican生成的代码区块中的红框</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Frantic1048">
+
+    <!-- Le styles -->
+    <link rel="stylesheet" href="http://frantic1048.com/blog/theme/css/bootstrap.dark.css" type="text/css" />
+    <style type="text/css">
+      body {
+        padding-top: 60px;
+        padding-bottom: 40px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+      .tag-1 {
+        font-size: 13pt;
+      }
+      .tag-2 {
+        font-size: 10pt;
+      }
+      .tag-2 {
+        font-size: 8pt;
+      }
+      .tag-4 {
+        font-size: 6pt;
+     }
+    </style>
+    <link href="http://frantic1048.com/blog/theme/css/bootstrap-responsive.dark.css" rel="stylesheet">
+        <link href="http://frantic1048.com/blog/theme/css/font-awesome.css" rel="stylesheet">
+
+    <link href="http://frantic1048.com/blog/theme/css/pygments.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+      <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <!-- Le fav and touch icons -->
+    <link rel="shortcut icon" href="http://frantic1048.com/blog/theme/images/favicon.ico">
+    <link rel="apple-touch-icon" href="http://frantic1048.com/blog/theme/images/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="http://frantic1048.com/blog/theme/images/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="http://frantic1048.com/blog/theme/images/apple-touch-icon-114x114.png">
+
+    <link href="http://frantic1048.com/blog/" type="application/atom+xml" rel="alternate" title="Frantic World ATOM Feed" />
+    
+  </head>
+
+  <body>
+
+    <div class="navbar navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container-fluid">
+          <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a>
+          <a class="brand" href="http://frantic1048.com/blog/index.html">Frantic World </a>
+          <div class="nav-collapse">
+            <ul class="nav">
+                                                          <li><a href="http://frantic1048.com/blog/pages/about.html">About</a></li>
+                                        <li class="divider-vertical"></li>
+                                              <li class="active">
+                    <a href="http://frantic1048.com/blog/category/blog.html">
+						<i class="icon-folder-open icon-large"></i>Blog
+					</a>
+                  </li>
+                                <li >
+                    <a href="http://frantic1048.com/blog/category/life.html">
+						<i class="icon-folder-open icon-large"></i>Life
+					</a>
+                  </li>
+                                <li >
+                    <a href="http://frantic1048.com/blog/category/misc.html">
+						<i class="icon-folder-open icon-large"></i>Misc
+					</a>
+                  </li>
+              
+                          <ul class="nav pull-right">
+                                <li><a href="http://frantic1048.com/blog/archives.html"><i class="icon-th-list"></i>Archives</a></li>
+                          </ul>
+
+            </ul>
+            <!--<p class="navbar-text pull-right">Logged in as <a href="#">username</a></p>-->
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="span9" id="content">
+            <section id="content">
+        <article>
+                <header>
+                        <h1>
+                                <a href=""
+                                        rel="bookmark"
+                                        title="Permalink to 去掉Pelican生成的代码区块中的红框">
+                                        去掉Pelican生成的代码区块中的红框
+                                </a>
+                                                        </h1>
+                </header>
+                <div class="entry-content">
+                <div class="well">
+                        <footer class="post-info">
+<span class="label">Date</span>
+<abbr class="published" title="2013-07-10T00:00:00">
+        <i class="icon-calendar"></i>Wed 10 July 2013
+</abbr>
+<span class="label">By</span>
+<a href="http://frantic1048.com/blog/author/frantic1048.html"><i class="icon-user"></i>Frantic1048</a>
+<span class="label">Category</span>
+<a href="http://frantic1048.com/blog/category/blog.html"><i class="icon-folder-open"></i>Blog</a>.
+
+
+<span class="label">Tags</span>
+	<a href="http://frantic1048.com/blog/tag/pelican.html"><i class="icon-tag"></i>Pelican</a>
+	<a href="http://frantic1048.com/blog/tag/css.html"><i class="icon-tag"></i>CSS</a>
+	<a href="http://frantic1048.com/blog/tag/pygment.html"><i class="icon-tag"></i>pygment</a>
+</footer><!-- /.post-info -->                </div>
+                <p>这几天折腾博客主题，无意间找到了最开始弄博客的时候代码区块中的一些字符会有红框框住的问题的原因。</p>
+<p>因为Pelican是使用pygment处理代码高亮的，而pygment的高亮颜色定义就在当前使用的主题目录中的<code>pygment.css</code>这个文件里，<strong>要修改代码高亮的配色就要通过修改这个文件来实现</strong>。现在打开它，可以看到里面是对代码的各种类型的内容的风格定义，其中有一行如下：</p>
+<blockquote>
+<p>.highlight .err { border: 1px solid #FF0000 } /<em> Error </em>/</p>
+</blockquote>
+<p>根据内容可以看出这是规定书写错误的代码的文本样式，可是平时代码中有的字符也会被识别成错误的代码，比如下面这句中的<code>@</code>:</p>
+<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span>
+</pre></div>
+
+
+<p>所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的<code>border</code>样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。</p>
+                </div><!-- /.entry-content -->
+                                <div class="comments">
+                <h2>Comments !</h2>
+                        <div id="disqus_thread"></div>
+                        <script type="text/javascript">
+                           var disqus_identifier = "qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html";
+                           (function() {
+                                var dsq = document.createElement('script');
+                                dsq.type = 'text/javascript'; dsq.async = true;
+                                dsq.src = 'http://frantic1048.disqus.com/embed.js';
+                                (document.getElementsByTagName('head')[0] ||
+                                 document.getElementsByTagName('body')[0]).appendChild(dsq);
+                          })();
+                        </script>
+                </div>
+                        </article>
+</section>
+        </div><!--/span-->
+
+                <div class="span3 well sidebar-nav" id="sidebar">
+            <ul class="nav nav-list">
+<li class="nav-header"><h4><i class="icon-external-link"></i>blogroll</h4></li>
+    <li><a href="http://linuxzen.com/"><i class="icon-external-link"></i>cold</a></li>
+    <li><a href="http://www.dongxf.com/"><i class="icon-external-link"></i>晓风‘Blog</a></li>
+<li class="nav-header"><h4><i class="icon-home icon-large"></i> social</h4></li>
+<li><a href="http://frantic1048.com/blog/" rel="alternate"><i class="icon-bookmark icon-large"></i>atom feed</a></li>
+    <li><a href="http://tudou.com/home/FranticBlack"><i class="icon-Tudou-sign icon-large"></i>Tudou</a></li>
+    <li><a href="https://github.com/frantic1048"><i class="icon-Github-sign icon-large"></i>Github</a></li>
+
+<li class="nav-header"><h4><i class="icon-folder-close icon-large"></i>Categories</h4></li>
+<li>
+<a href="http://frantic1048.com/blog/category/blog.html">
+    <i class="icon-folder-open icon-large"></i>Blog
+</a>
+</li>
+<li>
+<a href="http://frantic1048.com/blog/category/life.html">
+    <i class="icon-folder-open icon-large"></i>Life
+</a>
+</li>
+<li>
+<a href="http://frantic1048.com/blog/category/misc.html">
+    <i class="icon-folder-open icon-large"></i>Misc
+</a>
+</li>
+
+<li class="nav-header"><h4><i class="icon-tags icon-large"></i>Tags</h4></li>
+<li class="tag-2">
+    <a href="http://frantic1048.com/blog/tag/translation.html">
+        <i class="icon-tag icon-large"></i>Translation
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/blog/tag/blog.html">
+        <i class="icon-tag icon-large"></i>Blog
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/blog/tag/pelican.html">
+        <i class="icon-tag icon-large"></i>Pelican
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/blog/tag/life.html">
+        <i class="icon-tag icon-large"></i>Life
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/blog/tag/pygment.html">
+        <i class="icon-tag icon-large"></i>pygment
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/blog/tag/css.html">
+        <i class="icon-tag icon-large"></i>CSS
+    </a>
+</li>
+<li class="tag-4">
+    <a href="http://frantic1048.com/blog/tag/github.html">
+        <i class="icon-tag icon-large"></i>Github
+    </a>
+</li>
+<li class="tag-1">
+    <a href="http://frantic1048.com/blog/tag/windows.html">
+        <i class="icon-tag icon-large"></i>Windows
+    </a>
+</li>
+
+
+</ul>        </div><!--/.well -->
+
+      </div><!--/row-->
+
+      <hr>
+
+      <footer>
+        <address id="about">
+                Proudly powered by <a href="http://pelican.notmyidea.org/">Pelican <i class="icon-external-link"></i></a>,
+                                which takes great advantage of <a href="http://python.org">Python <i class="icon-external-link"></i></a>.
+        </address><!-- /#about -->
+
+        <p>The theme is based on <a href="http://twitter.github.com/bootstrap/">Bootstrap from Twitter <i class="icon-external-link"></i></a>,
+                   and <a href="http://fortawesome.github.com/Font-Awesome/">Font-Awesome <i class="icon-external-link"></i></a>, thanks!</p>
+      </footer>
+
+    </div><!--/.fluid-container-->
+
+
+            <script type="text/javascript">
+    var disqus_shortname = 'frantic1048';
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = 'http://' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+
+    <!-- Le javascript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="http://frantic1048.com/blog/theme/js/jquery-1.7.2.min.js"></script>
+    <script src="http://frantic1048.com/blog/theme/js/bootstrap.min.js"></script>
+  </body>
+</html>
