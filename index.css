@@ -1,6 +1,5 @@
 body{
-background-color:#333;
-font-size:10px;
+background-color:#222;
 }
 
 #sakuno{
@@ -17,11 +16,12 @@ z-index:1024;
 
 #charcontainer{
 right:0%;
-top:5em;
-position:fixed;
+bottom:8em;
 width:38em;
 height:27em;
 z-index:-1;
+font-size:5px;
+position:fixed;
 }
 .charf{
 margin-top:2em;
@@ -31,9 +31,9 @@ display:inline-block;
 width:4em;
 height:2em;
 background-color:transparent;
-border-top:2em solid orange;
-border-bottom:2em solid orange;
-border-left:2em solid orange; 
+border-top:2em solid #3e3e3e;
+border-bottom:2em solid #3e3e3e;
+border-left:2em solid #3e3e3e; 
 border-right:4em solid transparent;}
 
 .charf:after{
@@ -45,9 +45,9 @@ display:block;
 width:4em;
 height:5em;
 background-color:transparent;
-border-top:1em solid orange;
+border-top:1em solid #3e3e3e;
 border-bottom:3em solid transparent;
-border-left:2em solid orange; 
+border-left:2em solid #3e3e3e; 
 border-right:4em solid transparent;
 }
 
@@ -59,10 +59,10 @@ display:inline-block;
 background-color:transparent;
 width:6em;
 height:6em;
-border-top:2em solid green;
-border-bottom:2em solid green;
-border-left:2em solid green; 
-border-right:2em solid green;
+border-top:2em solid #3e3e3e;
+border-bottom:2em solid #3a3a3a;
+border-left:2em solid #3a3a3a; 
+border-right:2em solid #3a3a3a;
 -moz-border-radius:1em  10em 10em 1em; 
 -webkit-border-radius:1em  10em 10em 1em; 
 border-radius: 1em  10em 10em 1em;
@@ -76,22 +76,20 @@ left:-2em;
 content:"";
 width:2em;
 height:2em;
-background-color:green;
+background-color:#3a3a3a;
 box-shadow:
-0 2em 0 green,
-0 4em 0 green,
-0 5em 0 green,
-2em 1em 0 green,
-3em 2em 0 green,
-4em 3em 0 green,
-5em 4em 0 green,
-6em 5em 0 green,
-7em 5em 0 green,
-8em 5em 0 green
+0 2em 0 #3a3a3a,
+0 4em 0 #3a3a3a,
+0 5em 0 #3a3a3a,
+2em 1em 0 #3a3a3a,
+3em 2em 0 #3a3a3a,
+4em 3em 0 #3a3a3a,
+5em 4em 0 #3a3a3a,
+6em 5em 0 #3a3a3a,
+7em 5em 0 #3a3a3a,
+8em 5em 0 #3a3a3a
 ;
 }
-
-
 .chara{
 margin-top:2em;
 margin-left:2em;
@@ -100,10 +98,10 @@ display:inline-block;
 width:6em;
 height:6em;
 background-color:transparent;
-border-top:2em solid red;
-border-bottom:2em solid red;
-border-left:2em solid red; 
-border-right:2em solid red;
+border-top:2em solid #424242;
+border-bottom:2em solid #424242;
+border-left:2em solid #424242; 
+border-right:2em solid #424242;
 -moz-border-radius:6em  6em 1em 1em; 
 -webkit-border-radius:6em  6em 1em 1em; 
 border-radius: 6em  6em 1em 1em;
@@ -116,15 +114,15 @@ left:-2em;
 content:"";
 width:2em;
 height:2em;
-background-color:red;
+background-color:#424242;
 box-shadow:
-0 2em 0 red,
-0 4em 0 red,
-0 5em 0 red,
-8em 0 0 red,
-8em 2em 0 red,
-8em 4em 0 red,
-8em 5em 0 red
+0 2em 0 #424242,
+0 4em 0 #424242,
+0 5em 0 #424242,
+8em 0 0 #424242,
+8em 2em 0 #424242,
+8em 4em 0 #424242,
+8em 5em 0 #424242
 ;
 }
 
@@ -136,10 +134,10 @@ display:inline-block;
 width:3em;
 height:11em;
 background-color:transparent;
-border-top:2em solid blue;
+border-top:2em solid #444444;
 border-bottom:2em solid transparent;
-border-left:2em solid blue; 
-border-right:2em solid blue;
+border-left:2em solid #444444; 
+border-right:2em solid #444444;
 -moz-border-radius:6em  6em 4em 1em; 
 -webkit-border-radius:6em  6em 4em 1em; 
 border-radius: 6em  6em 4em 1em;
@@ -155,9 +153,9 @@ width:3em;
 height:11em;
 background-color:transparent;
 border-top:2em solid transparent;
-border-bottom:2em solid blue;
-border-left:2em solid blue; 
-border-right:2em solid blue;
+border-bottom:2em solid #444444;
+border-left:2em solid #444444; 
+border-right:2em solid #444444;
 -moz-border-radius:4em  1em 6em 6em; 
 -webkit-border-radius:4em  1em 6em 6em; 
 border-radius:4em  1em 6em 6em;
@@ -171,9 +169,9 @@ display:inline-block;
 width:3em;
 height:13em;
 background-color:transparent;
-border-top:2em solid Aquamarine;
+border-top:2em solid #4e4e4e;
 border-left:3em solid transparent; 
-border-right:1em solid Aquamarine;
+border-right:1em solid #4e4e4e;
 }
 
 .chart:after{
@@ -185,8 +183,8 @@ content:"";
 width:3em;
 height:13em;
 background-color:transparent;
-border-top:2em solid Aquamarine;
-border-left:1em solid Aquamarine; 
+border-top:2em solid #4e4e4e;
+border-left:1em solid #4e4e4e; 
 border-right:3em solid transparent;
 }
 
@@ -197,7 +195,7 @@ float:left;
 display:inline-block;
 width:0;
 height:0;
-border:1em solid Chartreuse;
+border:1em solid #525252;
 -moz-border-radius:1em  1em 1em 1em;
 -webkit-border-radius:1em  1em 1em 1em;
 border-radius:1em  1em 1em 1em;
@@ -213,24 +211,24 @@ left:-8em;
 width:0em;
 height:10em;
 background-color:transparent;
-border-top:2em solid Chartreuse;
-border-left:1em solid Chartreuse; 
-border-right:1em solid Chartreuse;
+border-top:2em solid #525252;
+border-left:1em solid #525252; 
+border-right:1em solid #525252;
 -moz-border-radius:2em  2em 0em 0em;
 -webkit-border-radius:2em  2em 0em 0em;
 border-radius:2em  2em 0em 0em;
 }
 
-.charC{
+.charc{
 margin-top:2em;
 margin-left:5em;
 float:left;
 display:inline-block;
 width:6em;
 height:11em;
-border-left:2em solid DeepPink;
-border-bottom:2em solid DeepPink;
-border-top:2em solid DeepPink;
+border-left:2em solid #363636;
+border-bottom:2em solid #363636;
+border-top:2em solid #363636;
 -moz-border-radius:1em  1em 1em 1em;
 -webkit-border-radius:1em  1em 1em 1em;
 border-radius:1em  1em 1em 1em;
