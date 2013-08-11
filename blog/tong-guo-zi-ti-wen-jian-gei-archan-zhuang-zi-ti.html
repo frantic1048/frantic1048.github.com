@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-		<title>给windows添加用Notepad++打开的右键菜单 | Frantic World</title>
+		<title>通过字体文件给Arch安装字体 | Frantic World</title>
 	<meta charset="utf-8" />
     <meta name="author" content="Frantic1048">
 	<link rel="stylesheet" href="http://frantic1048.com/blog/theme/css/franticworld.css" type="text/css" />
@@ -15,34 +15,44 @@
 		<div class="content">
 		
 <div class="metabox">
-	<p class="metaday">168</p>
+	<p class="metaday">222</p>
 	<p class="metayear">2013</p>
-	<p class="metacategory">Misc</p>
+	<p class="metacategory">Linux</p>
 </div>
 <div class="arcticlecontentbox">
 	<div class="articlecontent">
-		<a class="articletitle" href="http://frantic1048.com/blog/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html " >给windows添加用Notepad++打开的右键菜单</a>
-		<p>操作很简单:</p>
-<p>创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可</p>
-<p>注意:<em>最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置</em></p>
-<blockquote>
-<div class="highlight"><pre>Windows Registry Editor Version 5.00
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;Edit with Notepad++&quot;</span>
-
-<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++\command]</span>
-<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;C:\\Program Files (x86)\\notepad++\\notepad++.exe\&quot; %1&quot;</span>
+		<a class="articletitle" href="http://frantic1048.com/blog/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html " >通过字体文件给Arch安装字体</a>
+		<p>适用情况：</p>
+<ul>
+<li>搬运windows那边的字体到Arch</li>
+<li>安装从网上下载的字体文件</li>
+<li>其它需要手动安装字体文件的情况</li>
+</ul>
+<p>Arch的字体目录为<code>/usr/share/fonts</code>，安装字体时建议在这里建立单独的文件夹来存放手动安装的字体(比如这里建立了一个winfont文件夹)</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">winfont</span>
 </pre></div>
 
 
-</blockquote>
+<p>将你要安装的字体文件复制到<code>/usr/share/fonts</code>下你建立的文件夹中</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">font</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">winfont</span>
+</pre></div>
+
+
+<p>（注意这些字体文件的访问权限，至少要普通用户可读才行，否则就用<code>chmod</code>修改一下文件权限）</p>
+<p>然后执行</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">mkfontscale</span>
+<span class="n">sudo</span> <span class="n">mkfontdir</span>
+<span class="n">sudo</span> <span class="n">fc</span><span class="o">-</span><span class="n">cache</span> <span class="o">-</span><span class="n">fsv</span>
+</pre></div>
+
+
+<p>这样就安装完成了。</p>
 	</div>
 	
 		<div class="comments">
 	<div id="disqus_thread"></div>
 	<script type="text/javascript">
-	   var disqus_identifier = "gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html";
+	   var disqus_identifier = "tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html";
 	   (function() {
 			var dsq = document.createElement('script');
 			dsq.type = 'text/javascript'; dsq.async = true;
