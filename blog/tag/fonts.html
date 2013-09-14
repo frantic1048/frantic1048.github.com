@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-		<title>Frantic World - pygment</title>
+		<title>Frantic World - Fonts</title>
 	<meta charset="utf-8" />
     <meta name="author" content="Frantic1048">
 	<link rel="stylesheet" href="http://frantic1048.com/blog/theme/css/franticworld.css" type="text/css" />
@@ -16,24 +16,24 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
-		<p class="metaday">191</p>
+		<p class="metaday">257</p>
 		<p class="metayear">2013</p>
-		<p class="metacategory">Blog</p>
+		<p class="metacategory">Web</p>
 	</div>
 	<div class="summarybox">
-		<a class="summarytitle" href="http://frantic1048.com/blog/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html " >去掉Pelican生成的代码区块中的红框</a>
-		<p>这几天折腾博客主题，无意间找到了最开始弄博客的时候代码区块中的一些字符会有红框框住的问题的原因。</p>
-<p>因为Pelican是使用pygment处理代码高亮的，而pygment的高亮颜色定义就在当前使用的主题目录中的<code>pygment.css</code>这个文件里，<strong>要修改代码高亮的配色就要通过修改这个文件来实现</strong>。现在打开它，可以看到里面是对代码的各种类型的内容的风格定义，其中有一行如下：</p>
-<blockquote>
-<p>.highlight .err { border: 1px solid #FF0000 } /<em> Error </em>/</p>
-</blockquote>
-<p>根据内容可以看出这是规定书写错误的代码的文本样式，可是平时代码中有的字符也会被识别成错误的代码，比如下面这句中的<code>@</code>:</p>
-<div class="highlight"><pre><span class="n">ssh</span> <span class="o">-</span><span class="n">T</span> <span class="n">git</span><span class="err">@</span><span class="n">github</span><span class="p">.</span><span class="n">com</span>
-</pre></div>
-
-
-<p>所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的<code>border</code>样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。</p>
-		<a class="btnmore" href="http://frantic1048.com/blog/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html">more ...</a>
+		<a class="summarytitle" href="http://frantic1048.com/blog/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html " >使用Google Fonts丰富网页的字体</a>
+		<p>字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts</p>
+<h1>寻找到需要的字体</h1>
+<p>首先进入<a href="http://www.google.com/fonts/#HomePlace:home">Google Fonts首页</a>，点击页面正中的<code>Start choosing fonts</code>按钮。</p>
+<p>接下来你会看到一个包含很多字体的列表。你想要用哪一种字体，你就点击那个字体右下角的<code>Add to Collection</code>按钮，这个时候你选中的字体就会出现在页面下方的框框里。</p>
+<p>如果想要添加多种的字体，重复这步操作即可。</p>
+<h1>预览</h1>
+<p>点击下方显示你选择的字体列表的灰色框框右上角的<code>Review</code>按钮，接下来你会看到你选择的所有字体的预览，你可以在这里调节字体大小，风格等属性进一步了解你选中的字体的效果。</p>
+<h1>使用</h1>
+<p>点击之前<code>Review</code>按钮右边的<code>Use</code>按钮，这个时候你会看到一个页面加载速度的估计，注意： <em>你使用的字体越多，会造成你的网页加载速度更慢</em> 。</p>
+<p>继续向下翻这个页面，就能够看到Google向你提供的使用这些字体的对应代码了。默认显示的是HTML（像这样）：</p>
+<div class="highlight"><pre><span class="o">&lt;</span><span class="n">link</span> <span class="n">href ...</span></pre></div>
+		<a class="btnmore" href="http://frantic1048.com/blog/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html">more ...</a>
 	</div>
 </div>
 
