@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2013-09-19T00:00:00Z</updated><entry><title>启用Kate的内建终端</title><link href="/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2013-09-19T00:00:00Z</updated><entry><title>启用Kate的内建终端</title><link href="/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;操作系统：Arch Linux 3.11.1-1&lt;/li&gt;
 &lt;li&gt;桌面环境：KDE 4.11.1&lt;/li&gt;
 &lt;/ul&gt;

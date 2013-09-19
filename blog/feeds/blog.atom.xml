@@ -1,124 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/all.atom.xml" rel="self"></link><id>/</id><updated>2013-09-19T00:00:00Z</updated><entry><title>启用Kate的内建终端</title><link href="/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;操作系统：Arch Linux 3.11.1-1&lt;/li&gt;
-&lt;li&gt;桌面环境：KDE 4.11.1&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-with-out-terminal.png" /&gt;&lt;/p&gt;
-&lt;p&gt;开学一来就开始布置C作业，用Kate写Py版作业的时候发现Kate的内置终端没有了，折腾了十多分钟才发现自己犯傻了，在Kate设置中，插件那儿把&lt;code&gt;Terminal tool view&lt;/code&gt;这个插件启用就可以了,见下图。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-configure-terminal.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-with-terminal.png" /&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Kate"></category></entry><entry><title>使用Google Fonts丰富网页的字体</title><link href="/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html" rel="alternate"></link><updated>2013-09-14T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-14:shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</id><summary type="html">&lt;p&gt;字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts&lt;/p&gt;
-&lt;h1&gt;寻找到需要的字体&lt;/h1&gt;
-&lt;p&gt;首先进入&lt;a href="http://www.google.com/fonts/#HomePlace:home"&gt;Google Fonts首页&lt;/a&gt;，点击页面正中的&lt;code&gt;Start choosing fonts&lt;/code&gt;按钮。&lt;/p&gt;
-&lt;p&gt;接下来你会看到一个包含很多字体的列表。你想要用哪一种字体，你就点击那个字体右下角的&lt;code&gt;Add to Collection&lt;/code&gt;按钮，这个时候你选中的字体就会出现在页面下方的框框里。&lt;/p&gt;
-&lt;p&gt;如果想要添加多种的字体，重复这步操作即可。&lt;/p&gt;
-&lt;h1&gt;预览&lt;/h1&gt;
-&lt;p&gt;点击下方显示你选择的字体列表的灰色框框右上角的&lt;code&gt;Review&lt;/code&gt;按钮，接下来你会看到你选择的所有字体的预览，你可以在这里调节字体大小，风格等属性进一步了解你选中的字体的效果。&lt;/p&gt;
-&lt;h1&gt;使用&lt;/h1&gt;
-&lt;p&gt;点击之前&lt;code&gt;Review&lt;/code&gt;按钮右边的&lt;code&gt;Use&lt;/code&gt;按钮，这个时候你会看到一个页面加载速度的估计，注意： &lt;em&gt;你使用的字体越多，会造成你的网页加载速度更慢&lt;/em&gt; 。&lt;/p&gt;
-&lt;p&gt;继续向下翻这个页面，就能够看到Google向你提供的使用这些字体的对应代码了。默认显示的是HTML（像这样）：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="o"&gt;&amp;lt;&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt; &lt;span class="n"&gt;href&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="n"&gt;http&lt;/span&gt;&lt;span class="o"&gt;:&lt;/span&gt;&lt;span class="c1"&gt;//fonts.googleapis.com/css?family=Cinzel+Decorative|Kavoon&amp;#39; rel=&amp;#39;stylesheet&amp;#39; type=&amp;#39;text/css&amp;#39;&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;这段引用插入到HTML文档的&lt;head&gt;标签里面就可以在你的页面上直接使用这些字体啦！&lt;/p&gt;</summary><category term="Web"></category><category term="Fonts"></category></entry><entry><title>在Linux下用GCC编译C程序</title><link href="/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html" rel="alternate"></link><updated>2013-08-30T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-30:zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</id><summary type="html">&lt;p&gt;得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。&lt;/p&gt;
-&lt;p&gt;操作环境：Linux 3.10.9-1-ARCH&lt;/p&gt;
-&lt;h1&gt;安装GCC&lt;/h1&gt;
-&lt;p&gt;Arch安装软件蛮简单的，直接在终端里面&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;pacman&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;S&lt;/span&gt; &lt;span class="n"&gt;gcc&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;就搞定了。&lt;/p&gt;
-&lt;h1&gt;使用GCC编译你的C程序&lt;/h1&gt;
-&lt;p&gt;最简单的命令，就是&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;gcc&lt;/span&gt; &lt;span class="n"&gt;helloc&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;c&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;o&lt;/span&gt; &lt;span class="n"&gt;hello&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;out&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;其中选项&lt;code&gt;-o&lt;/code&gt;是指定输出文件位置，正常情况下，执行完之后生成的就是可以运行的二进制文件了。当然，因为这是Linux系统，你可能还需要运行&lt;code&gt;chmod +x hello.out&lt;/code&gt;来赋予执行权限给输出的程序。&lt;/p&gt;
-&lt;hr /&gt;
-&lt;p&gt;然后GCC还有一些其它的一些常见编译/优化/调试用的选项（参考书上的），这些就在接下来慢慢折腾吧。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;选项&lt;/th&gt;&lt;th&gt;作用&lt;/th&gt;&lt;th&gt;输出文件的默认后缀&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-E&lt;/td&gt;&lt;td&gt;只完成预处理过程&lt;/td&gt;&lt;td&gt;.i&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-S&lt;/td&gt;&lt;td&gt;在以上选项的基础上完成编译，生成汇编代码&lt;/td&gt;&lt;td&gt;.s&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-c&lt;/td&gt;&lt;td&gt;在以上选项的基础上完成汇编，生成机器码（此时输出的文件还不能运行）&lt;/td&gt;&lt;td&gt;.o&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-O0&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-O，-O1&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-O2&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-O3&lt;/td&gt;&lt;td&gt;在以上的基础上&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-Os&lt;/td&gt;&lt;td&gt;输出最小的可执行文件&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-
-&lt;tr&gt;&lt;td&gt;-M&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-MM&lt;/td&gt;&lt;td&gt;输出给定源文件的除了标准库头文件之外的依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;-MD&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系，同时编译生成可执行文件&lt;/td&gt;&lt;td&gt;.d(依赖关系文件) .out(可执行文件)&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</summary><category term="Linux"></category><category term="C"></category><category term="GCC"></category></entry><entry><title>解决KDE应用菜单不显示wine程序组的问题</title><link href="/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html" rel="alternate"></link><updated>2013-08-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-19:jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</id><summary type="html">&lt;ul&gt;
-&lt;li&gt;KDE版本：4.10.5&lt;/li&gt;
-&lt;li&gt;wine版本：1.7.0&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;刚用wine装了几个程序，发现K应用菜单里面没有wine程序的这个分类，wine程序全部跑到 &lt;code&gt;Lost + Found&lt;/code&gt; 这分组去了。上网搜索一番，没找到问题原因的描述，就找到下面的解决方法，似乎是因为wine没有修改到KDE使用的造成的？&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ln&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Archlinux"></category></entry><entry><title>在Arch中安装和使用virtualenv</title><link href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html" rel="alternate"></link><updated>2013-08-11T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-11:zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</id><summary type="html">&lt;p&gt;刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。&lt;/p&gt;
-&lt;h2&gt;安装&lt;/h2&gt;
-&lt;p&gt;在Arch仓库里面有俩个&lt;code&gt;virtualenv&lt;/code&gt;,根据需要安装即可。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# pacman -S python2-virtualenv&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;或者&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# pacman -S python-virtualenv&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;前者对应的是python2,后者python3。命令行命令分别是&lt;code&gt;virtualenv2&lt;/code&gt;和&lt;code&gt;virtualenv&lt;/code&gt;。&lt;/p&gt;
-&lt;h2&gt;使用&lt;/h2&gt;
-&lt;p&gt;首先为&lt;code&gt;virtualenv&lt;/code&gt;创建一个目录：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;p&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;virtualenvs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;my_env&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;创建虚拟环境&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;virtualenv2&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;virtualenvs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;my_env&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;激活环境以供使用（就这步和关闭虚拟环境跟windows下面不一样，让我撞墙好久）&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;source&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;virtualenvs&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;my_env&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;bin&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;activate&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;之后你就可以在虚拟环境里面用&lt;code&gt;pip&lt;/code&gt;安装你需要的包，以及干各种事情啦。&lt;/p&gt;
-&lt;p&gt;最后是离开虚拟环境&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="n"&gt;my_env&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt;&lt;span class="err"&gt;$&lt;/span&gt; &lt;span class="n"&gt;deactivate&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h2&gt;参考&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb"&gt;Arch Wiki:Python VirtualEnv&lt;/a&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="Python"></category></entry><entry><title>通过字体文件给Arch安装字体</title><link href="/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html" rel="alternate"></link><updated>2013-08-10T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-10:tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</id><summary type="html">&lt;p&gt;适用情况：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;搬运windows那边的字体到Arch&lt;/li&gt;
-&lt;li&gt;安装从网上下载的字体文件&lt;/li&gt;
-&lt;li&gt;其它需要手动安装字体文件的情况&lt;/li&gt;
-&lt;/ul&gt;
-&lt;p&gt;Arch的字体目录为&lt;code&gt;/usr/share/fonts&lt;/code&gt;，安装字体时建议在这里建立单独的文件夹来存放手动安装的字体(比如这里建立了一个winfont文件夹)&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkdir&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;winfont&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;将你要安装的字体文件复制到&lt;code&gt;/usr/share/fonts&lt;/code&gt;下你建立的文件夹中&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;cp&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;r&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;directory&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;to&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;your&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;font&lt;/span&gt; &lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;usr&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;share&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;fonts&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;winfont&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;（注意这些字体文件的访问权限，至少要普通用户可读才行，否则就用&lt;code&gt;chmod&lt;/code&gt;修改一下文件权限）&lt;/p&gt;
-&lt;p&gt;然后执行&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkfontscale&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;mkfontdir&lt;/span&gt;
-&lt;span class="n"&gt;sudo&lt;/span&gt; &lt;span class="n"&gt;fc&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;cache&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;fsv&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;这样就安装完成了。&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="font"></category></entry><entry><title>翻译：pelican-themes官方文档</title><link href="/fan-yi-pelican-themesguan-fang-wen-dang.html" rel="alternate"></link><updated>2013-07-12T00:00:00Z</updated><author><name></name></author><id>tag:,2013-07-12:fan-yi-pelican-themesguan-fang-wen-dang.html</id><summary type="html">&lt;p&gt;这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说到主题，还是得先读文档，由于经常用到 &lt;strong&gt;pelican-themes&lt;/strong&gt;，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，这是本人第一次做翻译内容如有不当之处还请多多指正~&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/blog.atom.xml" rel="self"></link><id>/</id><updated>2013-07-12T00:00:00Z</updated><entry><title>翻译：pelican-themes官方文档</title><link href="/fan-yi-pelican-themesguan-fang-wen-dang.html" rel="alternate"></link><updated>2013-07-12T00:00:00Z</updated><author><name></name></author><id>tag:,2013-07-12:fan-yi-pelican-themesguan-fang-wen-dang.html</id><summary type="html">&lt;p&gt;这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说到主题，还是得先读文档，由于经常用到 &lt;strong&gt;pelican-themes&lt;/strong&gt;，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，这是本人第一次做翻译内容如有不当之处还请多多指正~&lt;/p&gt;
 &lt;h1&gt;pelican-themes&lt;/h1&gt;
 &lt;h2&gt;描述&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;pelican-themes&lt;/strong&gt; 是一个用来管理Pelican主题的命令行工具。&lt;/p&gt;
@@ -464,11 +345,7 @@ simple  &lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的&lt;code&gt;border&lt;/code&gt;样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。&lt;/p&gt;</summary><category term="Pelican"></category><category term="CSS"></category><category term="pygment"></category></entry><entry><title>手动删除Windows上的服务程序</title><link href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html" rel="alternate"></link><updated>2013-06-26T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-26:shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</id><summary type="html">&lt;p&gt;好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。&lt;/p&gt;
-&lt;p&gt;我先用&lt;code&gt;iobit unistaller&lt;/code&gt;把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！&lt;/p&gt;
-&lt;p&gt;二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。&lt;/p&gt;
-&lt;p&gt;之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。&lt;/p&gt;
-&lt;p&gt;在注册表&lt;code&gt;LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;/code&gt;中找到你要删除的服务程序，直接删掉即可。&lt;/p&gt;</summary><category term="Windows"></category></entry><entry><title>博客诞生记:基于GitHub+Pelican创建博客的整个过程</title><link href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html" rel="alternate"></link><updated>2013-06-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-19:bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html</id><summary type="html">&lt;p&gt;很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是是因为托管博客的限制颇多，编辑体验太差 +_+
+&lt;p&gt;所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的&lt;code&gt;border&lt;/code&gt;样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。&lt;/p&gt;</summary><category term="Pelican"></category><category term="CSS"></category><category term="pygment"></category></entry><entry><title>博客诞生记:基于GitHub+Pelican创建博客的整个过程</title><link href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html" rel="alternate"></link><updated>2013-06-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-19:bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html</id><summary type="html">&lt;p&gt;很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是是因为托管博客的限制颇多，编辑体验太差 +_+
 本文记录了我建立博客的基本过程，希望能对想要建博客却跟我一样完全不懂web的小白有所帮助。&lt;/p&gt;
 &lt;p&gt;阅读本文所需技能：&lt;/p&gt;
 &lt;ul&gt;
@@ -705,21 +582,7 @@ PLUGINS = ["sitemap"]&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;然后 Pelican 就会将&lt;code&gt;img&lt;/code&gt;目录拷贝到&lt;code&gt;output/static/&lt;/code&gt;下就大功告成了。&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category><category term="Pelican"></category><category term="Github"></category></entry><entry><title>给windows添加用Notepad++打开的右键菜单</title><link href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html" rel="alternate"></link><updated>2013-06-17T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-17:gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</id><summary type="html">&lt;p&gt;操作很简单:&lt;/p&gt;
-&lt;p&gt;创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可&lt;/p&gt;
-&lt;p&gt;注意:&lt;em&gt;最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置&lt;/em&gt;&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;Windows Registry Editor Version 5.00
-
-&lt;span class="k"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class="k"&gt;\*\shell\notepad++]&lt;/span&gt;
-&lt;span class="na"&gt;@&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;Edit with Notepad++&amp;quot;&lt;/span&gt;
-
-&lt;span class="k"&gt;[&lt;/span&gt;&lt;span class="nb"&gt;HKEY_CLASSES_ROOT&lt;/span&gt;&lt;span class="k"&gt;\*\shell\notepad++\command]&lt;/span&gt;
-&lt;span class="na"&gt;@&lt;/span&gt;&lt;span class="o"&gt;=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;\&amp;quot;C:\\Program Files (x86)\\notepad++\\notepad++.exe\&amp;quot; %1&amp;quot;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;/blockquote&gt;</summary><category term="Windows"></category></entry><entry><title>Windows下安装和使用Pelican</title><link href="/windowsxia-an-zhuang-he-shi-yong-pelican.html" rel="alternate"></link><updated>2013-06-17T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-17:windowsxia-an-zhuang-he-shi-yong-pelican.html</id><summary type="html">&lt;p&gt;最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：&lt;/p&gt;
+&lt;p&gt;然后 Pelican 就会将&lt;code&gt;img&lt;/code&gt;目录拷贝到&lt;code&gt;output/static/&lt;/code&gt;下就大功告成了。&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category><category term="Pelican"></category><category term="Github"></category></entry><entry><title>Windows下安装和使用Pelican</title><link href="/windowsxia-an-zhuang-he-shi-yong-pelican.html" rel="alternate"></link><updated>2013-06-17T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-17:windowsxia-an-zhuang-he-shi-yong-pelican.html</id><summary type="html">&lt;p&gt;最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/blinker"&gt;blinker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/docutils"&gt;docutils&lt;/a&gt;&lt;/li&gt;
@@ -734,4 +597,4 @@ PLUGINS = ["sitemap"]&lt;/p&gt;
 &lt;p&gt;一起下载下来解压到同一个文件夹，写个简单的批处理就一并安装了。另外我还发现Python3运行Pelican有点问题，解决所有依赖关系后运行pelican会出现 &lt;a href="http://stackoverflow.com/questions/17124129/cannot-import-name-signals-when-importing-pelican-on-windows" title="Stack Overflow 上该问题的详细描述"&gt;TypeError&lt;/a&gt;，后来我另外安装了Python2去运行就没有发现问题，目前还没能找到原因。&lt;/p&gt;
 &lt;p&gt;如果你发现你在命令行中键入Pelican提示找不到命令，检查一下Python安装目录下的&lt;em&gt;Scripts&lt;/em&gt;子目录是否已经添加进了%Path%中。&lt;/p&gt;
 &lt;p&gt;如果你已经有Pelican搭建的博客了，&lt;em&gt;记得确保你所使用的博客主题也已经安装在电脑上&lt;/em&gt;，否则Pelican会在编译的时候会出错，提示找不到主题。&lt;/p&gt;
-&lt;p&gt;在Windows下面使用Pelican感觉编译之前的等待时间多了不少。&lt;/p&gt;</summary><category term="Blog"></category><category term="Life"></category><category term="Pelican"></category><category term="Windows"></category></entry><entry><title>My Super Beginng</title><link href="/my-super-beginng.html" rel="alternate"></link><updated>2013-06-06T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-06:my-super-beginng.html</id><summary type="html">&lt;p&gt;Frantic1048's Blog is beginning from NOW , HERE !&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category></entry></feed>
+&lt;p&gt;在Windows下面使用Pelican感觉编译之前的等待时间多了不少。&lt;/p&gt;</summary><category term="Blog"></category><category term="Life"></category><category term="Pelican"></category><category term="Windows"></category></entry></feed>
