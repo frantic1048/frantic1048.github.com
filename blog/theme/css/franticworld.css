@@ -220,10 +220,11 @@ display:inline-block;
 margin-left:20px;
 height:10px;
 width:10px;
-background-color:transparent;
+background-color:transparent;}
 #about{
 font-size:1.5em;
 display:block;
 text-align:center;
-color:#ccc;}
+color:#ccc;
+}
 #about a{text-decoration:underline;color:#ccc;font-family:jim nightshade;}
