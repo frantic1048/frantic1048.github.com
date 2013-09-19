@@ -16,6 +16,57 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
+		<p class="metaday">262</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="http://frantic1048.com/blog/qi-yong-katede-nei-jian-zhong-duan.html " >启用Kate的内建终端</a>
+		<ul>
+<li>操作系统：Arch Linux 3.11.1-1</li>
+<li>桌面环境：KDE 4.11.1</li>
+</ul>
+<p><img alt="" src="./static/img/kate-with-out-terminal.png" /></p>
+<p>开学一来就开始布置C作业，用Kate写Py版作业的时候发现Kate的内置终端没有了，折腾了十多分钟才发现自己犯傻了，在Kate设置中，插件那儿把<code>Terminal tool view</code>这个插件启用就可以了,见下图。</p>
+<p><img alt="" src="./static/img/kate-configure-terminal.png" /></p>
+<p><img alt="" src="./static/img/kate-with-terminal.png" /></p>
+		<a class="btnmore" href="http://frantic1048.com/blog/qi-yong-katede-nei-jian-zhong-duan.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">242</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="http://frantic1048.com/blog/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html " >在Linux下用GCC编译C程序</a>
+		<p>得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。</p>
+<p>操作环境：Linux 3.10.9-1-ARCH</p>
+<h1>安装GCC</h1>
+<p>Arch安装软件蛮简单的，直接在终端里面</p>
+<div class="highlight"><pre><span class="n">pacman</span> <span class="o">-</span><span class="n">S</span> <span class="n">gcc</span>
+</pre></div>
+
+
+<p>就搞定了。</p>
+<h1>使用GCC编译你的C程序</h1>
+<p>最简单的命令，就是</p>
+<div class="highlight"><pre><span class="n">gcc</span> <span class="n">helloc</span><span class="p">.</span><span class="n">c</span> <span class="o">-</span><span class="n">o</span> <span class="n">hello</span><span class="p">.</span><span class="n">out</span>
+</pre></div>
+
+
+<p>其中选项<code>-o</code>是指定输出文件位置，正常情况下，执行完之后生成的就是可以运行的二进制文件了。当然，因为这是Linux系统，你可能还需要运行<code>chmod +x hello.out</code>来赋予执行权限给输出的程序。</p>
+<hr />
+<p>然后GCC还有一些其它的一些常见编译/优化/调试用的选项（参考书上的），这些就在接下来慢慢折腾吧。</p>
+<table border-collapse=collapse>
+<tr><th>选项</th><th>作用</th><th>输出文件的默认后缀</th></tr>
+<tr><td>-E</td><td>只完成预处理过程</td><td>.i ...</td></tr></table>
+		<a class="btnmore" href="http://frantic1048.com/blog/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
 		<p class="metaday">231</p>
 		<p class="metayear">2013</p>
 		<p class="metacategory">Linux</p>
