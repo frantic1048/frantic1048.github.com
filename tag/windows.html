@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+		<title>Frantic World - Windows</title>
+	<meta charset="utf-8" />
+    <meta name="author" content="Frantic1048">
+	<link rel="stylesheet" href="/theme/css/franticworld.css" type="text/css" />
+	<link href="/theme/css/pygments.css" rel="stylesheet">
+	</head>
+<body background="./theme/img/pattern.png">
+		<div class="nav-banner">
+		<a href="">Frantic World</a>
+		</div>
+		
+		<div class="content">
+		
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">177</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Misc</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html " >手动删除Windows上的服务程序</a>
+		<p>好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。</p>
+<p>我先用<code>iobit unistaller</code>把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！</p>
+<p>二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。</p>
+<p>之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。</p>
+<p>在注册表<code>LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>中找到你要删除的服务程序，直接删掉即可。</p>
+		<a class="btnmore" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">168</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Misc</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html " >给windows添加用Notepad++打开的右键菜单</a>
+		<p>操作很简单:</p>
+<p>创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可</p>
+<p>注意:<em>最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置</em></p>
+<blockquote>
+<div class="highlight"><pre>Windows Registry Editor Version 5.00
+
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;Edit with Notepad++&quot;</span>
+
+<span class="k">[</span><span class="nb">HKEY_CLASSES_ROOT</span><span class="k">\*\shell\notepad++\command]</span>
+<span class="na">@</span><span class="o">=</span><span class="s">&quot;\&quot;C:\\Program Files (x86)\\notepad++\\notepad++.exe\&quot; %1&quot;</span>
+</pre></div>
+
+
+</blockquote>
+		<a class="btnmore" href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">168</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Blog</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/windowsxia-an-zhuang-he-shi-yong-pelican.html " >Windows下安装和使用Pelican</a>
+		<p>最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：</p>
+<ul>
+<li><a href="https://pypi.python.org/pypi/blinker">blinker</a></li>
+<li><a href="https://pypi.python.org/pypi/docutils">docutils</a></li>
+<li><a href="https://pypi.python.org/pypi/feedgenerator">feedgenerator</a></li>
+<li><a href="https://pypi.python.org/pypi/Jinja2">jinja2</a></li>
+<li><a href="https://pypi.python.org/pypi/Markdown">markdown</a></li>
+<li><a href="https://pypi.python.org/pypi/Pygments">pygments</a></li>
+<li><a href="https://pypi.python.org/pypi/pytz">pytz</a></li>
+<li><a href="https://pypi.python.org/pypi/setuptools">setuptools</a></li>
+<li><a href="https://pypi.python.org/pypi/pelican">pelican</a></li>
+</ul>
+<p>一起下载下来解压到同一个文件夹，写个简单的批处理就一并安装了。另外我还发现Python3运行Pelican有点问题，解决所有依赖关系后运行pelican会出现 <a href="http://stackoverflow.com/questions/17124129/cannot-import-name-signals-when-importing-pelican-on-windows" title="Stack Overflow 上该问题的详细描述">TypeError</a>，后来我另外安装了Python2去运行就没有发现问题，目前还没能找到原因。</p>
+<p>如果你发现你在命令行中键入Pelican提示找不到命令，检查一下Python安装目录下的<em>Scripts</em>子目录是否已经添加进了%Path%中。</p>
+<p>如果你已经有Pelican搭建的博客了，<em>记得确保你所使用的博客主题也已经安装在电脑上</em>，否则Pelican会在编译的时候会出错，提示找不到主题。</p>
+<p>在Windows下面使用Pelican感觉编译之前的等待时间多了不少。</p>
+		<a class="btnmore" href="/windowsxia-an-zhuang-he-shi-yong-pelican.html">more ...</a>
+	</div>
+</div>
+
+<p class="paginator">
+        Page 1 / 1
+    </p>
+		</div>
+		
+		<div class="sidebar">
+		<div class="sidebarcategory">
+<h4>Categories</h4>
+	<li><a href="/category/blog.html">Blog</a></li>
+	<li><a href="/category/life.html">Life</a></li>
+	<li><a href="/category/linux.html">Linux</a></li>
+	<li><a href="/category/misc.html">Misc</a></li>
+	<li><a href="/category/web.html">Web</a></li>
+</div>
+
+<div class="sidebarpages">
+</div>
+
+<div class="sidebarblogroll">
+<h4>Blogroll</h4>
+    <li><a href="http://linuxzen.com/" target="_blank">cold</a></li>
+    <li><a href="http://www.dongxf.com/" target="_blank">晓风</a></li>
+    <li><a href="http://www.pythontip.com/home" target="_blank">一人一python</a></li>
+</div>
+
+<div class="sidebarsocial">
+<h4>Social</h4>
+    <li><a href="http://tudou.com/home/FranticBlack">Tudou</a></li>
+    <li><a href="https://github.com/frantic1048">Github</a></li>
+</div>		</div>
+		
+		<footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>,
+				Theme by <a href="http://frantic1048.com/">Frantic1048</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</body>
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+		<title>Frantic World - Arch</title>
+	<meta charset="utf-8" />
+    <meta name="author" content="Frantic1048">
+	<link rel="stylesheet" href="/theme/css/franticworld.css" type="text/css" />
+	<link href="/theme/css/pygments.css" rel="stylesheet">
+	</head>
+<body background="./theme/img/pattern.png">
+		<div class="nav-banner">
+		<a href="">Frantic World</a>
+		</div>
+		
+		<div class="content">
+		
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">223</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html " >在Arch中安装和使用virtualenv</a>
+		<p>刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。</p>
+<h2>安装</h2>
+<p>在Arch仓库里面有俩个<code>virtualenv</code>,根据需要安装即可。</p>
+<div class="highlight"><pre><span class="c"># pacman -S python2-virtualenv</span>
+</pre></div>
+
+
+<p>或者</p>
+<div class="highlight"><pre><span class="c"># pacman -S python-virtualenv</span>
+</pre></div>
+
+
+<p>前者对应的是python2,后者python3。命令行命令分别是<code>virtualenv2</code>和<code>virtualenv</code>。</p>
+<h2>使用</h2>
+<p>首先为<code>virtualenv</code>创建一个目录：</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span>
+</pre></div>
+
+
+<p>创建虚拟环境</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">virtualenv2</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span>
+</pre></div>
+
+
+<p>激活环境以供使用（就这步和关闭虚拟环境跟windows下面不一样，让我撞墙好久）</p>
+<div class="highlight"><pre><span class="err">$</span> <span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
+</pre></div>
+
+
+<p>之后你就可以在虚拟环境里面用<code>pip</code>安装你需要的包，以及干各种事情啦。</p>
+<p>最后是离开虚拟环境</p>
+<div class="highlight"><pre><span class="p">(</span><span class="n">my_env</span><span class="p">)</span><span class="err">$</span> <span class="n">deactivate</span>
+</pre></div>
+
+
+<h2>参考</h2>
+<p><a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb">Arch ...</a></p>
+		<a class="btnmore" href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">222</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html " >通过字体文件给Arch安装字体</a>
+		<p>适用情况：</p>
+<ul>
+<li>搬运windows那边的字体到Arch</li>
+<li>安装从网上下载的字体文件</li>
+<li>其它需要手动安装字体文件的情况</li>
+</ul>
+<p>Arch的字体目录为<code>/usr/share/fonts</code>，安装字体时建议在这里建立单独的文件夹来存放手动安装的字体(比如这里建立了一个winfont文件夹)</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">mkdir</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">winfont</span>
+</pre></div>
+
+
+<p>将你要安装的字体文件复制到<code>/usr/share/fonts</code>下你建立的文件夹中</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">cp</span> <span class="o">-</span><span class="n">r</span> <span class="o">/</span><span class="n">directory</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">your</span><span class="o">-</span><span class="n">font</span> <span class="o">/</span><span class="n">usr</span><span class="o">/</span><span class="n">share</span><span class="o">/</span><span class="n">fonts</span><span class="o">/</span><span class="n">winfont</span>
+</pre></div>
+
+
+<p>（注意这些字体文件的访问权限，至少要普通用户可读才行，否则就用<code>chmod</code>修改一下文件权限）</p>
+<p>然后执行</p>
+<div class="highlight"><pre><span class="n">sudo</span> <span class="n">mkfontscale</span>
+<span class="n">sudo</span> <span class="n">mkfontdir</span>
+<span class="n">sudo</span> <span class="n">fc</span><span class="o">-</span><span class="n">cache</span> <span class="o">-</span><span class="n">fsv</span>
+</pre></div>
+
+
+<p>这样就安装完成了。</p>
+		<a class="btnmore" href="/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html">more ...</a>
+	</div>
+</div>
+
+<p class="paginator">
+        Page 1 / 1
+    </p>
+		</div>
+		
+		<div class="sidebar">
+		<div class="sidebarcategory">
+<h4>Categories</h4>
+	<li><a href="/category/blog.html">Blog</a></li>
+	<li><a href="/category/life.html">Life</a></li>
+	<li><a href="/category/linux.html">Linux</a></li>
+	<li><a href="/category/misc.html">Misc</a></li>
+	<li><a href="/category/web.html">Web</a></li>
+</div>
+
+<div class="sidebarpages">
+</div>
+
+<div class="sidebarblogroll">
+<h4>Blogroll</h4>
+    <li><a href="http://linuxzen.com/" target="_blank">cold</a></li>
+    <li><a href="http://www.dongxf.com/" target="_blank">晓风</a></li>
+    <li><a href="http://www.pythontip.com/home" target="_blank">一人一python</a></li>
+</div>
+
+<div class="sidebarsocial">
+<h4>Social</h4>
+    <li><a href="http://tudou.com/home/FranticBlack">Tudou</a></li>
+    <li><a href="https://github.com/frantic1048">Github</a></li>
+</div>		</div>
+		
+		<footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>,
+				Theme by <a href="http://frantic1048.com/">Frantic1048</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</body>
+</html>
