@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh_CN">
 <head>
 		<title>Frantic World</title>
 	<meta charset="utf-8" />
@@ -219,36 +219,6 @@
 </div>
 <div class="summarycontainer">
 	<div class="metabox">
-		<p class="metaday">193</p>
-		<p class="metayear">2013</p>
-		<p class="metacategory">Blog</p>
-	</div>
-	<div class="summarybox">
-		<a class="summarytitle" href="/fan-yi-ru-he-wei-pelicanzhi-zuo-zhu-ti-wu-xian-xiu-ding-zhong.html " >翻译：如何为pelican制作主题（无限修订中）</a>
-		<p>好吧，要做主题，这才是真正开始。</p>
-<p>翻译的时候好多地方都不知道怎么表达，望大神指点。</p>
-<h1>如何为Pelican制作主题</h1>
-<p>Pelican使用著名的 <a href="http://jinja.pocoo.org/">Jinja2</a> 模板引擎来生成它的HTML输出。Jinja2的语法非常简单。如果你想要制作你自己的主题，随意看看 <a href="https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates" title=" “simple” theme ">“simple”主题</a> 或许能给你一些灵感。</p>
-<h2>主题的结构</h2>
-<p>制作主题时，你必须遵守下列结构</p>
-<div class="highlight"><pre><span class="err">├────</span> <span class="k">static</span>
-<span class="err">│</span>   <span class="err">├──</span> <span class="n">css</span>
-<span class="err">│</span>   <span class="err">└──</span> <span class="n">images</span>
-<span class="err">└────</span> <span class="n">templates</span>
-    <span class="err">├──</span> <span class="n">archives</span><span class="p">.</span><span class="n">html</span> <span class="c1">// 用来显示文章存档</span>
-    <span class="err">├──</span> <span class="n">period_archives</span><span class="p">.</span><span class="n">html</span>  <span class="c1">//用来显示根据时间段划分的文章存档</span>
-    <span class="err">├──</span> <span class="n">article</span><span class="p">.</span><span class="n">html</span>  <span class="c1">// 用来处理每篇文章的页面</span>
-    <span class="err">├──</span> <span class="n">author</span><span class="p">.</span><span class="n">html</span>   <span class="c1">// 用来处理各个作者的页面</span>
-    <span class="err">├──</span> <span class="n">authors</span><span class="p">.</span><span class="n">html</span>  <span class="c1">// 必须列出所有作者</span>
-    <span class="err">├──</span> <span class="n">categories</span><span class="p">.</span><span class="n">html</span>   <span class="c1">// 必须列出所有目录</span>
-    <span class="err">├──</span> <span class="n">category</span><span class="p">.</span><span class="n">html</span> <span class="c1">// 用来处理各个目录</span>
-    <span class="err">├──</span> <span class="n">index</span><span class="p">.</span><span class="n">html</span><span class="c1">// Index页面，列出所有文章</span>
-    <span class="err">├──</span> <span class="n">page</span><span class="p">.</span><span class="n">html</span> <span class="c1">// 用来处理每个page ...</span></pre></div>
-		<a class="btnmore" href="/fan-yi-ru-he-wei-pelicanzhi-zuo-zhu-ti-wu-xian-xiu-ding-zhong.html">more ...</a>
-	</div>
-</div>
-<div class="summarycontainer">
-	<div class="metabox">
 		<p class="metaday">191</p>
 		<p class="metayear">2013</p>
 		<p class="metacategory">Blog</p>
@@ -285,6 +255,40 @@
 		<a class="btnmore" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
 	</div>
 </div>
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">170</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Blog</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html " >博客诞生记:基于GitHub+Pelican创建博客的整个过程</a>
+		<p>很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是是因为托管博客的限制颇多，编辑体验太差 +_+
+本文记录了我建立博客的基本过程，希望能对想要建博客却跟我一样完全不懂web的小白有所帮助。</p>
+<p>阅读本文所需技能：</p>
+<ul>
+<li>脑补精通 Lv1：脑补基础</li>
+<li>举一反三 Lv1：举一反三分之一</li>
+<li>英文掌握 Lv2：字母精通</li>
+<li>Linux掌握 Lv1：会开终端</li>
+</ul>
+<p>在谋划阶段，看了不少关于建博的路子，最后图简单我选择了用Pelican在GitHub上搭建博客的路子。</p>
+<p>整个过程所在平台：<a href="http://www.chakra-linux.org/">Chakra Linux</a>，Pelican版本：3.2.0</p>
+<hr />
+<h1>过程概要</h1>
+<ol>
+<li>在<a href="https://github.com/">Github</a>上创建工程</li>
+<li>安装配置pelican和git，以及准备工作</li>
+<li>开始写博客</li>
+</ol>
+<hr />
+<h1>详细步骤</h1>
+<h2>在GitHub上创建工程</h2>
+<p>如果你还没有<a href="https://github.com/">GitHub</a>账户，去注册一个~</p>
+<p>登录GitHub，点击页面顶部的显示你用户名位置右边的<em>创建新工程</em> <code>(Create a new ...</code></p>
+		<a class="btnmore" href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html">more ...</a>
+	</div>
+</div>
 
 <p class="paginator">
         Page 1 / 2
@@ -303,7 +307,9 @@
 </div>
 
 <div class="sidebarpages">
-</div>
+	<h4>Pages</h4>
+			<li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+	</div>
 
 <div class="sidebarblogroll">
 <h4>Blogroll</h4>
