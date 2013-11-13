@@ -16,6 +16,31 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
+		<p class="metaday">281</p>
+		<p class="metayear">2013</p>
+		<p class="metacategory">Web</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/chun-csszhi-zuo-tooltip.html " >纯CSS制作tooltip</a>
+		<p><img alt="DEMO CAPTURE" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /></p>
+<p><a href="http://frantic1048.com/pages/demo-pure-css-tooltip.html" title="View Demo">VIEW DEMO</a></p>
+<p>tootip这个东西，真是什么地方都用得着，这段时间就不可避免的遇到了。</p>
+<p>首先考虑一下tooltip的基本表现：</p>
+<blockquote>
+<p>移动到某个元素上就会弹出的元素</p>
+</blockquote>
+<p>这应该是最简单的tooltip了。</p>
+<p>首先是移动到某个元素上触发效果，这里想必会用到<code>:hover</code>伪类。但是对其作出反应的却是另外一个元素，这里就需要实现一个联动的效果，最简单的方法，那就是嵌套咯，用外层元素做容器，使用<code>:hover</code>伪类派生的方法来让容器内部的元素也发生变化，在这儿就是让tooltip显示出来喽～</p>
+<p>于是，就先来弄几个个自带容器的tooltip吧。</p>
+<p>HTML:</p>
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tooltip-wrapper&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>AB<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Angel Beats!<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>SAO<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Sword Art Online ...</pre></div>
+		<a class="btnmore" href="/chun-csszhi-zuo-tooltip.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
 		<p class="metaday">262</p>
 		<p class="metayear">2013</p>
 		<p class="metacategory">Linux</p>
@@ -26,10 +51,10 @@
 <li>操作系统：Arch Linux 3.11.1-1</li>
 <li>桌面环境：KDE 4.11.1</li>
 </ul>
-<p><img alt="" src="./static/img/kate-with-out-terminal.png" /></p>
+<p><img alt="" src="http://frantic1048.com/static/img/kate-with-out-terminal.png" /></p>
 <p>开学一来就开始布置C作业，用Kate写Py版作业的时候发现Kate的内置终端没有了，折腾了十多分钟才发现自己犯傻了，在Kate设置中，插件那儿把<code>Terminal tool view</code>这个插件启用就可以了,见下图。</p>
-<p><img alt="" src="./static/img/kate-configure-terminal.png" /></p>
-<p><img alt="" src="./static/img/kate-with-terminal.png" /></p>
+<p><img alt="" src="http://frantic1048.com/static/img/kate-configure-terminal.png" /></p>
+<p><img alt="" src="http://frantic1048.com/static/img/kate-with-terminal.png" /></p>
 		<a class="btnmore" href="/qi-yong-katede-nei-jian-zhong-duan.html">more ...</a>
 	</div>
 </div>
@@ -253,40 +278,6 @@
 <p>之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。</p>
 <p>在注册表<code>LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>中找到你要删除的服务程序，直接删掉即可。</p>
 		<a class="btnmore" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
-	</div>
-</div>
-<div class="summarycontainer">
-	<div class="metabox">
-		<p class="metaday">170</p>
-		<p class="metayear">2013</p>
-		<p class="metacategory">Blog</p>
-	</div>
-	<div class="summarybox">
-		<a class="summarytitle" href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html " >博客诞生记:基于GitHub+Pelican创建博客的整个过程</a>
-		<p>很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是因为托管博客的限制颇多，编辑体验太差 +_+
-本文记录了我建立博客的基本过程，希望能对想要建博客却跟我一样完全不懂web的小白有所帮助。</p>
-<p>阅读本文所需技能：</p>
-<ul>
-<li>脑补精通 Lv1：脑补基础</li>
-<li>举一反三 Lv1：举一反三分之一</li>
-<li>英文掌握 Lv2：字母精通</li>
-<li>Linux掌握 Lv1：会开终端</li>
-</ul>
-<p>在谋划阶段，看了不少关于建博的路子，最后图简单我选择了用Pelican在GitHub上搭建博客的路子。</p>
-<p>整个过程所在平台：<a href="http://www.chakra-linux.org/">Chakra Linux</a>，Pelican版本：3.2.0</p>
-<hr />
-<h1>过程概要</h1>
-<ol>
-<li>在<a href="https://github.com/">Github</a>上创建工程</li>
-<li>安装配置pelican和git，以及准备工作</li>
-<li>开始写博客</li>
-</ol>
-<hr />
-<h1>详细步骤</h1>
-<h2>在GitHub上创建工程</h2>
-<p>如果你还没有<a href="https://github.com/">GitHub</a>账户，去注册一个~</p>
-<p>登录GitHub，点击页面顶部的显示你用户名位置右边的<em>创建新工程</em> <code>(Create a new ...</code></p>
-		<a class="btnmore" href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html">more ...</a>
 	</div>
 </div>
 

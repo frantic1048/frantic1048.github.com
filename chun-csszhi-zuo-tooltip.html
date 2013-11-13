@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+		<title>纯CSS制作tooltip | Frantic World</title>
+	<meta charset="utf-8" />
+    <meta name="author" content="Frantic1048">
+	<link rel="stylesheet" href="http://frantic1048.com/theme/css/franticworld.css" type="text/css" />
+	<link href="http://frantic1048.com/theme/css/pygments.css" rel="stylesheet">
+	</head>
+<body background="http://frantic1048.com/theme/img/pattern.png">
+		<div class="nav-banner">
+		<a href="http://frantic1048.com">Frantic World</a>
+		</div>
+		
+		<div class="content">
+		
+<div class="metabox">
+	<p class="metaday">281</p>
+	<p class="metayear">2013</p>
+	<p class="metacategory">Web</p>
+</div>
+<div class="arcticlecontentbox">
+	<div class="articlecontent">
+		<a class="articletitle" href="/chun-csszhi-zuo-tooltip.html " >纯CSS制作tooltip</a>
+		<p><img alt="DEMO CAPTURE" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /></p>
+<p><a href="http://frantic1048.com/pages/demo-pure-css-tooltip.html" title="View Demo">VIEW DEMO</a></p>
+<p>tootip这个东西，真是什么地方都用得着，这段时间就不可避免的遇到了。</p>
+<p>首先考虑一下tooltip的基本表现：</p>
+<blockquote>
+<p>移动到某个元素上就会弹出的元素</p>
+</blockquote>
+<p>这应该是最简单的tooltip了。</p>
+<p>首先是移动到某个元素上触发效果，这里想必会用到<code>:hover</code>伪类。但是对其作出反应的却是另外一个元素，这里就需要实现一个联动的效果，最简单的方法，那就是嵌套咯，用外层元素做容器，使用<code>:hover</code>伪类派生的方法来让容器内部的元素也发生变化，在这儿就是让tooltip显示出来喽～</p>
+<p>于是，就先来弄几个个自带容器的tooltip吧。</p>
+<p>HTML:</p>
+<div class="highlight"><pre><span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;tooltip-wrapper&quot;</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>AB<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Angel Beats!<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>SAO<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Sword Art Online<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>GTO<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Great Teacher Onizuka<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>TRC<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Tsubasa Reservoir Chronicle<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+    <span class="nt">&lt;span&gt;&lt;a</span> <span class="na">href=</span><span class="s">&quot;#&quot;</span><span class="nt">&gt;</span>D.C.<span class="nt">&lt;/a&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;tooltip&quot;</span><span class="nt">&gt;</span>Da Capo<span class="nt">&lt;/span&gt;&lt;/span&gt;</span>
+<span class="nt">&lt;/div&gt;</span>
+</pre></div>
+
+
+<p>接下来就是关键的CSS了,有这几个关键的地方：</p>
+<ul>
+<li>一般情况下tooltip是不应该显示出来的，所以最简单的就是将它的透明度设置为0（<code>opacity:0;</code>）。</li>
+<li>对于tooltip的定位，在这个演示里面tooltip在其容器的正上方出现，为了给tooltip设置相对于容器的定位，将它的父元素设置为相对定位（<code>position:relative;</code>）。</li>
+<li>在tooltip的父元素处于光标下的时候让tooltip显示出来，这个样式就通过父元素的<code>:hover</code>伪类派生来设定。</li>
+<li>为了让tooltip的出现来得和谐点，给它加个<code>transition</code>。</li>
+</ul>
+<p>CSS:</p>
+<div class="highlight"><pre><span class="p">.</span><span class="s-Atom">tooltip</span><span class="o">-</span><span class="s-Atom">wrapper</span><span class="p">{</span>
+    <span class="nn">margin</span><span class="p">:</span><span class="m">5</span><span class="s-Atom">em</span> <span class="m">2</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">font</span><span class="o">-</span><span class="nn">size</span><span class="p">:</span><span class="m">24</span><span class="s-Atom">px</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*Normal State*/</span>
+
+<span class="p">.</span><span class="s-Atom">tooltip</span><span class="o">-</span><span class="s-Atom">wrapper</span><span class="o">&gt;</span><span class="s-Atom">span</span><span class="p">{</span>
+    <span class="nn">position</span><span class="p">:</span><span class="s-Atom">relative</span><span class="p">;</span>
+    <span class="nn">display</span><span class="p">:</span><span class="s-Atom">inline</span><span class="o">-</span><span class="s-Atom">block</span><span class="p">;</span>
+    <span class="nn">height</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="nn">width</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="nn">margin</span><span class="p">:</span><span class="m">0</span> <span class="m">0</span><span class="p">.</span><span class="m">4</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">line</span><span class="o">-</span><span class="nn">height</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">text</span><span class="o">-</span><span class="nn">align</span><span class="p">:</span><span class="s-Atom">center</span><span class="p">;</span>
+    <span class="s-Atom">font</span><span class="o">-</span><span class="nn">weight</span><span class="p">:</span><span class="m">600</span><span class="p">;</span>
+
+    <span class="nn">color</span><span class="p">:</span><span class="s-Atom">white</span><span class="p">;</span>
+    <span class="nn">background</span><span class="p">:</span><span class="nf">rgba</span><span class="p">(</span><span class="m">204</span><span class="p">,</span><span class="m">153</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="nn">border</span><span class="p">:</span> <span class="m">6</span><span class="s-Atom">px</span> <span class="s-Atom">solid</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">223</span><span class="p">,</span><span class="m">191</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="s-Atom">border</span><span class="o">-</span><span class="nn">radius</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">box</span><span class="o">-</span><span class="nn">shadow</span><span class="p">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">5</span><span class="s-Atom">px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">223</span><span class="p">,</span><span class="m">191</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="s-Atom">tooltip</span><span class="p">{</span>
+    <span class="nn">position</span><span class="p">:</span><span class="s-Atom">absolute</span><span class="p">;</span>
+    <span class="nn">top</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+    <span class="nn">left</span><span class="p">:</span><span class="o">-</span><span class="m">25</span><span class="c1">%;</span>
+
+    <span class="nn">width</span><span class="p">:</span><span class="m">5</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">line</span><span class="o">-</span><span class="nn">height</span><span class="p">:</span><span class="m">1</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">font</span><span class="o">-</span><span class="nn">size</span><span class="p">:</span><span class="m">16</span><span class="s-Atom">px</span><span class="p">;</span>
+    <span class="s-Atom">text</span><span class="o">-</span><span class="nn">align</span><span class="p">:</span><span class="s-Atom">center</span><span class="p">;</span>
+    <span class="nn">padding</span><span class="p">:</span><span class="m">0</span><span class="p">.</span><span class="m">3</span><span class="s-Atom">em</span> <span class="m">0</span><span class="p">.</span><span class="m">5</span><span class="s-Atom">em</span><span class="p">;</span>
+
+    <span class="nn">color</span><span class="p">:</span><span class="s-Atom">snow</span><span class="p">;</span>
+    <span class="nn">background</span><span class="p">:</span><span class="s-Atom">#bbb</span><span class="p">;</span>
+    <span class="nn">border</span><span class="p">:</span><span class="m">2</span><span class="s-Atom">px</span> <span class="s-Atom">solid</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">147</span><span class="p">,</span><span class="m">126</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="s-Atom">border</span><span class="o">-</span><span class="nn">radius</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">px</span><span class="p">;</span>
+
+    <span class="nn">opacity</span><span class="p">:</span><span class="m">0</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="cm">/*Active State*/</span>
+
+<span class="p">.</span><span class="s-Atom">tooltip</span><span class="o">-</span><span class="s-Atom">wrapper</span><span class="o">&gt;</span><span class="nn">span</span><span class="p">:</span><span class="s-Atom">hover</span><span class="p">{</span>
+    <span class="nn">color</span><span class="p">:</span><span class="nf">rgba</span><span class="p">(</span><span class="m">133</span><span class="p">,</span><span class="m">101</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="nn">background</span><span class="p">:</span><span class="nf">rgba</span><span class="p">(</span><span class="m">255</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="nn">border</span><span class="p">:</span><span class="m">6</span><span class="s-Atom">px</span> <span class="s-Atom">solid</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">135</span><span class="p">,</span><span class="m">101</span><span class="p">,</span><span class="m">168</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+    <span class="s-Atom">border</span><span class="o">-</span><span class="nn">radius</span><span class="p">:</span><span class="m">3</span><span class="s-Atom">em</span><span class="p">;</span>
+    <span class="s-Atom">box</span><span class="o">-</span><span class="nn">shadow</span><span class="p">:</span><span class="m">0</span> <span class="m">0</span> <span class="m">20</span><span class="s-Atom">px</span> <span class="nf">rgba</span><span class="p">(</span><span class="m">223</span><span class="p">,</span><span class="m">191</span><span class="p">,</span><span class="m">255</span><span class="p">,</span><span class="m">0</span><span class="p">.</span><span class="m">8</span><span class="p">);</span>
+
+    <span class="nn">transition</span><span class="p">:</span><span class="s-Atom">all</span> <span class="m">0</span><span class="p">.</span><span class="m">2</span><span class="s-Atom">s</span> <span class="s-Atom">ease</span><span class="o">-</span><span class="s-Atom">in</span><span class="o">-</span><span class="s-Atom">out</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="p">.</span><span class="s-Atom">tooltip</span><span class="o">-</span><span class="s-Atom">wrapper</span><span class="o">&gt;</span><span class="nn">span</span><span class="p">:</span><span class="s-Atom">hover</span> <span class="p">.</span><span class="s-Atom">tooltip</span><span class="p">{</span>
+    <span class="nn">top</span><span class="p">:</span><span class="o">-</span><span class="m">5</span><span class="s-Atom">em</span><span class="p">;</span>
+
+    <span class="s-Atom">border</span><span class="o">-</span><span class="nn">radius</span><span class="p">:</span><span class="m">5</span><span class="s-Atom">px</span><span class="p">;</span>
+
+    <span class="nn">opacity</span><span class="p">:</span><span class="m">1</span><span class="p">;</span>
+    <span class="nn">transition</span><span class="p">:</span><span class="s-Atom">all</span> <span class="m">0</span><span class="p">.</span><span class="m">2</span><span class="s-Atom">s</span> <span class="s-Atom">ease</span><span class="o">-</span><span class="s-Atom">in</span><span class="o">-</span><span class="s-Atom">out</span><span class="p">;</span>
+<span class="p">}</span>
+</pre></div>
+	</div>
+	
+		<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	   var disqus_identifier = "chun-csszhi-zuo-tooltip.html";
+	   (function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://frantic1048.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] ||
+			 document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	</div>
+		       
+</div>
+
+		</div>
+		
+		<div class="sidebar">
+		<div class="sidebarcategory">
+<h4>Categories</h4>
+	<li><a href="http://frantic1048.com/category/blog.html">Blog</a></li>
+	<li><a href="http://frantic1048.com/category/life.html">Life</a></li>
+	<li><a href="http://frantic1048.com/category/linux.html">Linux</a></li>
+	<li><a href="http://frantic1048.com/category/misc.html">Misc</a></li>
+	<li><a href="http://frantic1048.com/category/web.html">Web</a></li>
+</div>
+
+<div class="sidebarpages">
+	<h4>Pages</h4>
+			<li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+	</div>
+
+<div class="sidebarblogroll">
+<h4>Blogroll</h4>
+    <li><a href="http://linuxzen.com/" target="_blank">cold</a></li>
+    <li><a href="http://www.dongxf.com/" target="_blank">晓风</a></li>
+    <li><a href="http://www.pythontip.com/home" target="_blank">一人一python</a></li>
+</div>
+
+<div class="sidebarsocial">
+<h4>Social</h4>
+    <li><a href="http://tudou.com/home/FranticBlack">Tudou</a></li>
+    <li><a href="https://github.com/frantic1048">Github</a></li>
+</div>		</div>
+		
+		<footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>,
+				Theme by <a href="http://frantic1048.com/">Frantic1048</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</body>
+</html>
