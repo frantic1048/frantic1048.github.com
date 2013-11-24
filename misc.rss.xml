@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Frantic World</title><link href="http://frantic1048.com/" rel="alternate"></link><link href="http://frantic1048.com/feeds/misc.atom.xml" rel="self"></link><id>http://frantic1048.com/</id><updated>2013-06-26T00:00:00+08:00</updated><entry><title>手动删除Windows上的服务程序</title><link href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html" rel="alternate"></link><updated>2013-06-26T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-26:shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</id><summary type="html">&lt;p&gt;好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frantic World</title><link>http://frantic1048.com/</link><description></description><atom:link href="http://frantic1048.com/misc.rss.xml" rel="self"></atom:link><lastBuildDate>Wed, 26 Jun 2013 00:00:00 +0800</lastBuildDate><item><title>手动删除Windows上的服务程序</title><link>http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</link><description>&lt;p&gt;好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。&lt;/p&gt;
 &lt;p&gt;我先用&lt;code&gt;iobit unistaller&lt;/code&gt;把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！&lt;/p&gt;
 &lt;p&gt;二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。&lt;/p&gt;
 &lt;p&gt;之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。&lt;/p&gt;
-&lt;p&gt;在注册表&lt;code&gt;LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;/code&gt;中找到你要删除的服务程序，直接删掉即可。&lt;/p&gt;</summary><category term="Windows"></category></entry><entry><title>给windows添加用Notepad++打开的右键菜单</title><link href="http://frantic1048.com/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html" rel="alternate"></link><updated>2013-06-17T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-17:gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</id><summary type="html">&lt;p&gt;操作很简单:&lt;/p&gt;
+&lt;p&gt;在注册表&lt;code&gt;LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;/code&gt;中找到你要删除的服务程序，直接删掉即可。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Wed, 26 Jun 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-06-26:shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</guid><category>Windows</category></item><item><title>给windows添加用Notepad++打开的右键菜单</title><link>http://frantic1048.com/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</link><description>&lt;p&gt;操作很简单:&lt;/p&gt;
 &lt;p&gt;创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可&lt;/p&gt;
 &lt;p&gt;注意:&lt;em&gt;最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -17,4 +17,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;/blockquote&gt;</summary><category term="Windows"></category></entry></feed>
+&lt;/blockquote&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Mon, 17 Jun 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-06-17:gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</guid><category>Windows</category></item></channel></rss>

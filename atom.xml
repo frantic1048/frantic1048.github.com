@@ -1,12 +1,102 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>A Pelican Blog</title><link href="/" rel="alternate"></link><link href="/feeds/all-en.atom.xml" rel="self"></link><id>/</id><updated>2013-09-19T00:00:00Z</updated><entry><title>启用Kate的内建终端</title><link href="/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Frantic World</title><link href="http://frantic1048.com/" rel="alternate"></link><link href="http://frantic1048.com/atom.xml" rel="self"></link><id>http://frantic1048.com/</id><updated>2013-10-08T00:00:00+08:00</updated><entry><title>纯CSS制作tooltip</title><link href="http://frantic1048.com/chun-csszhi-zuo-tooltip.html" rel="alternate"></link><updated>2013-10-08T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-10-08:chun-csszhi-zuo-tooltip.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="http://frantic1048.com/pages/demo-pure-css-tooltip.html" title="View Demo"&gt;VIEW DEMO&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;tootip这个东西，真是什么地方都用得着，这段时间就不可避免的遇到了。&lt;/p&gt;
+&lt;p&gt;首先考虑一下tooltip的基本表现：&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;移动到某个元素上就会弹出的元素&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这应该是最简单的tooltip了。&lt;/p&gt;
+&lt;p&gt;首先是移动到某个元素上触发效果，这里想必会用到&lt;code&gt;:hover&lt;/code&gt;伪类。但是对其作出反应的却是另外一个元素，这里就需要实现一个联动的效果，最简单的方法，那就是嵌套咯，用外层元素做容器，使用&lt;code&gt;:hover&lt;/code&gt;伪类派生的方法来让容器内部的元素也发生变化，在这儿就是让tooltip显示出来喽～&lt;/p&gt;
+&lt;p&gt;于是，就先来弄几个个自带容器的tooltip吧。&lt;/p&gt;
+&lt;p&gt;HTML:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="nt"&gt;&amp;lt;div&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip-wrapper&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;AB&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Angel Beats!&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;SAO&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Sword Art Online&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;GTO&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Great Teacher Onizuka&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;TRC&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Tsubasa Reservoir Chronicle&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+    &lt;span class="nt"&gt;&amp;lt;span&amp;gt;&amp;lt;a&lt;/span&gt; &lt;span class="na"&gt;href=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;#&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;D.C.&lt;span class="nt"&gt;&amp;lt;/a&amp;gt;&amp;lt;span&lt;/span&gt; &lt;span class="na"&gt;class=&lt;/span&gt;&lt;span class="s"&gt;&amp;quot;tooltip&amp;quot;&lt;/span&gt;&lt;span class="nt"&gt;&amp;gt;&lt;/span&gt;Da Capo&lt;span class="nt"&gt;&amp;lt;/span&amp;gt;&amp;lt;/span&amp;gt;&lt;/span&gt;
+&lt;span class="nt"&gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;
+
+
+&lt;p&gt;接下来就是关键的CSS了,有这几个关键的地方：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;一般情况下tooltip是不应该显示出来的，所以最简单的就是将它的透明度设置为0（&lt;code&gt;opacity:0;&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;对于tooltip的定位，在这个演示里面tooltip在其容器的正上方出现，为了给tooltip设置相对于容器的定位，将它的父元素设置为相对定位（&lt;code&gt;position:relative;&lt;/code&gt;）。&lt;/li&gt;
+&lt;li&gt;在tooltip的父元素处于光标下的时候让tooltip显示出来，这个样式就通过父元素的&lt;code&gt;:hover&lt;/code&gt;伪类派生来设定。&lt;/li&gt;
+&lt;li&gt;为了让tooltip的出现来得和谐点，给它加个&lt;code&gt;transition&lt;/code&gt;。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;CSS:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;wrapper&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nn"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt; &lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;24&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="cm"&gt;/*Normal State*/&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;wrapper&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="s-Atom"&gt;span&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nn"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;relative&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;display&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;inline&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;block&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;margin&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;4&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;line&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;weight&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;600&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nn"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;white&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;204&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;153&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nn"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt; &lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt; &lt;span class="s-Atom"&gt;solid&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;223&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;191&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;box&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;shadow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;223&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;191&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nn"&gt;position&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;absolute&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;left&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;25&lt;/span&gt;&lt;span class="c1"&gt;%;&lt;/span&gt;
+
+    &lt;span class="nn"&gt;width&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;line&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;height&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;size&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;16&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;align&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;center&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;padding&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nn"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;snow&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;#bbb&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt; &lt;span class="s-Atom"&gt;solid&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;147&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;126&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;168&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nn"&gt;opacity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+
+&lt;span class="cm"&gt;/*Active State*/&lt;/span&gt;
+
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;wrapper&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nn"&gt;span&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;hover&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nn"&gt;color&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;133&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;101&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;168&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nn"&gt;background&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="nn"&gt;border&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;6&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt; &lt;span class="s-Atom"&gt;solid&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;135&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;101&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;168&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;3&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="s-Atom"&gt;box&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;shadow&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt; &lt;span class="m"&gt;20&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt; &lt;span class="nf"&gt;rgba&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="m"&gt;223&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;191&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;255&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt;&lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;8&lt;/span&gt;&lt;span class="p"&gt;);&lt;/span&gt;
+
+    &lt;span class="nn"&gt;transition&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;all&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="s-Atom"&gt;s&lt;/span&gt; &lt;span class="s-Atom"&gt;ease&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;out&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;wrapper&lt;/span&gt;&lt;span class="o"&gt;&amp;gt;&lt;/span&gt;&lt;span class="nn"&gt;span&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;hover&lt;/span&gt; &lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="s-Atom"&gt;tooltip&lt;/span&gt;&lt;span class="p"&gt;{&lt;/span&gt;
+    &lt;span class="nn"&gt;top&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;em&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="s-Atom"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="nn"&gt;radius&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;5&lt;/span&gt;&lt;span class="s-Atom"&gt;px&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+
+    &lt;span class="nn"&gt;opacity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+    &lt;span class="nn"&gt;transition&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;all&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="s-Atom"&gt;s&lt;/span&gt; &lt;span class="s-Atom"&gt;ease&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;out&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
+&lt;span class="p"&gt;}&lt;/span&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="CSS"></category></entry><entry><title>启用Kate的内建终端</title><link href="http://frantic1048.com/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;操作系统：Arch Linux 3.11.1-1&lt;/li&gt;
 &lt;li&gt;桌面环境：KDE 4.11.1&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-with-out-terminal.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-with-out-terminal.png" /&gt;&lt;/p&gt;
 &lt;p&gt;开学一来就开始布置C作业，用Kate写Py版作业的时候发现Kate的内置终端没有了，折腾了十多分钟才发现自己犯傻了，在Kate设置中，插件那儿把&lt;code&gt;Terminal tool view&lt;/code&gt;这个插件启用就可以了,见下图。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-configure-terminal.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/kate-with-terminal.png" /&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Kate"></category></entry><entry><title>使用Google Fonts丰富网页的字体</title><link href="/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html" rel="alternate"></link><updated>2013-09-14T00:00:00Z</updated><author><name></name></author><id>tag:,2013-09-14:shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</id><summary type="html">&lt;p&gt;字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-configure-terminal.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-with-terminal.png" /&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Kate"></category></entry><entry><title>使用Google Fonts丰富网页的字体</title><link href="http://frantic1048.com/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html" rel="alternate"></link><updated>2013-09-14T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-09-14:shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</id><summary type="html">&lt;p&gt;字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts&lt;/p&gt;
 &lt;h1&gt;寻找到需要的字体&lt;/h1&gt;
 &lt;p&gt;首先进入&lt;a href="http://www.google.com/fonts/#HomePlace:home"&gt;Google Fonts首页&lt;/a&gt;，点击页面正中的&lt;code&gt;Start choosing fonts&lt;/code&gt;按钮。&lt;/p&gt;
 &lt;p&gt;接下来你会看到一个包含很多字体的列表。你想要用哪一种字体，你就点击那个字体右下角的&lt;code&gt;Add to Collection&lt;/code&gt;按钮，这个时候你选中的字体就会出现在页面下方的框框里。&lt;/p&gt;
@@ -20,7 +110,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;这段引用插入到HTML文档的&lt;head&gt;标签里面就可以在你的页面上直接使用这些字体啦！&lt;/p&gt;</summary><category term="Web"></category><category term="Fonts"></category></entry><entry><title>在Linux下用GCC编译C程序</title><link href="/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html" rel="alternate"></link><updated>2013-08-30T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-30:zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</id><summary type="html">&lt;p&gt;得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。&lt;/p&gt;
+&lt;p&gt;这段引用插入到HTML文档的&lt;head&gt;标签里面就可以在你的页面上直接使用这些字体啦！&lt;/p&gt;</summary><category term="Web"></category><category term="Fonts"></category></entry><entry><title>在Linux下用GCC编译C程序</title><link href="http://frantic1048.com/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html" rel="alternate"></link><updated>2013-08-30T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-30:zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</id><summary type="html">&lt;p&gt;得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。&lt;/p&gt;
 &lt;p&gt;操作环境：Linux 3.10.9-1-ARCH&lt;/p&gt;
 &lt;h1&gt;安装GCC&lt;/h1&gt;
 &lt;p&gt;Arch安装软件蛮简单的，直接在终端里面&lt;/p&gt;
@@ -52,13 +142,13 @@
 &lt;tr&gt;&lt;td&gt;-M&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;-MM&lt;/td&gt;&lt;td&gt;输出给定源文件的除了标准库头文件之外的依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;-MD&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系，同时编译生成可执行文件&lt;/td&gt;&lt;td&gt;.d(依赖关系文件) .out(可执行文件)&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</summary><category term="Linux"></category><category term="C"></category><category term="GCC"></category></entry><entry><title>解决KDE应用菜单不显示wine程序组的问题</title><link href="/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html" rel="alternate"></link><updated>2013-08-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-19:jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</id><summary type="html">&lt;ul&gt;
+&lt;/table&gt;</summary><category term="Linux"></category><category term="C"></category><category term="GCC"></category></entry><entry><title>解决KDE应用菜单不显示wine程序组的问题</title><link href="http://frantic1048.com/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html" rel="alternate"></link><updated>2013-08-19T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-19:jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</id><summary type="html">&lt;ul&gt;
 &lt;li&gt;KDE版本：4.10.5&lt;/li&gt;
 &lt;li&gt;wine版本：1.7.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;刚用wine装了几个程序，发现K应用菜单里面没有wine程序的这个分类，wine程序全部跑到 &lt;code&gt;Lost + Found&lt;/code&gt; 这分组去了。上网搜索一番，没找到问题原因的描述，就找到下面的解决方法，似乎是因为wine没有修改到KDE使用的造成的？&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ln&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Archlinux"></category></entry><entry><title>在Arch中安装和使用virtualenv</title><link href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html" rel="alternate"></link><updated>2013-08-11T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-11:zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</id><summary type="html">&lt;p&gt;刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Archlinux"></category></entry><entry><title>在Arch中安装和使用virtualenv</title><link href="http://frantic1048.com/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html" rel="alternate"></link><updated>2013-08-11T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-11:zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</id><summary type="html">&lt;p&gt;刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
 &lt;p&gt;在Arch仓库里面有俩个&lt;code&gt;virtualenv&lt;/code&gt;,根据需要安装即可。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# pacman -S python2-virtualenv&lt;/span&gt;
@@ -94,7 +184,7 @@
 
 
 &lt;h2&gt;参考&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb"&gt;Arch Wiki:Python VirtualEnv&lt;/a&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="Python"></category></entry><entry><title>通过字体文件给Arch安装字体</title><link href="/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html" rel="alternate"></link><updated>2013-08-10T00:00:00Z</updated><author><name></name></author><id>tag:,2013-08-10:tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</id><summary type="html">&lt;p&gt;适用情况：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb"&gt;Arch Wiki:Python VirtualEnv&lt;/a&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="Python"></category></entry><entry><title>通过字体文件给Arch安装字体</title><link href="http://frantic1048.com/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html" rel="alternate"></link><updated>2013-08-10T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-10:tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</id><summary type="html">&lt;p&gt;适用情况：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;搬运windows那边的字体到Arch&lt;/li&gt;
 &lt;li&gt;安装从网上下载的字体文件&lt;/li&gt;
@@ -118,7 +208,7 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;这样就安装完成了。&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="font"></category></entry><entry><title>翻译：pelican-themes官方文档</title><link href="/fan-yi-pelican-themesguan-fang-wen-dang.html" rel="alternate"></link><updated>2013-07-12T00:00:00Z</updated><author><name></name></author><id>tag:,2013-07-12:fan-yi-pelican-themesguan-fang-wen-dang.html</id><summary type="html">&lt;p&gt;这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说到主题，还是得先读文档，由于经常用到 &lt;strong&gt;pelican-themes&lt;/strong&gt;，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，这是本人第一次做翻译内容如有不当之处还请多多指正~&lt;/p&gt;
+&lt;p&gt;这样就安装完成了。&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="font"></category></entry><entry><title>翻译：pelican-themes官方文档</title><link href="http://frantic1048.com/fan-yi-pelican-themesguan-fang-wen-dang.html" rel="alternate"></link><updated>2013-07-12T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-07-12:fan-yi-pelican-themesguan-fang-wen-dang.html</id><summary type="html">&lt;p&gt;这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说到主题，还是得先读文档，由于经常用到 &lt;strong&gt;pelican-themes&lt;/strong&gt;，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，这是本人第一次做翻译内容如有不当之处还请多多指正~&lt;/p&gt;
 &lt;h1&gt;pelican-themes&lt;/h1&gt;
 &lt;h2&gt;描述&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;pelican-themes&lt;/strong&gt; 是一个用来管理Pelican主题的命令行工具。&lt;/p&gt;
@@ -236,225 +326,7 @@ simple  &lt;/p&gt;
 &lt;li&gt;&lt;a href="http://docs.notmyidea.org/alexis/pelican/"&gt;http://docs.notmyidea.org/alexis/pelican/&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;/usr/share/doc/pelican/&lt;/code&gt; 如果你用 &lt;a href="http://skami18.github.com/pelican-packages/"&gt;APT repository&lt;/a&gt; 安装了Pelican&lt;/li&gt;
 &lt;li&gt;原版文档：&lt;a href="http://docs.getpelican.com/en/latest/pelican-themes.html" title="pelican-themes documentation"&gt;http://docs.getpelican.com/en/latest/pelican-themes.html&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary><category term="Blog"></category><category term="Pelican"></category><category term="Translation"></category></entry><entry><title>翻译：如何为pelican制作主题（无限修订中）</title><link href="/fan-yi-ru-he-wei-pelicanzhi-zuo-zhu-ti-wu-xian-xiu-ding-zhong.html" rel="alternate"></link><updated>2013-07-12T00:00:00Z</updated><author><name></name></author><id>tag:,2013-07-12:fan-yi-ru-he-wei-pelicanzhi-zuo-zhu-ti-wu-xian-xiu-ding-zhong.html</id><summary type="html">&lt;p&gt;好吧，要做主题，这才是真正开始。&lt;/p&gt;
-&lt;p&gt;翻译的时候好多地方都不知道怎么表达，望大神指点。&lt;/p&gt;
-&lt;h1&gt;如何为Pelican制作主题&lt;/h1&gt;
-&lt;p&gt;Pelican使用著名的 &lt;a href="http://jinja.pocoo.org/"&gt;Jinja2&lt;/a&gt; 模板引擎来生成它的HTML输出。Jinja2的语法非常简单。如果你想要制作你自己的主题，随意看看 &lt;a href="https://github.com/getpelican/pelican/tree/master/pelican/themes/simple/templates" title=" “simple” theme "&gt;“simple”主题&lt;/a&gt; 或许能给你一些灵感。&lt;/p&gt;
-&lt;h2&gt;主题的结构&lt;/h2&gt;
-&lt;p&gt;制作主题时，你必须遵守下列结构&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="err"&gt;├────&lt;/span&gt; &lt;span class="k"&gt;static&lt;/span&gt;
-&lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;css&lt;/span&gt;
-&lt;span class="err"&gt;│&lt;/span&gt;   &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;images&lt;/span&gt;
-&lt;span class="err"&gt;└────&lt;/span&gt; &lt;span class="n"&gt;templates&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;archives&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="c1"&gt;// 用来显示文章存档&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;period_archives&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;  &lt;span class="c1"&gt;//用来显示根据时间段划分的文章存档&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;  &lt;span class="c1"&gt;// 用来处理每篇文章的页面&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;author&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;   &lt;span class="c1"&gt;// 用来处理各个作者的页面&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;authors&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;  &lt;span class="c1"&gt;// 必须列出所有作者&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;categories&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;   &lt;span class="c1"&gt;// 必须列出所有目录&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;category&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="c1"&gt;// 用来处理各个目录&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;index&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;&lt;span class="c1"&gt;// Index页面，列出所有文章&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;page&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="c1"&gt;// 用来处理每个page&lt;/span&gt;
-    &lt;span class="err"&gt;├──&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt;  &lt;span class="c1"&gt;// 用来处理每个标签&lt;/span&gt;
-    &lt;span class="err"&gt;└──&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;html&lt;/span&gt; &lt;span class="c1"&gt;// 必须列出所有标签，可以是标签云&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ul&gt;
-&lt;li&gt;_static_包含了所有的静态文件，最后会被复制到输出中的_theme_目录下。我把CSS和image目录放在了这里，不过这只是举例，把你需要的东西放在这里。&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;templates&lt;/em&gt; 包含了所有被用来生成页面的模板。我只在这里存放了必需的模板，你可以自己定义对你来说有用的模板。&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;模板与变量&lt;/h2&gt;
-&lt;p&gt;我们的想法是使用可以嵌入进HTML的简单语法。这个文件描述了哪些模板存在于主题中，哪些变量将会在生成时被传递给每个模板。&lt;/p&gt;
-&lt;p&gt;所有的模板都会接收到你在设置文件中定义的全部大写的变量。你可以直接访问这些变量。&lt;/p&gt;
-&lt;h3&gt;公共变量&lt;/h3&gt;
-&lt;p&gt;这些设置对所有模板都有效。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;output_file&lt;/td&gt;&lt;td&gt;正在生成的文件的名字。举个例子，Pelican渲染主页的时候，output_file将会是“index.html”.&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles&lt;/td&gt;&lt;td&gt;文章列表，依日期降序排列所有类型为&lt;em&gt;Aritcle&lt;/em&gt;对象的元素，你可以访问它们的属性（比如标题，概要，作者…）。有时会被屏蔽（例如在tags页面中）。你可以在变量&lt;em&gt;all_articles &lt;/em&gt;中找到关于它的信息。&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates&lt;/td&gt;&lt;td&gt;同样是文章列表，不过是依日期升序排列。&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;tags&lt;/td&gt;&lt;td&gt;一个包含数个(tag,articles)元组的列表。包含了所有的标签和使用特定标签的所有文章的列表构成的元组。&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;categories&lt;/td&gt;&lt;td&gt;一个包含数个(category,articles)元组的列表。包含了所有分类和在特定分类下所有文章的列表构成的元组。&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;pages&lt;/td&gt;&lt;td&gt;pages的列表&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;排序&lt;/h3&gt;
-&lt;p&gt;URL wrappers (currently categories, tags, and authors), have comparison methods that allow them to be easily sorted by name:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="k"&gt;for&lt;/span&gt; &lt;span class="n"&gt;tag&lt;/span&gt;&lt;span class="p"&gt;,&lt;/span&gt; &lt;span class="n"&gt;articles&lt;/span&gt; &lt;span class="n"&gt;in&lt;/span&gt; &lt;span class="n"&gt;tags&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;sort&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;p&gt;如果你想依照其它标准进行排序, &lt;a href="http://jinja.pocoo.org/docs/templates/#sort" title="Jinja’s sort command "&gt;Jinja 的 sort 命令&lt;/a&gt; 拥有很多选项。&lt;/p&gt;
-&lt;h3&gt;日期格式化&lt;/h3&gt;
-&lt;p&gt;Pelican依据你的设置和区域(&lt;code&gt;DATE_FORMATS&lt;/code&gt;/&lt;code&gt;DEFAULT_DATE_FORMAT&lt;/code&gt;)来提供一个&lt;code&gt;locale_date&lt;/code&gt;属性。另一方面，&lt;code&gt;date&lt;/code&gt;属性蒋成为一个&lt;code&gt;datetime&lt;/code&gt;对象。如果你需要与当前设置不同的日期格式，使用Pelican自带的Jinja过滤器&lt;code&gt;strftime&lt;/code&gt;，用法和Python中的 &lt;a href="http://docs.python.org/2/library/datetime.html#strftime-strptime-behavior"&gt;strftime&lt;/a&gt; 是一样的，过滤器会正确地根据你设置的区域正确地对日期进行格式化。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="p"&gt;{{&lt;/span&gt; &lt;span class="n"&gt;article&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;date&lt;/span&gt;&lt;span class="o"&gt;|&lt;/span&gt;&lt;span class="n"&gt;strftime&lt;/span&gt;&lt;span class="p"&gt;(&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;d&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;B&lt;/span&gt; &lt;span class="o"&gt;%&lt;/span&gt;&lt;span class="n"&gt;Y&lt;/span&gt;&lt;span class="err"&gt;&amp;#39;&lt;/span&gt;&lt;span class="p"&gt;)&lt;/span&gt; &lt;span class="p"&gt;}}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;index.html&lt;/h3&gt;
-&lt;p&gt;这是博客的主页，生成到 output/index.html 。&lt;/p&gt;
-&lt;p&gt;如果启用了分页，后续的页面会被保存在 output/index`n`.html 。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_paginator&lt;/td&gt;&lt;td&gt;一个用来处理文章列表的paginator对象&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_page&lt;/td&gt;&lt;td&gt;文章列表的当前页面&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_paginator&lt;/td&gt;&lt;td&gt;一个用来处理文章的paginator对象，依照日期升序进行排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_page&lt;/td&gt;&lt;td&gt;文章列表的当前页面，依照日期升序排列&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;page_name&lt;/td&gt;&lt;td&gt;“索引” - 很有用的分页链接&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;author.html&lt;/h3&gt;
-&lt;p&gt;这个模板将用来处理每个作者的页面，输出为output/author/&lt;em&gt;author_name&lt;/em&gt;.html。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;author&lt;/td&gt;&lt;td&gt;作者名&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles&lt;/td&gt;&lt;td&gt;该作者的文章&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates&lt;/td&gt;&lt;td&gt;该作者的文章，依日期升序排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_paginator&lt;/td&gt;&lt;td&gt;一个用于文章列表的paginator对象&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_page&lt;/td&gt;&lt;td&gt;文章的当前页&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_paginator&lt;/td&gt;&lt;td&gt;一个用于文章列表的paginator对象，依日期升序排序/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_page&lt;/td&gt;&lt;td&gt;文章的当前页，依日期升序排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;page_name&lt;/td&gt;&lt;td&gt;AUTHOR_URL：在{slug}后面的一切都被去掉了 - 对分页链接很有用&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;category.html&lt;/h3&gt;
-&lt;p&gt;这个模板会用来处理每个分类，输出为output/category/&lt;em&gt;category_name&lt;/em&gt;.html。&lt;/p&gt;
-&lt;p&gt;如果启用了分页，后续的页面将依照CATEGORY_SAVE_AS(默认值: output/category/&lt;em&gt;category_name&lt;/em&gt;’n’.html)输出。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;category&lt;/td&gt;&lt;td&gt;目录名&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles&lt;/td&gt;&lt;td&gt;该目录的文章&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates&lt;/td&gt;&lt;td&gt;该目录的文章，按日期升序排列&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_paginator&lt;/td&gt;&lt;td&gt;一个文章列表的paginator对象&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_page&lt;/td&gt;&lt;td&gt;文章的当前页&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_paginator&lt;/td&gt;&lt;td&gt;一个文章列表的paginator对象，按日期升序排列&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_page&lt;/td&gt;&lt;td&gt;文章当前页，按日期升序排列&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;page_name&lt;/td&gt;&lt;td&gt;CATEGORY\_URL:在{slug}后面的一切都被去掉了 - 对分页链接很有用&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;article.html&lt;/h3&gt;
-&lt;p&gt;这个模板用来处理每篇文章，输出为output/&lt;em&gt;article_name&lt;/em&gt;.html。这里是它特有的变量。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;article&lt;/td&gt;&lt;td&gt;要被显示的article对象&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;category&lt;/td&gt;&lt;td&gt;当前文章所属分类的名称&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;page.html&lt;/h3&gt;
-&lt;p&gt;这个模板用来处理每个page页面，相应输出为output/&lt;em&gt;page_name&lt;/em&gt;.html。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;page&lt;/td&gt;&lt;td&gt;要显示的page对象，你可以访问它的标题，slug和内容&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h3&gt;tag.html&lt;/h3&gt;
-&lt;p&gt;这个模板用来处理各个标签，相应的输出为output/tag/&lt;em&gt;tag_name&lt;/em&gt;.html。&lt;/p&gt;
-&lt;p&gt;如果启用了分页，后续的页面将依照TAG_SAVE_AS(默认值: output/tag/&lt;em&gt;tag_name&lt;/em&gt;’n’.html)输出。&lt;/p&gt;
-&lt;table border-collapse=collapse&gt;
-&lt;tr&gt;&lt;th&gt;变量&lt;/th&gt;&lt;th&gt;描述&lt;/th&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;tag&lt;/td&gt;&lt;td&gt;标签名&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles&lt;/td&gt;&lt;td&gt;与该标签相关的文章&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates&lt;/td&gt;&lt;td&gt;与该标签相关的文章，依照日期升序排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_paginator&lt;/td&gt;&lt;td&gt;一个文章列表的paginator对象&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;articles_page&lt;/td&gt;&lt;td&gt;文章当前所在页&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_paginator&lt;/td&gt;&lt;td&gt;一个文章列表的paginator对象，依照日期升序排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;dates_page&lt;/td&gt;&lt;td&gt;文章当前所在页，依照日期升序排序&lt;/td&gt;&lt;/tr&gt;
-&lt;tr&gt;&lt;td&gt;page_name&lt;/td&gt;&lt;td&gt;TAG_URL：在{slug}后面的一切都被去掉了 - 对分页链接很有用&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;
-
-&lt;h2&gt;Feeds&lt;/h2&gt;
-&lt;p&gt;feed变量在3.0版本(译者注：指Pelican，下同)中有所改变，现在每个变量在名字中显式列出是ATOM还是RSS。ATOM依然是默认的。旧主题可能因此需要更新。下面是所有的feed变量&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;FEED_ATOM&lt;/li&gt;
-&lt;li&gt;FEED_RSS&lt;/li&gt;
-&lt;li&gt;FEED_ALL_ATOM&lt;/li&gt;
-&lt;li&gt;FEED_ALL_RSS&lt;/li&gt;
-&lt;li&gt;CATEGORY_FEED_ATOM&lt;/li&gt;
-&lt;li&gt;CATEGORY_FEED_RSS&lt;/li&gt;
-&lt;li&gt;TAG_FEED_ATOM&lt;/li&gt;
-&lt;li&gt;TAG_FEED_RSS&lt;/li&gt;
-&lt;li&gt;TRANSLATION_FEED_ATOM&lt;/li&gt;
-&lt;li&gt;TRANSLATION_FEED_RSS&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2&gt;继承&lt;/h2&gt;
-&lt;p&gt;自从3.0版本开始，Pelican支持继承&lt;code&gt;simlpe&lt;/code&gt;主题，你可以在你的主题里面重用&lt;code&gt;simple&lt;/code&gt;主题中的模板。&lt;/p&gt;
-&lt;p&gt;如果你的&lt;code&gt;templates/&lt;/code&gt;目录下的某个__必需模板__丢失了，它将被&lt;code&gt;simple&lt;/code&gt;主题中的对应模板替代。因此，如果&lt;code&gt;simple&lt;/code&gt;主题中的模板的HTML结构是适合你的，你就不需要从头写一个全新的模板。&lt;/p&gt;
-&lt;p&gt;你也可以在你的主题中对&lt;code&gt;simple&lt;/code&gt;主题的模板进行扩展，像下面这个例子中一样使用&lt;code&gt;{% extends %}&lt;/code&gt;来实现。&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;extends&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;!simple/index.html&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;   &amp;lt;!-- extends the ``index.html`` template from the ``simple`` theme --&amp;gt;&lt;/span&gt;
-
-&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;extends&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;index.html&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;   &amp;lt;!-- &amp;quot;regular&amp;quot; extending --&amp;gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;例子&lt;/h3&gt;
-&lt;p&gt;通过这个机制，你可以仅仅用两个文件来创建一个主题。&lt;/p&gt;
-&lt;h3&gt;base.html&lt;/h3&gt;
-&lt;p&gt;第一个文件是&lt;code&gt;templates/base.html&lt;/code&gt;模板：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;extends&lt;/span&gt; &lt;span class="s2"&gt;&amp;quot;!simple/base.html&amp;quot;&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-
-&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;block&lt;/span&gt; &lt;span class="nv"&gt;head&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nb"&gt;super&lt;/span&gt;&lt;span class="o"&gt;()&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;span class="x"&gt;   &amp;lt;link rel=&amp;quot;stylesheet&amp;quot; type=&amp;quot;text/css&amp;quot; href=&amp;quot;&lt;/span&gt;&lt;span class="cp"&gt;{{&lt;/span&gt; &lt;span class="nv"&gt;SITEURL&lt;/span&gt; &lt;span class="cp"&gt;}}&lt;/span&gt;&lt;span class="x"&gt;/theme/css/style.css&amp;quot; /&amp;gt;&lt;/span&gt;
-&lt;span class="cp"&gt;{%&lt;/span&gt; &lt;span class="k"&gt;endblock&lt;/span&gt; &lt;span class="cp"&gt;%}&lt;/span&gt;&lt;span class="x"&gt;&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;ol&gt;
-&lt;li&gt;在第一行，我们扩展了&lt;code&gt;simple&lt;/code&gt;主题中的&lt;code&gt;base.html&lt;/code&gt;，所以我们不需要重写整个文件。&lt;/li&gt;
-&lt;li&gt;第三行，我们开始了在simple主题中定义好的 &lt;code&gt;head&lt;/code&gt; 块。&lt;/li&gt;
-&lt;li&gt;第四行，&lt;code&gt;super()&lt;/code&gt; 函数保持先前插入的&lt;code&gt;head&lt;/code&gt; 块不结束。&lt;/li&gt;
-&lt;li&gt;第五行，我们为页面添加了一个样式表。&lt;/li&gt;
-&lt;li&gt;最后一行，我们结束了&lt;code&gt;head&lt;/code&gt; 块。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;这个文件将被所有其它的模板（译者注：tags.html，articles.html…）扩展，所以样式表会被连接到所有页面中。&lt;/p&gt;
-&lt;h3&gt;style.css&lt;/h3&gt;
-&lt;p&gt;第二个文件就是&lt;code&gt;static/css/style.css&lt;/code&gt;CSS样式表：&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;body&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;family&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;monospace&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;font&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;size&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;100&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;background&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;white&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="err"&gt;#&lt;/span&gt;&lt;span class="mi"&gt;111&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;width&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;80&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;width&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;400&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;min&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;height&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;200&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;padding&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;margin&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="mi"&gt;10&lt;/span&gt;&lt;span class="o"&gt;%&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;border&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;thin&lt;/span&gt; &lt;span class="n"&gt;solid&lt;/span&gt; &lt;span class="n"&gt;gray&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;border&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;radius&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;5&lt;/span&gt;&lt;span class="n"&gt;px&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;block&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="nl"&gt;a:&lt;/span&gt;&lt;span class="n"&gt;link&lt;/span&gt;    &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;decoration&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;none&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;      &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nl"&gt;a:&lt;/span&gt;&lt;span class="n"&gt;hover&lt;/span&gt;   &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="n"&gt;text&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;decoration&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;underline&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="nl"&gt;a:&lt;/span&gt;&lt;span class="n"&gt;visited&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;blue&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;                               &lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="n"&gt;h1&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="n"&gt;h2&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="n"&gt;h3&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="n"&gt;h4&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="n"&gt;h5&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;span class="n"&gt;h6&lt;/span&gt; &lt;span class="n"&gt;a&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt; &lt;span class="n"&gt;color&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="n"&gt;inherit&lt;/span&gt; &lt;span class="o"&gt;!&lt;/span&gt;&lt;span class="n"&gt;important&lt;/span&gt; &lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="n"&gt;pre&lt;/span&gt; &lt;span class="p"&gt;{&lt;/span&gt;
-    &lt;span class="n"&gt;margin&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="mi"&gt;2&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="mi"&gt;4&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="cp"&gt;#menu li {&lt;/span&gt;
-    &lt;span class="n"&gt;display&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="kr"&gt;inline&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-
-&lt;span class="cp"&gt;#post-list {&lt;/span&gt;
-    &lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;bottom&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-    &lt;span class="n"&gt;margin&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;top&lt;/span&gt; &lt;span class="o"&gt;:&lt;/span&gt; &lt;span class="mi"&gt;1&lt;/span&gt;&lt;span class="n"&gt;em&lt;/span&gt; &lt;span class="p"&gt;;&lt;/span&gt;
-&lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-
-
-&lt;h3&gt;下载&lt;/h3&gt;
-&lt;p&gt;你可以从&lt;a href="http://docs.getpelican.com/en/latest/_downloads/theme-basic.zip"&gt;这里&lt;/a&gt;下载这个样例主题&lt;/p&gt;
-&lt;h3&gt;源文档&lt;/h3&gt;
-&lt;p&gt;原文链接：&lt;a href="http://docs.getpelican.com/en/latest/themes.html" title="original-page"&gt;http://docs.getpelican.com/en/latest/themes.html&lt;/a&gt;&lt;/p&gt;</summary><category term="Blog"></category><category term="Pelican"></category><category term="Translation"></category></entry><entry><title>去掉Pelican生成的代码区块中的红框</title><link href="/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html" rel="alternate"></link><updated>2013-07-10T00:00:00Z</updated><author><name></name></author><id>tag:,2013-07-10:qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html</id><summary type="html">&lt;p&gt;这几天折腾博客主题，无意间找到了最开始弄博客的时候代码区块中的一些字符会有红框框住的问题的原因。&lt;/p&gt;
+&lt;/ul&gt;</summary><category term="Blog"></category><category term="Pelican"></category><category term="Translation"></category></entry><entry><title>去掉Pelican生成的代码区块中的红框</title><link href="http://frantic1048.com/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html" rel="alternate"></link><updated>2013-07-10T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-07-10:qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html</id><summary type="html">&lt;p&gt;这几天折腾博客主题，无意间找到了最开始弄博客的时候代码区块中的一些字符会有红框框住的问题的原因。&lt;/p&gt;
 &lt;p&gt;因为Pelican是使用pygment处理代码高亮的，而pygment的高亮颜色定义就在当前使用的主题目录中的&lt;code&gt;pygment.css&lt;/code&gt;这个文件里，&lt;strong&gt;要修改代码高亮的配色就要通过修改这个文件来实现&lt;/strong&gt;。现在打开它，可以看到里面是对代码的各种类型的内容的风格定义，其中有一行如下：&lt;/p&gt;
 &lt;blockquote&gt;
 &lt;p&gt;.highlight .err { border: 1px solid #FF0000 } /&lt;em&gt; Error &lt;/em&gt;/&lt;/p&gt;
@@ -464,11 +336,11 @@ simple  &lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的&lt;code&gt;border&lt;/code&gt;样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。&lt;/p&gt;</summary><category term="Pelican"></category><category term="CSS"></category><category term="pygment"></category></entry><entry><title>手动删除Windows上的服务程序</title><link href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html" rel="alternate"></link><updated>2013-06-26T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-26:shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</id><summary type="html">&lt;p&gt;好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。&lt;/p&gt;
+&lt;p&gt;所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的&lt;code&gt;border&lt;/code&gt;样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。&lt;/p&gt;</summary><category term="Pelican"></category><category term="CSS"></category><category term="pygment"></category></entry><entry><title>手动删除Windows上的服务程序</title><link href="http://frantic1048.com/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html" rel="alternate"></link><updated>2013-06-26T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-26:shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html</id><summary type="html">&lt;p&gt;好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。&lt;/p&gt;
 &lt;p&gt;我先用&lt;code&gt;iobit unistaller&lt;/code&gt;把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！&lt;/p&gt;
 &lt;p&gt;二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。&lt;/p&gt;
 &lt;p&gt;之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。&lt;/p&gt;
-&lt;p&gt;在注册表&lt;code&gt;LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;/code&gt;中找到你要删除的服务程序，直接删掉即可。&lt;/p&gt;</summary><category term="Windows"></category></entry><entry><title>博客诞生记:基于GitHub+Pelican创建博客的整个过程</title><link href="/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html" rel="alternate"></link><updated>2013-06-19T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-19:bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html</id><summary type="html">&lt;p&gt;很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是是因为托管博客的限制颇多，编辑体验太差 +_+
+&lt;p&gt;在注册表&lt;code&gt;LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services&lt;/code&gt;中找到你要删除的服务程序，直接删掉即可。&lt;/p&gt;</summary><category term="Windows"></category></entry><entry><title>博客诞生记:基于GitHub+Pelican创建博客的整个过程</title><link href="http://frantic1048.com/bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html" rel="alternate"></link><updated>2013-06-19T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-19:bo-ke-dan-sheng-ji-ji-yu-githubpelicanchuang-jian-bo-ke-de-zheng-ge-guo-cheng.html</id><summary type="html">&lt;p&gt;很早以前就想搭建一个独立博客，一点点的记录生活与学习，说到底，还不是因为托管博客的限制颇多，编辑体验太差 +_+
 本文记录了我建立博客的基本过程，希望能对想要建博客却跟我一样完全不懂web的小白有所帮助。&lt;/p&gt;
 &lt;p&gt;阅读本文所需技能：&lt;/p&gt;
 &lt;ul&gt;
@@ -491,12 +363,12 @@ simple  &lt;/p&gt;
 &lt;h2&gt;在GitHub上创建工程&lt;/h2&gt;
 &lt;p&gt;如果你还没有&lt;a href="https://github.com/"&gt;GitHub&lt;/a&gt;账户，去注册一个~&lt;/p&gt;
 &lt;p&gt;登录GitHub，点击页面顶部的显示你用户名位置右边的&lt;em&gt;创建新工程&lt;/em&gt; &lt;code&gt;(Create a new repo)&lt;/code&gt; 按钮，来到创建新工程页面&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/create-a-new-repo.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/create-a-new-repo.png" /&gt;&lt;/p&gt;
 &lt;p&gt;建立一个名为&lt;code&gt;xxx.github.com&lt;/code&gt;的工程，这里我用的是frantic1048，我已经创建好了，所以提示已存在。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/craate-a-new-repo2.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/craate-a-new-repo2.png" /&gt;&lt;/p&gt;
 &lt;p&gt;填写好工程名后，点击下方的&lt;em&gt;创建工程&lt;/em&gt;&lt;code&gt;（Create repository）&lt;/code&gt;按钮。&lt;/p&gt;
 &lt;p&gt;接下来进入项目的设置页面，在&lt;code&gt;GitHub Pages&lt;/code&gt;这栏（我因为已经创建过页面了所以有提示"Your site is published at ......"），点击&lt;code&gt;Automatic Page Generator&lt;/code&gt;，接下来几步一路&lt;code&gt;continue&lt;/code&gt;就可以了，因为生成的页面在随后会被清空。&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="./static/img/auto-generator.png" /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/auto-generator.png" /&gt;&lt;/p&gt;
 &lt;p&gt;这步完成之后，通过&lt;code&gt;http://xxx.github.com/&lt;/code&gt;或者&lt;code&gt;http://xxx.github.io/&lt;/code&gt;就可以访问生成的页面了，如果你遇到404错误，别着急，第一次生成完大概十来分钟才能看到页面，这个时候先来看下一步吧。&lt;/p&gt;
 &lt;h2&gt;安装配置pelican和git，以及准备工作&lt;/h2&gt;
 &lt;p&gt;&lt;strong&gt;pelican的安装&lt;/strong&gt;:根据pelican官方的推荐，我使用pip安装，而pip的安装又依赖distribute,整合3方的安装指南，我使用的终端命令如下：&lt;/p&gt;
@@ -705,7 +577,7 @@ PLUGINS = ["sitemap"]&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;然后 Pelican 就会将&lt;code&gt;img&lt;/code&gt;目录拷贝到&lt;code&gt;output/static/&lt;/code&gt;下就大功告成了。&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category><category term="Pelican"></category><category term="Github"></category></entry><entry><title>给windows添加用Notepad++打开的右键菜单</title><link href="/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html" rel="alternate"></link><updated>2013-06-17T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-17:gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</id><summary type="html">&lt;p&gt;操作很简单:&lt;/p&gt;
+&lt;p&gt;然后 Pelican 就会将&lt;code&gt;img&lt;/code&gt;目录拷贝到&lt;code&gt;output/static/&lt;/code&gt;下就大功告成了。&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category><category term="Pelican"></category><category term="Github"></category></entry><entry><title>给windows添加用Notepad++打开的右键菜单</title><link href="http://frantic1048.com/gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html" rel="alternate"></link><updated>2013-06-17T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-17:gei-windowstian-jia-yong-notepadda-kai-de-you-jian-cai-dan.html</id><summary type="html">&lt;p&gt;操作很简单:&lt;/p&gt;
 &lt;p&gt;创建一个文本文件,键入以下内容后保存为reg文件,最后双击添加注册表项即可&lt;/p&gt;
 &lt;p&gt;注意:&lt;em&gt;最下面一行中的文件目录为你的电脑上的Notepad++可执行文件所在位置&lt;/em&gt;&lt;/p&gt;
 &lt;blockquote&gt;
@@ -719,7 +591,7 @@ PLUGINS = ["sitemap"]&lt;/p&gt;
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;/blockquote&gt;</summary><category term="Windows"></category></entry><entry><title>Windows下安装和使用Pelican</title><link href="/windowsxia-an-zhuang-he-shi-yong-pelican.html" rel="alternate"></link><updated>2013-06-17T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-17:windowsxia-an-zhuang-he-shi-yong-pelican.html</id><summary type="html">&lt;p&gt;最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：&lt;/p&gt;
+&lt;/blockquote&gt;</summary><category term="Windows"></category></entry><entry><title>Windows下安装和使用Pelican</title><link href="http://frantic1048.com/windowsxia-an-zhuang-he-shi-yong-pelican.html" rel="alternate"></link><updated>2013-06-17T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-17:windowsxia-an-zhuang-he-shi-yong-pelican.html</id><summary type="html">&lt;p&gt;最近几天尝试在Windows上面使用Pelican，刚开始也是直接想用pip安装，不料不少pelican依赖的包都没能下载。最后只好手动安装了这些没能自动装上的包。悲催的过程就不提了，就把需要手动安装的包列表记在这儿了：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/blinker"&gt;blinker&lt;/a&gt;&lt;/li&gt;
 &lt;li&gt;&lt;a href="https://pypi.python.org/pypi/docutils"&gt;docutils&lt;/a&gt;&lt;/li&gt;
@@ -734,4 +606,4 @@ PLUGINS = ["sitemap"]&lt;/p&gt;
 &lt;p&gt;一起下载下来解压到同一个文件夹，写个简单的批处理就一并安装了。另外我还发现Python3运行Pelican有点问题，解决所有依赖关系后运行pelican会出现 &lt;a href="http://stackoverflow.com/questions/17124129/cannot-import-name-signals-when-importing-pelican-on-windows" title="Stack Overflow 上该问题的详细描述"&gt;TypeError&lt;/a&gt;，后来我另外安装了Python2去运行就没有发现问题，目前还没能找到原因。&lt;/p&gt;
 &lt;p&gt;如果你发现你在命令行中键入Pelican提示找不到命令，检查一下Python安装目录下的&lt;em&gt;Scripts&lt;/em&gt;子目录是否已经添加进了%Path%中。&lt;/p&gt;
 &lt;p&gt;如果你已经有Pelican搭建的博客了，&lt;em&gt;记得确保你所使用的博客主题也已经安装在电脑上&lt;/em&gt;，否则Pelican会在编译的时候会出错，提示找不到主题。&lt;/p&gt;
-&lt;p&gt;在Windows下面使用Pelican感觉编译之前的等待时间多了不少。&lt;/p&gt;</summary><category term="Blog"></category><category term="Life"></category><category term="Pelican"></category><category term="Windows"></category></entry><entry><title>My Super Beginng</title><link href="/my-super-beginng.html" rel="alternate"></link><updated>2013-06-06T00:00:00Z</updated><author><name></name></author><id>tag:,2013-06-06:my-super-beginng.html</id><summary type="html">&lt;p&gt;Frantic1048's Blog is beginning from NOW , HERE !&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category></entry></feed>
+&lt;p&gt;在Windows下面使用Pelican感觉编译之前的等待时间多了不少。&lt;/p&gt;</summary><category term="Blog"></category><category term="Life"></category><category term="Pelican"></category><category term="Windows"></category></entry><entry><title>My Super Beginng</title><link href="http://frantic1048.com/my-super-beginng.html" rel="alternate"></link><updated>2013-06-06T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-06-06:my-super-beginng.html</id><summary type="html">&lt;p&gt;Frantic1048's Blog is beginning from NOW , HERE !&lt;/p&gt;</summary><category term="Life"></category><category term="Blog"></category></entry></feed>

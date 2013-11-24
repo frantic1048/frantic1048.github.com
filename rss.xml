@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frantic World</title><link>http://frantic1048.com/</link><description></description><atom:link href="http://frantic1048.com/feeds/%s.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 08 Oct 2013 00:00:00 +0800</lastBuildDate><item><title>纯CSS制作tooltip</title><link>http://frantic1048.com/chun-csszhi-zuo-tooltip.html</link><description>&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frantic World</title><link>http://frantic1048.com/</link><description></description><atom:link href="http://frantic1048.com/rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 08 Oct 2013 00:00:00 +0800</lastBuildDate><item><title>纯CSS制作tooltip</title><link>http://frantic1048.com/chun-csszhi-zuo-tooltip.html</link><description>&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://frantic1048.com/pages/demo-pure-css-tooltip.html" title="View Demo"&gt;VIEW DEMO&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;tootip这个东西，真是什么地方都用得着，这段时间就不可避免的遇到了。&lt;/p&gt;
 &lt;p&gt;首先考虑一下tooltip的基本表现：&lt;/p&gt;

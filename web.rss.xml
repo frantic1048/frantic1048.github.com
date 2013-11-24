@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Frantic World</title><link href="http://frantic1048.com/" rel="alternate"></link><link href="http://frantic1048.com/feeds/web.atom.xml" rel="self"></link><id>http://frantic1048.com/</id><updated>2013-10-08T00:00:00+08:00</updated><entry><title>纯CSS制作tooltip</title><link href="http://frantic1048.com/chun-csszhi-zuo-tooltip.html" rel="alternate"></link><updated>2013-10-08T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-10-08:chun-csszhi-zuo-tooltip.html</id><summary type="html">&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /&gt;&lt;/p&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frantic World</title><link>http://frantic1048.com/</link><description></description><atom:link href="http://frantic1048.com/web.rss.xml" rel="self"></atom:link><lastBuildDate>Tue, 08 Oct 2013 00:00:00 +0800</lastBuildDate><item><title>纯CSS制作tooltip</title><link>http://frantic1048.com/chun-csszhi-zuo-tooltip.html</link><description>&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/demo-pure-css-tooltip.png" /&gt;&lt;/p&gt;
 &lt;p&gt;&lt;a href="http://frantic1048.com/pages/demo-pure-css-tooltip.html" title="View Demo"&gt;VIEW DEMO&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;tootip这个东西，真是什么地方都用得着，这段时间就不可避免的遇到了。&lt;/p&gt;
 &lt;p&gt;首先考虑一下tooltip的基本表现：&lt;/p&gt;
@@ -89,7 +89,7 @@
     &lt;span class="nn"&gt;opacity&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="m"&gt;1&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
     &lt;span class="nn"&gt;transition&lt;/span&gt;&lt;span class="p"&gt;:&lt;/span&gt;&lt;span class="s-Atom"&gt;all&lt;/span&gt; &lt;span class="m"&gt;0&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="m"&gt;2&lt;/span&gt;&lt;span class="s-Atom"&gt;s&lt;/span&gt; &lt;span class="s-Atom"&gt;ease&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;in&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="s-Atom"&gt;out&lt;/span&gt;&lt;span class="p"&gt;;&lt;/span&gt;
 &lt;span class="p"&gt;}&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="CSS"></category></entry><entry><title>使用Google Fonts丰富网页的字体</title><link href="http://frantic1048.com/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html" rel="alternate"></link><updated>2013-09-14T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-09-14:shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</id><summary type="html">&lt;p&gt;字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Tue, 08 Oct 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-10-08:chun-csszhi-zuo-tooltip.html</guid><category>CSS</category></item><item><title>使用Google Fonts丰富网页的字体</title><link>http://frantic1048.com/shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</link><description>&lt;p&gt;字体啥的，在自己电脑上很好弄，可是问题到了网页上，就是另外一回事儿了，因为你不能确保每个查看你网页的人都有你在网页上使用的字体，今儿就找到一个解决办法：使用Google Fonts&lt;/p&gt;
 &lt;h1&gt;寻找到需要的字体&lt;/h1&gt;
 &lt;p&gt;首先进入&lt;a href="http://www.google.com/fonts/#HomePlace:home"&gt;Google Fonts首页&lt;/a&gt;，点击页面正中的&lt;code&gt;Start choosing fonts&lt;/code&gt;按钮。&lt;/p&gt;
 &lt;p&gt;接下来你会看到一个包含很多字体的列表。你想要用哪一种字体，你就点击那个字体右下角的&lt;code&gt;Add to Collection&lt;/code&gt;按钮，这个时候你选中的字体就会出现在页面下方的框框里。&lt;/p&gt;
@@ -103,4 +103,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;这段引用插入到HTML文档的&lt;head&gt;标签里面就可以在你的页面上直接使用这些字体啦！&lt;/p&gt;</summary><category term="Web"></category><category term="Fonts"></category></entry></feed>
+&lt;p&gt;这段引用插入到HTML文档的&lt;head&gt;标签里面就可以在你的页面上直接使用这些字体啦！&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Sat, 14 Sep 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-09-14:shi-yong-google-fontsfeng-fu-wang-ye-de-zi-ti.html</guid><category>Web</category><category>Fonts</category></item></channel></rss>

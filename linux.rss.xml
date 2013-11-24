@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Frantic World</title><link href="http://frantic1048.com/" rel="alternate"></link><link href="http://frantic1048.com/feeds/linux.atom.xml" rel="self"></link><id>http://frantic1048.com/</id><updated>2013-09-19T00:00:00+08:00</updated><entry><title>启用Kate的内建终端</title><link href="http://frantic1048.com/qi-yong-katede-nei-jian-zhong-duan.html" rel="alternate"></link><updated>2013-09-19T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</id><summary type="html">&lt;ul&gt;
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frantic World</title><link>http://frantic1048.com/</link><description></description><atom:link href="http://frantic1048.com/linux.rss.xml" rel="self"></atom:link><lastBuildDate>Thu, 19 Sep 2013 00:00:00 +0800</lastBuildDate><item><title>启用Kate的内建终端</title><link>http://frantic1048.com/qi-yong-katede-nei-jian-zhong-duan.html</link><description>&lt;ul&gt;
 &lt;li&gt;操作系统：Arch Linux 3.11.1-1&lt;/li&gt;
 &lt;li&gt;桌面环境：KDE 4.11.1&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-with-out-terminal.png" /&gt;&lt;/p&gt;
 &lt;p&gt;开学一来就开始布置C作业，用Kate写Py版作业的时候发现Kate的内置终端没有了，折腾了十多分钟才发现自己犯傻了，在Kate设置中，插件那儿把&lt;code&gt;Terminal tool view&lt;/code&gt;这个插件启用就可以了,见下图。&lt;/p&gt;
 &lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-configure-terminal.png" /&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-with-terminal.png" /&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Kate"></category></entry><entry><title>在Linux下用GCC编译C程序</title><link href="http://frantic1048.com/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html" rel="alternate"></link><updated>2013-08-30T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-30:zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</id><summary type="html">&lt;p&gt;得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。&lt;/p&gt;
+&lt;p&gt;&lt;img alt="" src="http://frantic1048.com/static/img/kate-with-terminal.png" /&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Thu, 19 Sep 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-09-19:qi-yong-katede-nei-jian-zhong-duan.html</guid><category>Linux</category><category>KDE</category><category>Kate</category></item><item><title>在Linux下用GCC编译C程序</title><link>http://frantic1048.com/zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</link><description>&lt;p&gt;得知第一学期似乎就要搞C了，以前没认真看过，今儿图书馆去翻了本Linux C的书，学会怎么编译先。&lt;/p&gt;
 &lt;p&gt;操作环境：Linux 3.10.9-1-ARCH&lt;/p&gt;
 &lt;h1&gt;安装GCC&lt;/h1&gt;
 &lt;p&gt;Arch安装软件蛮简单的，直接在终端里面&lt;/p&gt;
@@ -38,13 +38,13 @@
 &lt;tr&gt;&lt;td&gt;-M&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;-MM&lt;/td&gt;&lt;td&gt;输出给定源文件的除了标准库头文件之外的依赖关系&lt;/td&gt;&lt;td&gt; - &lt;/td&gt;&lt;/tr&gt;
 &lt;tr&gt;&lt;td&gt;-MD&lt;/td&gt;&lt;td&gt;输出给定源文件的所有依赖关系，同时编译生成可执行文件&lt;/td&gt;&lt;td&gt;.d(依赖关系文件) .out(可执行文件)&lt;/td&gt;&lt;/tr&gt;
-&lt;/table&gt;</summary><category term="Linux"></category><category term="C"></category><category term="GCC"></category></entry><entry><title>解决KDE应用菜单不显示wine程序组的问题</title><link href="http://frantic1048.com/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html" rel="alternate"></link><updated>2013-08-19T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-19:jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</id><summary type="html">&lt;ul&gt;
+&lt;/table&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Fri, 30 Aug 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-08-30:zai-linuxxia-yong-gccbian-yi-ccheng-xu.html</guid><category>Linux</category><category>C</category><category>GCC</category></item><item><title>解决KDE应用菜单不显示wine程序组的问题</title><link>http://frantic1048.com/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</link><description>&lt;ul&gt;
 &lt;li&gt;KDE版本：4.10.5&lt;/li&gt;
 &lt;li&gt;wine版本：1.7.0&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;刚用wine装了几个程序，发现K应用菜单里面没有wine程序的这个分类，wine程序全部跑到 &lt;code&gt;Lost + Found&lt;/code&gt; 这分组去了。上网搜索一番，没找到问题原因的描述，就找到下面的解决方法，似乎是因为wine没有修改到KDE使用的造成的？&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="n"&gt;ln&lt;/span&gt; &lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;s&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt; &lt;span class="o"&gt;~/&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="n"&gt;config&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;menus&lt;/span&gt;&lt;span class="o"&gt;/&lt;/span&gt;&lt;span class="n"&gt;kde&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;applications&lt;/span&gt;&lt;span class="o"&gt;-&lt;/span&gt;&lt;span class="n"&gt;merged&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;</summary><category term="Linux"></category><category term="KDE"></category><category term="Archlinux"></category></entry><entry><title>在Arch中安装和使用virtualenv</title><link href="http://frantic1048.com/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html" rel="alternate"></link><updated>2013-08-11T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-11:zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</id><summary type="html">&lt;p&gt;刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。&lt;/p&gt;
+&lt;/pre&gt;&lt;/div&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Mon, 19 Aug 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-08-19:jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html</guid><category>Linux</category><category>KDE</category><category>Archlinux</category></item><item><title>在Arch中安装和使用virtualenv</title><link>http://frantic1048.com/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</link><description>&lt;p&gt;刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。&lt;/p&gt;
 &lt;h2&gt;安装&lt;/h2&gt;
 &lt;p&gt;在Arch仓库里面有俩个&lt;code&gt;virtualenv&lt;/code&gt;,根据需要安装即可。&lt;/p&gt;
 &lt;div class="highlight"&gt;&lt;pre&gt;&lt;span class="c"&gt;# pacman -S python2-virtualenv&lt;/span&gt;
@@ -80,7 +80,7 @@
 
 
 &lt;h2&gt;参考&lt;/h2&gt;
-&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb"&gt;Arch Wiki:Python VirtualEnv&lt;/a&gt;&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="Python"></category></entry><entry><title>通过字体文件给Arch安装字体</title><link href="http://frantic1048.com/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html" rel="alternate"></link><updated>2013-08-10T00:00:00+08:00</updated><author><name>Frantic1048</name></author><id>tag:frantic1048.com,2013-08-10:tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</id><summary type="html">&lt;p&gt;适用情况：&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb"&gt;Arch Wiki:Python VirtualEnv&lt;/a&gt;&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Sun, 11 Aug 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-08-11:zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html</guid><category>Linux</category><category>Arch</category><category>Python</category></item><item><title>通过字体文件给Arch安装字体</title><link>http://frantic1048.com/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</link><description>&lt;p&gt;适用情况：&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;搬运windows那边的字体到Arch&lt;/li&gt;
 &lt;li&gt;安装从网上下载的字体文件&lt;/li&gt;
@@ -104,4 +104,4 @@
 &lt;/pre&gt;&lt;/div&gt;
 
 
-&lt;p&gt;这样就安装完成了。&lt;/p&gt;</summary><category term="Linux"></category><category term="Arch"></category><category term="font"></category></entry></feed>
+&lt;p&gt;这样就安装完成了。&lt;/p&gt;</description><dc:creator xmlns:dc="http://purl.org/dc/elements/1.1/">Frantic1048</dc:creator><pubDate>Sat, 10 Aug 2013 00:00:00 +0800</pubDate><guid>tag:frantic1048.com,2013-08-10:tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html</guid><category>Linux</category><category>Arch</category><category>font</category></item></channel></rss>
