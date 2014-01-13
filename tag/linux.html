@@ -31,16 +31,16 @@
 <li>用写过ArchLinux镜像的U盘启动，进入64位的Live系统（我的系统是64位的）</li>
 <li>
 <p>挂载本本上的分区，<em>一定要先挂载根目录</em></p>
-<p>mount /dev/sdb1 /mnt
-mount /dev/sda3 /mnt/home
-Mount /dev/sda2 /mnt/var</p>
+<div class="highlight"><pre><span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sdb1</span> <span class="o">/</span><span class="n">mnt</span>
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda3</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">home</span>
+<span class="n">mount</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">sda2</span> <span class="o">/</span><span class="n">mnt</span><span class="o">/</span><span class="n">var</span>
+</pre></div>
+
+
 </li>
 <li>
 <p>把根目录切换到本本上的根目录</p>
-<p>arch-chroot /mnt</p>
-</li>
-<li>
-<p>接下来就是grub的操作了 ...</p></li></ul>
+<div class="highlight"><pre><span class="n">arch</span><span class="o">-</span><span class="n">chroot</span> <span class="o">/</span><span class="n">mnt ...</span></pre></div></li></ul>
 		<a class="btnmore" href="/xiu-fu-arch-linuxde-yin-dao.html">more ...</a>
 	</div>
 </div>
