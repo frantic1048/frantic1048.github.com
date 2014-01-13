@@ -24,12 +24,12 @@ text-shadow:5px 5px 0px #000,4px 4px 0px white,5px -5px 0px #000,4px -4px 0px wh
 }
 
 .content{
-width:62em;
+width:60em;
 display:inline-block;
 margin-left:3%;
 }
 .summarycontainer{
-width:62em;
+width:60em;
 }
 .metabox{
 vertical-align:top;
@@ -57,7 +57,7 @@ text-shadow:1px 1px 0px #000;
 }
 .summarybox{
 display:inline-block;
-width:52em;
+width:50em;
 background-color:rgba(255,255,255,0.6);
 margin-bottom:3em;
 margin-left:-4px;
@@ -68,7 +68,7 @@ text-shadow:1px 1px 0px rgba(255,255,255,0.2);
 }
 .summarytitle,.articletitle{
 display:block;
-width:820px;
+width:790px;
 margin-top:-25px;
 margin-left:-25px;
 padding:5px;
@@ -92,7 +92,7 @@ text-shadow:0 0 10px #2fa0ff;
 
 .arcticlecontentbox,.page-body{
 display:inline-block;
-width:52em;
+width:50em;
 background-color:rgba(255,255,255,0.6);
 margin-bottom:3em;
 margin-left:-4px;
@@ -212,17 +212,9 @@ font-size:2em;}
 .paginator>a{
 color:#2f99ff;
 font-family:kelly slab;
-text-shadow:1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px rgba(0,0,0,0.8),1px -1px 1px rgba(0,0,0,0.8),-1px 1px 1px rgba(0,0,0,0.8);
-transition:text-shadow;
--moz-transition:text-shadow 0.2s; /* Firefox 4 */
--webkit-transition:text-shadow 0.2s; /* Safari 和 Chrome */
--o-transition:text-shadow 0.2s; /* Opera */
+text-shadow:0 0 10px white,0 0 15px white,0 0 20px white,0 0 25px white;
 }
-.paginator>a:hover{
-font-weight:bold;
-color:white;
-text-shadow:1px 1px 1px rgba(0,0,0,0.4),-1px -1px 1px rgba(0,0,0,0.4),1px -1px 1px rgba(0,0,0,0.4),-1px 1px 1px rgba(0,0,0,0.4),0px 0px 10px rgba(140,203,255,0.8),0px 0px 10px rgba(140,203,255,0.8),0px 0px 10px rgba(140,203,255,0.8),0px 0px 10px rgba(140,203,255,0.8);
-}.paginator>a:before{
+.paginator>a:before{
 content:" ";
 display:inline-block;
 margin-left:20px;

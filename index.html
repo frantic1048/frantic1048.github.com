@@ -16,6 +16,36 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
+		<p class="metaday">013</p>
+		<p class="metayear">2014</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/xiu-fu-arch-linuxde-yin-dao.html " >修复Arch Linux的引导</a>
+		<p>今天折腾着给移动硬盘装系统，结果进了几下PE把自己本本的引导玩坏了，搞了半天回忆了一下安装系统的过程，终于把系统给重新正常启动了，万分激动啊！</p>
+<hr />
+<p>我的本本只有一个ArchLinux在上面，硬盘属于<em>混合硬盘</em>，Linux下面会被识别成一个500GB的<code>/sda</code>和20GB的<code>/sdb</code>,前面一个盘有<code>/home</code>,<code>/var</code>两个目录，和<code>swap</code>分区；根目录被我直接放在固态硬盘的<code>/sdb</code>了。</p>
+<p>现在问题是引导挂掉了，也就是说GRUB都不能启动了，开机直接黑&gt;_&lt;</p>
+<h1>解决步骤</h1>
+<ul>
+<li>用写过ArchLinux镜像的U盘启动，进入64位的Live系统（我的系统是64位的）</li>
+<li>
+<p>挂载本本上的分区，<em>一定要先挂载根目录</em></p>
+<p>mount /dev/sdb1 /mnt
+mount /dev/sda3 /mnt/home
+Mount /dev/sda2 /mnt/var</p>
+</li>
+<li>
+<p>把根目录切换到本本上的根目录</p>
+<p>arch-chroot /mnt</p>
+</li>
+<li>
+<p>接下来就是grub的操作了 ...</p></li></ul>
+		<a class="btnmore" href="/xiu-fu-arch-linuxde-yin-dao.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
 		<p class="metaday">281</p>
 		<p class="metayear">2013</p>
 		<p class="metacategory">Web</p>
@@ -262,22 +292,6 @@
 
 <p>所以就造成了代码块中时不时出现恼人的红框的问题，原因清楚了，现在要解决它就很容易了，直接删掉那行中的<code>border</code>样式就可以了。如果你跟我一样完全不需要给这类代码规定特殊样式的话，直接删掉那行即可。</p>
 		<a class="btnmore" href="/qu-diao-pelicansheng-cheng-de-dai-ma-qu-kuai-zhong-de-hong-kuang.html">more ...</a>
-	</div>
-</div>
-<div class="summarycontainer">
-	<div class="metabox">
-		<p class="metaday">177</p>
-		<p class="metayear">2013</p>
-		<p class="metacategory">Misc</p>
-	</div>
-	<div class="summarybox">
-		<a class="summarytitle" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html " >手动删除Windows上的服务程序</a>
-		<p>好多软件在卸载的时候不会卸载自己安装的服务程序，而且不知道什么时候还会被继续装上，前些天莫名其妙被装上风行就是这情况。</p>
-<p>我先用<code>iobit unistaller</code>把它卸载了，最后弄完发现系统进程里面竟然还有风行的服务程序，我打开进程目录一看，甚至连安装包都还在那个目录下面，而且这还是一个相当庞大的目录！</p>
-<p>二话不说，先把服务程序和安装程序都给加到HIPS的Block List中去，总之再也不想见到它，接下来就是删除这个风行制造的目录。</p>
-<p>之后还要在注册表中删除那个服务程序的键，否则的话你一直都会在系统的服务列表里面看到它。</p>
-<p>在注册表<code>LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services</code>中找到你要删除的服务程序，直接删掉即可。</p>
-		<a class="btnmore" href="/shou-dong-shan-chu-windowsshang-de-fu-wu-cheng-xu.html">more ...</a>
 	</div>
 </div>
 

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh_CN">
+<head>
+		<title>Frantic World - 引导</title>
+	<meta charset="utf-8" />
+    <meta name="author" content="Frantic1048">
+	<link rel="stylesheet" href="http://frantic1048.com/theme/css/franticworld.css" type="text/css" />
+	<link href="http://frantic1048.com/theme/css/pygments.css" rel="stylesheet">
+	</head>
+<body background="http://frantic1048.com/theme/img/pattern.png">
+		<div class="nav-banner">
+		<a href="http://frantic1048.com">Frantic World</a>
+		</div>
+		
+		<div class="content">
+		
+<div class="summarycontainer">
+	<div class="metabox">
+		<p class="metaday">013</p>
+		<p class="metayear">2014</p>
+		<p class="metacategory">Linux</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/xiu-fu-arch-linuxde-yin-dao.html " >修复Arch Linux的引导</a>
+		<p>今天折腾着给移动硬盘装系统，结果进了几下PE把自己本本的引导玩坏了，搞了半天回忆了一下安装系统的过程，终于把系统给重新正常启动了，万分激动啊！</p>
+<hr />
+<p>我的本本只有一个ArchLinux在上面，硬盘属于<em>混合硬盘</em>，Linux下面会被识别成一个500GB的<code>/sda</code>和20GB的<code>/sdb</code>,前面一个盘有<code>/home</code>,<code>/var</code>两个目录，和<code>swap</code>分区；根目录被我直接放在固态硬盘的<code>/sdb</code>了。</p>
+<p>现在问题是引导挂掉了，也就是说GRUB都不能启动了，开机直接黑&gt;_&lt;</p>
+<h1>解决步骤</h1>
+<ul>
+<li>用写过ArchLinux镜像的U盘启动，进入64位的Live系统（我的系统是64位的）</li>
+<li>
+<p>挂载本本上的分区，<em>一定要先挂载根目录</em></p>
+<p>mount /dev/sdb1 /mnt
+mount /dev/sda3 /mnt/home
+Mount /dev/sda2 /mnt/var</p>
+</li>
+<li>
+<p>把根目录切换到本本上的根目录</p>
+<p>arch-chroot /mnt</p>
+</li>
+<li>
+<p>接下来就是grub的操作了 ...</p></li></ul>
+		<a class="btnmore" href="/xiu-fu-arch-linuxde-yin-dao.html">more ...</a>
+	</div>
+</div>
+
+<p class="paginator">
+        Page 1 / 1
+    </p>
+		</div>
+		
+		<div class="sidebar">
+		<div class="sidebarcategory">
+<h4>Categories</h4>
+	<li><a href="http://frantic1048.com/category/blog.html">Blog</a></li>
+	<li><a href="http://frantic1048.com/category/life.html">Life</a></li>
+	<li><a href="http://frantic1048.com/category/linux.html">Linux</a></li>
+	<li><a href="http://frantic1048.com/category/misc.html">Misc</a></li>
+	<li><a href="http://frantic1048.com/category/web.html">Web</a></li>
+</div>
+
+<div class="sidebarpages">
+	<h4>Pages</h4>
+			<li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+	</div>
+
+<div class="sidebarblogroll">
+<h4>Blogroll</h4>
+    <li><a href="http://linuxzen.com/" target="_blank">cold</a></li>
+    <li><a href="http://www.dongxf.com/" target="_blank">晓风</a></li>
+    <li><a href="http://www.pythontip.com/home" target="_blank">一人一python</a></li>
+</div>
+
+<div class="sidebarsocial">
+<h4>Social</h4>
+    <li><a href="http://tudou.com/home/FranticBlack">Tudou</a></li>
+    <li><a href="https://github.com/frantic1048">Github</a></li>
+</div>		</div>
+		
+		<footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>,
+				Theme by <a href="http://frantic1048.com/">Frantic1048</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</body>
+</html>
