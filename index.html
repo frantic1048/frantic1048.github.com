@@ -16,6 +16,39 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
+		<p class="metaday">132</p>
+		<p class="metayear">2014</p>
+		<p class="metacategory">Misc</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/linuxxia-tong-guo-cuefen-gui-cheng-flac.html " >Linux下通过cue分轨成flac</a>
+		<p>最近遇到分轨的问题，一个巨大的文件跟着一个cue个人觉得还是不方便，网上查了一下最后翻到了<a href="https://wiki.archlinux.org/index.php/APE+CUE_Splitting">Archwiki</a>上面找到了比较完整的解决办法，把分轨和标签填充一并搞定了，另外顺便把封面嵌入也一起解决。</p>
+<h1>预备工具</h1>
+<p>我是直接把wiki里面提到的工具都给安装了，这里给个列表，直接用pacman安装即可。</p>
+<ul>
+<li>shntool （用于分割音频文件）</li>
+<li>bchunk （iso/bin文件支持）</li>
+<li>mac （APE编解码器）</li>
+<li>flac （flac编码器）</li>
+<li>wavpack （wav支持）</li>
+<li>lame （MP3编码器）</li>
+<li>mp3info （MP3 ID3 1.x标签支持）</li>
+<li>vorbis-tools （Ogg的额外工具）</li>
+<li>cuetools (cue,toc 文件解析)</li>
+</ul>
+<h1>开始分轨</h1>
+<p>接下来通过cue文件进行分轨，这里是我平常用的方法</p>
+<div class="highlight"><pre><span class="n">shnsplit</span> <span class="o">-</span><span class="n">f</span> <span class="n">file</span><span class="p">.</span><span class="n">cue</span> <span class="o">-</span><span class="n">o</span> <span class="n">flac</span> <span class="o">-</span><span class="n">t</span> <span class="s">&quot;%n %t&quot;</span> <span class="n">file</span><span class="p">.</span><span class="n">wav</span>
+</pre></div>
+
+
+<blockquote>
+<p>-f选项指定用来作为分轨依据的cue文件 ...</p></blockquote>
+		<a class="btnmore" href="/linuxxia-tong-guo-cuefen-gui-cheng-flac.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
 		<p class="metaday">060</p>
 		<p class="metayear">2014</p>
 		<p class="metacategory">Misc</p>
@@ -259,34 +292,6 @@
 		<a class="btnmore" href="/tong-guo-zi-ti-wen-jian-gei-archan-zhuang-zi-ti.html">more ...</a>
 	</div>
 </div>
-<div class="summarycontainer">
-	<div class="metabox">
-		<p class="metaday">193</p>
-		<p class="metayear">2013</p>
-		<p class="metacategory">Blog</p>
-	</div>
-	<div class="summarybox">
-		<a class="summarytitle" href="/yi-pelican-themesguan-fang-wen-dang.html " >[译]pelican-themes官方文档</a>
-		<p>这段时间倒腾主题，干到最后，发现仅仅改CSS无法让我满意，遂打算开始定制模板，说到主题，还是得先读文档，由于经常用到 <strong>pelican-themes</strong>，就顺便做个翻译便于查阅，同时根据我的理解进行了一点补充说明，这是本人第一次做翻译内容如有不当之处还请多多指正~</p>
-<h1>pelican-themes</h1>
-<h2>描述</h2>
-<p><strong>pelican-themes</strong> 是一个用来管理Pelican主题的命令行工具。</p>
-<h3>用法</h3>
-<div class="highlight"><pre><span class="n">pelican</span><span class="o">-</span><span class="n">themes</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">l</span><span class="p">]</span> <span class="p">[</span><span class="o">-</span><span class="n">i</span> <span class="n">theme</span> <span class="n">path</span> <span class="p">[</span><span class="n">theme</span> <span class="n">path</span> <span class="p">...]]</span>
-<span class="p">[</span><span class="o">-</span><span class="n">r</span> <span class="n">theme</span> <span class="n">name</span> <span class="p">[</span><span class="n">theme</span> <span class="n">name</span> <span class="p">...]]</span>
-<span class="p">[</span><span class="o">-</span><span class="n">s</span> <span class="n">theme</span> <span class="n">path</span> <span class="p">[</span><span class="n">theme</span> <span class="n">path</span> <span class="p">...]]</span> <span class="p">[</span><span class="o">-</span><span class="n">v</span><span class="p">]</span> <span class="p">[</span><span class="err">–</span><span class="n">version</span><span class="p">]</span>
-</pre></div>
-
-
-<h3>可选参数</h3>
-<ul>
-<li><code>-h</code>,<code>--help</code> 显示帮助</li>
-<li><code>-l</code>, <code>--list</code> 显示已安装的主题</li>
-<li><code>-i theme_path</code> , <code>--install theme_path</code> 安装一个或多个主题</li>
-<li><code>-r ...</code></li></ul>
-		<a class="btnmore" href="/yi-pelican-themesguan-fang-wen-dang.html">more ...</a>
-	</div>
-</div>
 
 <p class="paginator">
         Page 1 / 2
@@ -305,7 +310,9 @@
 </div>
 
 <div class="sidebarpages">
-</div>
+	<h4>Pages</h4>
+			<li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+	</div>
 
 <div class="sidebarblogroll">
 <h4>Blogroll</h4>
