@@ -16,6 +16,28 @@
 		
 <div class="summarycontainer">
 	<div class="metabox">
+		<p class="metaday">254</p>
+		<p class="metayear">2014</p>
+		<p class="metacategory">Web</p>
+	</div>
+	<div class="summarybox">
+		<a class="summarytitle" href="/wang-ye-zhi-zuo-xiao-gong-lue.html " >网页制作小攻略</a>
+		<p>这是一个简单基础的网页制作攻略，因为听起来比较萌萌哒就加了一个“小”。所有内容均有 LZ 人肉验证。也正是因为人肉认证，所以 LZ 不了解的东西不会特别展开，比如 <code>Sublime Text</code> 因为没实际用过所以就没有提出，以及喜欢其他各种传说装备的人不要来群殴我。以及很多地方的内容因为篇幅原因都有所限制。LZ 语文呢不是特别好，所以可能有用词错误，请勿作为正确用词的参考。</p>
+<h2>装备</h2>
+<p>关于装备，浏览器主要用来测试，另外同时也可以直接拿来打码，下面会有介绍。</p>
+<h3>浏览器</h3>
+<p>LZ 日常陪火狐子玩，做网页也会时不时地找找铬娘，她们各有自己的好处，请勿舍鱼而取兄长也。</p>
+<h4>Firefox/火狐子</h4>
+<p>火狐子是 LZ 最喜欢也是最常用的浏览器，其他的东西不 balabala，在制作网页上面它能够提供很多便利。</p>
+<p>例如：</p>
+<ul>
+<li>她提供了很好使的 CSS 查看/编辑器。</li>
+<li>她对 W3C 标准命名的 CSS 属性支持很快，一般情况下需要的 ...</li></ul>
+		<a class="btnmore" href="/wang-ye-zhi-zuo-xiao-gong-lue.html">more ...</a>
+	</div>
+</div>
+<div class="summarycontainer">
+	<div class="metabox">
 		<p class="metaday">140</p>
 		<p class="metayear">2014</p>
 		<p class="metacategory">Linux</p>
@@ -220,54 +242,6 @@
 <div class="highlight"><pre><span class="n">ln</span> <span class="o">-</span><span class="n">s</span> <span class="o">~/</span><span class="p">.</span><span class="n">config</span><span class="o">/</span><span class="n">menus</span><span class="o">/</span><span class="n">applications</span><span class="o">-</span><span class="n">merged</span> <span class="o">~/</span><span class="p">.</span><span class="n">config</span><span class="o">/</span><span class="n">menus</span><span class="o">/</span><span class="n">kde</span><span class="o">-</span><span class="n">applications</span><span class="o">-</span><span class="n">merged</span>
 </pre></div>
 		<a class="btnmore" href="/jie-jue-kdeying-yong-cai-dan-bu-xian-shi-winecheng-xu-zu-de-wen-ti.html">more ...</a>
-	</div>
-</div>
-<div class="summarycontainer">
-	<div class="metabox">
-		<p class="metaday">223</p>
-		<p class="metayear">2013</p>
-		<p class="metacategory">Linux</p>
-	</div>
-	<div class="summarybox">
-		<a class="summarytitle" href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html " >在Arch中安装和使用virtualenv</a>
-		<p>刚刚换到Arch，发现不少东西操作都有点变化。想当然已经解决不了问题了x_x，遂将其记下来。</p>
-<h2>安装</h2>
-<p>在Arch仓库里面有俩个<code>virtualenv</code>,根据需要安装即可。</p>
-<div class="highlight"><pre><span class="c"># pacman -S python2-virtualenv</span>
-</pre></div>
-
-
-<p>或者</p>
-<div class="highlight"><pre><span class="c"># pacman -S python-virtualenv</span>
-</pre></div>
-
-
-<p>前者对应的是python2,后者python3。命令行命令分别是<code>virtualenv2</code>和<code>virtualenv</code>。</p>
-<h2>使用</h2>
-<p>首先为<code>virtualenv</code>创建一个目录：</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">mkdir</span> <span class="o">-</span><span class="n">p</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span>
-</pre></div>
-
-
-<p>创建虚拟环境</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">virtualenv2</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span>
-</pre></div>
-
-
-<p>激活环境以供使用（就这步和关闭虚拟环境跟windows下面不一样，让我撞墙好久）</p>
-<div class="highlight"><pre><span class="err">$</span> <span class="n">source</span> <span class="o">~/</span><span class="p">.</span><span class="n">virtualenvs</span><span class="o">/</span><span class="n">my_env</span><span class="o">/</span><span class="n">bin</span><span class="o">/</span><span class="n">activate</span>
-</pre></div>
-
-
-<p>之后你就可以在虚拟环境里面用<code>pip</code>安装你需要的包，以及干各种事情啦。</p>
-<p>最后是离开虚拟环境</p>
-<div class="highlight"><pre><span class="p">(</span><span class="n">my_env</span><span class="p">)</span><span class="err">$</span> <span class="n">deactivate</span>
-</pre></div>
-
-
-<h2>参考</h2>
-<p><a href="https://wiki.archlinux.org/index.php/Python_VirtualEnvb">Arch ...</a></p>
-		<a class="btnmore" href="/zai-archzhong-an-zhuang-he-shi-yong-virtualenv.html">more ...</a>
 	</div>
 </div>
 

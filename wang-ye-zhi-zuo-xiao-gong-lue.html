@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+		<title>网页制作小攻略 | Frantic World</title>
+	<meta charset="utf-8" />
+    <meta name="author" content="Frantic1048">
+	<link rel="stylesheet" href="http://frantic1048.com/theme/css/franticworld.css" type="text/css" />
+	<link href="http://frantic1048.com/theme/css/pygments.css" rel="stylesheet">
+	</head>
+<body background="http://frantic1048.com/theme/img/pattern.png">
+		<div class="nav-banner">
+		<a href="http://frantic1048.com">Frantic World</a>
+		</div>
+		
+		<div class="content">
+		
+<div class="metabox">
+	<p class="metaday">254</p>
+	<p class="metayear">2014</p>
+	<p class="metacategory">Web</p>
+</div>
+<div class="arcticlecontentbox">
+	<div class="articlecontent">
+		<a class="articletitle" href="/wang-ye-zhi-zuo-xiao-gong-lue.html " >网页制作小攻略</a>
+		<p>这是一个简单基础的网页制作攻略，因为听起来比较萌萌哒就加了一个“小”。所有内容均有 LZ 人肉验证。也正是因为人肉认证，所以 LZ 不了解的东西不会特别展开，比如 <code>Sublime Text</code> 因为没实际用过所以就没有提出，以及喜欢其他各种传说装备的人不要来群殴我。以及很多地方的内容因为篇幅原因都有所限制。LZ 语文呢不是特别好，所以可能有用词错误，请勿作为正确用词的参考。</p>
+<h2>装备</h2>
+<p>关于装备，浏览器主要用来测试，另外同时也可以直接拿来打码，下面会有介绍。</p>
+<h3>浏览器</h3>
+<p>LZ 日常陪火狐子玩，做网页也会时不时地找找铬娘，她们各有自己的好处，请勿舍鱼而取兄长也。</p>
+<h4>Firefox/火狐子</h4>
+<p>火狐子是 LZ 最喜欢也是最常用的浏览器，其他的东西不 balabala，在制作网页上面它能够提供很多便利。</p>
+<p>例如：</p>
+<ul>
+<li>她提供了很好使的 CSS 查看/编辑器。</li>
+<li>她对 W3C 标准命名的 CSS 属性支持很快，一般情况下需要的 hack 比铬娘少，可以在制作过程中更少地遇到传说中的兼容性问题以及各种奇奇怪怪的事情。</li>
+<li>提升逼格</li>
+<li>……</li>
+</ul>
+<h5>获取</h5>
+<p>千万不要去下载成国行（中国版）火狐子了，那个会让你抓狂的，认准 Mozilla 家亲生的火狐子：</p>
+<p>密切注意顶级域名是 <code>mozilla.org</code> ，不是 <code>.cn</code></p>
+<blockquote>
+<p>https://www.mozilla.org/zh-CN/firefox/desktop/</p>
+</blockquote>
+<h4>扩展</h4>
+<p>这里给出几个开发必备的扩展。</p>
+<h5><strong>Auto Reload</strong> by Yurii Zolot'ko</h5>
+<blockquote>
+<p>https://addons.mozilla.org/en-US/firefox/addon/auto-reload/?src=search</p>
+</blockquote>
+<p>这是一个自动刷新扩展，它会在你当前浏览器打开的本地页面所引用的文件发生变动的时候自动刷新页面。比如你写了一个 <code>index.html</code> 文件，然后让火狐子打开了这个页面，此时你继续用你的编辑器编辑 <code>index.html</code> ，然后保存一下，火狐子就会自动刷新，可以节省很多寻找 <code>R</code> 、<code>F5</code> 、 <code>刷新按钮</code> 的时间。</p>
+<h5><strong>ColorZilla</strong> by Alex Sirota</h5>
+<blockquote>
+<p>https://addons.mozilla.org/en-US/firefox/addon/colorzilla/?src=search</p>
+</blockquote>
+<p>功能有点多，一个一个说</p>
+<ul>
+<li>取色器：按照颜色参数取色，以及取网页中任意一个位置的颜色。支持多种颜色表达式，非常方便。</li>
+<li>色板：预置了数个色板，另外还可以直接用当前页面用到的所有颜色（不包括多媒体文件）来创建一个色板。</li>
+<li>渐变色生成工具： 像在 PS 里面编辑渐变那样创建 CSS 渐变，没错，纯 CSS 渐变，而且自带多浏览器支持。你还在用图片做用在网页上的大片渐变？苦恼于页面大小变化之后渐变图片缩放之后导致看起来不萌萌哒了？这个时候你就该改用 CSS 渐变了。</li>
+</ul>
+<h5><strong>FireMath</strong> by MrBont</h5>
+<blockquote>
+<p>https://addons.mozilla.org/en-US/firefox/addon/firemath/?src=search</p>
+</blockquote>
+<p>如果有同鞋的网页内容 <em>实在太学术</em> ，想要好好插入公式到网页中的话，除了插图片，还可以用这家伙将公式转化成 <code>MathML</code> ，然后直接插入 <code>HTML</code> 中就能显示复杂的公式了，而且公式内容什么的都是可以随时编辑的。</p>
+<h4>火狐子的特性技能</h4>
+<p>LZ 喜欢火狐子除了之前的原因还有一个就是火狐子有很好使的开发者工具，你在召唤出火狐子之后按组合键 <code>alt + shift + I</code> ( Inspector )、<code>alt + shift + K</code> ( Console )、<code>shift + F7</code> ( Style Editor )或者在菜单中寻找（只记得这三个快捷键……），都能够看到开发者工具套装。</p>
+<p>首先是 <code>Inspector/查看器</code> ，它可以显示出你的整个网页文件的结构，然后你在里面选中某个元素，右侧就会对应显示出那个元素当前应用的样式，你可以直接在右侧显示样式的地方修改样式并立刻看到结果，方便用来实时查看效果。注意：<strong>在查看器里面修改的样式是不会保存到文件的，如果改出了自己想要的效果，请注意把它复制出来保存到你的网页中</strong> 。另外火狐子在最近两个月，她的查看器还能直接看到每个元素都绑定了什么 DOM 事件（元素右边会有一个小小的反色显示 <code>ev</code> 字样），并列出各自引用的 js 。</p>
+<p>另外是 <code>Style Editor/样式编辑器</code>，你在这个标签下可以看到当前页面引用的所有样式表，你可以直接编辑那些被引用的文件，并且有火狐子超聪明的选择器补全和属性补全，在这里编辑的文件，直接按键盘 <code>ctrl + S</code> 就能够将改动保存到文件。因为在这里编辑 <code>CSS</code> 可以实时看到编辑的效果，所以直接用它写 <code>CSS</code> 也是一个很不错的主意哟。另外火狐子在前段时间不知道什么时候可以直接引用 <code>SCSS/SASS</code> 代码了，如果有使用它的同鞋应该会很高兴吧。</p>
+<p>最后一个是 <code>Console/控制台</code> ，你想做简单的 js 实验的时候，可以直接在这里执行 js 代码，然后看到执行效果，以及进行一些调试神马的。</p>
+<h4>Chromium/铬娘</h4>
+<p>这里提到的铬娘，包括 Chromiun、Google Chrome 以及一系列使用（基本）相同内核的一系列浏览器。</p>
+<p>LZ 对铬娘了解不多，简单介绍吧。</p>
+<h5>获取</h5>
+<blockquote>
+<p><a href="">https://www.google.com/chrome</a></p>
+</blockquote>
+<h4>专有技能</h4>
+<p>铬娘可以很好的模拟移动设备，打开她的开发者工具，你能够在左上角看到一个爪机的图标，点一下就能够模拟移动设备了，这个时候你的鼠标操作也会对应模拟成触屏操作。如果有在意移动页面的同鞋，这个技能可是究极好使的哟。</p>
+<h3>打码</h3>
+<p>LZ 是用文本编辑器打码的，当然这里说的文本编辑器可没有 Win 娘那个<code>notepad.exe</code> 那么寒碜（多亏室友让 LZ 知道了碜怎么打）。它们的功能对于打码有很多增益。</p>
+<h4>Brackets</h4>
+<blockquote>
+<p>http://brackets.io/</p>
+</blockquote>
+<p>平台：Windows、Mac、Linux Debian 系。</p>
+<p>Adobe 近来开发的一个开源 Web 开发工具，LZ 有在上个假期做某传说的某个小网页作业的时候全程用它写。</p>
+<p>好处：</p>
+<ul>
+<li>文件路径补全。在打 <code>img</code>、 <code>link</code>一类标签的时候提供一定方便，当然这功能不是说让你把文件名和目录结构弄得非常凌乱。</li>
+<li>快速编辑功能。在特定代码的位置，按 <code>ctrl + E</code> 可以对那个位置进行快速编辑。举个粒子：你正在写一个 <code>color</code> 属性的值，按下 <code>ctrl + E</code> 就能在那个位置打开一个取色器。</li>
+<li>图片预览。你把光标移到一个图片的文件名上去的时候能够直接看到那张图片的预览。</li>
+<li>多光标（多点）编辑。</li>
+<li>对 <code>EX 技：Emmet 大法</code> 的支持。</li>
+</ul>
+<p>吐槽：</p>
+<ul>
+<li>启动时间在 LZ 的6年老机以及本本的虚拟机里至少要 1s。</li>
+<li>只支持 <code>utf-8</code> 编码（ <code>Unicode</code> 大法好）。</li>
+</ul>
+<h4>Notepad ++</h4>
+<blockquote>
+<p>http://notepad-plus-plus.org/zh/</p>
+</blockquote>
+<p>平台：Windows</p>
+<p>一个比较通用的文本编辑器，用来编辑网页也是蛮不错的，作为一个文本编辑器，文本编辑器该有的他都有，比如不会造成某同学复制一份代码到你电脑上打开之后就变成一行代码的事情。另外它也支持 <code>Emmet 大法</code> 。</p>
+<p>优点：</p>
+<ul>
+<li>启动比上面那个快一点点</li>
+<li>在写各种基于文本的东西的时候都用的上。</li>
+</ul>
+<p>吐槽：</p>
+<ul>
+<li>界面不拉风</li>
+</ul>
+<h4>Kate</h4>
+<blockquote>
+<p>http://kate-editor.org/</p>
+</blockquote>
+<p>平台：Linux 各发行版</p>
+<p>这是 LZ 编辑各种以文本为载体东西九成时间都在用的文本编辑器，他内置 <code>Emmet 大法</code> 。</p>
+<p>优点：</p>
+<ul>
+<li>启动时间长期都在 1s 以内。</li>
+<li>块编辑模式，编辑 HTML 和 CSS 的时候都很方便。</li>
+<li>伪 Vim 模式，有的时候可以缓缓操作缓缓心情，另外和 LZ 一样 Vim 不是玩得特别转的同学这个模式能够一定获得 Vim 式编辑的好处以及了解基础 Vim 操作。</li>
+<li>除了语言相关的补全能力，还能够直接补全你正在写的东西的内容，即使你在写中文，比如写毛概作业的时候，我写了很多句子之后，在打我之后，就可以看到这样的补全充分显示了 LZ 的词汇匮乏。</li>
+<li>进可变得跟小型 IDE 一样写 C 语言并且进行编译运行和调试以及查看各种。退可变得跟个桌面便签一样用来专心码字。</li>
+</ul>
+<h2>技能书</h2>
+<p>关于技能的学习只推荐两个值得信任的地方。</p>
+<h3>Mozilla Developer Network</h3>
+<blockquote>
+<p>https://developer.mozilla.org/zh-CN/</p>
+</blockquote>
+<p>简称 <strong>MDN</strong>，这里非常适合学习各种各样的 web 技术，从 HTML 入门到 webGL 等各种科技，都有很详细的文章告诉你怎样去使用这些东西。当然，最开始的食用步骤肯定是 HTML，接着 CSS 以及 Javascript，这三个东西是几乎一切的基础，很多东西都是建立在这个之上的。</p>
+<p>可能有一些页面还没有简体中文的版本，这个可能需要稍微有点耐心，如果英语还不错的同学，可以直接去参加志愿翻译，随时你都可以贡献自己的翻译，造福大众嘛。</p>
+<h3>World Wide Web Consortium</h3>
+<blockquote>
+<p>http://www.w3.org/</p>
+</blockquote>
+<p>它就是传说中的 <code>W3C</code> ，万维网联盟，如果你有什么实在搞不清楚感到困扰的东西，就直接去查阅它的文档吧，因为他们就是 web 标准的制定者，所以这个是绝对可以信任的。</p>
+<p>另外它的一部分文档已经被翻译成了中文：</p>
+<p>http://www.w3.org/2005/11/Translations/Lists/ListLang-zh-hans.html</p>
+<h2>特殊野生技能书</h2>
+<p>关于奇葩的技巧，常用 UI 元素的实现，以及一些酷炫的东西的实现。有俩不错的网站。</p>
+<h3>CSS Tricks</h3>
+<blockquote>
+<p>http://css-tricks.com/</p>
+</blockquote>
+<p>这里有很多各种很实际的 CSS 属性/技巧的熟肉，比如生动易懂的 <a href="http://css-tricks.com/snippets/css/a-guide-to-flexbox/">Flexbox 指南</a>，比如怎么 <a href="http://css-tricks.com/examples/ShapesOfCSS/?=derp">用 CSS 搞出各种奇怪的几何图形，甚至是让你能够 100% 像素级别的重现一张图片</a> ……</p>
+<h3>Codrops</h3>
+<blockquote>
+<p>http://tympanus.net/codrops/</p>
+</blockquote>
+<p>这里有妹子写的各种酷炫实用的 UI 元素实例、各种酷炫的动画效果实例……并且有细心的思路介绍， LZ 在这里也学到了不少技能。</p>
+<h2>传说装备、特殊道具、EX技能</h2>
+<p>一些非常实用的东西。</p>
+<h3>Can I Use</h3>
+<blockquote>
+<p>http://caniuse.com/</p>
+</blockquote>
+<p>当你有和这网站标题一样的问题的时候，就打开那个网站吧，你能够在上面查到各种 CSS 属性 、HTML 标签、Web API 等各种技术在各种平台/浏览器上的支持情况。</p>
+<h3>Dillinger，StackEdit</h3>
+<blockquote>
+<p>https://stackedit.io/
+http://dillinger.io/</p>
+</blockquote>
+<p>Markdown 编辑器，这篇文章就是用 StackEdit 写出来的。对于做网页有啥好处，我用跟纯文本没差多少的 Markdown 写好了这篇文章，然后直接复制成 HTML 粘贴到这个帖子里面，规整的格式立马都有了。当你在填充简单网页内容的时候，比如就像这篇文章这样的复杂度的内容的时候，你可以用这类编辑器写出来，然后像我一样复制成 HTML 格式直接粘贴进你的网页里面，就是这样。</p>
+<h3>EX：Emmet 大法</h3>
+<blockquote>
+<p>http://emmet.io/</p>
+</blockquote>
+<p>前面提到不少次了，当你感觉“怎么要打这么多尖括号啊，这好多重复的东西，要死啦要死啦”的时候，你就可以考虑投奔  <code>Emmet 大法</code> 了，它是一个文本编辑器扩展，有了它，</p>
+<div class="highlight"><pre><span class="n">article</span><span class="err">#</span><span class="n">atc</span><span class="err">$</span><span class="o">*</span><span class="mi">5</span><span class="o">&gt;</span><span class="n">header</span><span class="p">{</span><span class="n">Article</span><span class="err">$@</span><span class="mi">233</span><span class="p">}.</span><span class="n">anime1</span><span class="p">.</span><span class="n">center</span><span class="o">+</span><span class="n">sectoin</span><span class="p">.</span><span class="n">content</span>
+</pre></div>
+
+
+<p>立马变成它：</p>
+<div class="highlight"><pre><span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">&quot;atc1&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>Article1<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;sectoin</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;&lt;/sectoin&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">&quot;atc2&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>Article2<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;sectoin</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;&lt;/sectoin&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">&quot;atc3&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>Article3<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;sectoin</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;&lt;/sectoin&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">&quot;atc4&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>Article4<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;sectoin</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;&lt;/sectoin&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+<span class="nt">&lt;article</span> <span class="na">id=</span><span class="s">&quot;atc5&quot;</span><span class="nt">&gt;</span>
+  <span class="nt">&lt;header&gt;</span>Article5<span class="nt">&lt;/header&gt;</span>
+  <span class="nt">&lt;sectoin</span> <span class="na">class=</span><span class="s">&quot;content&quot;</span><span class="nt">&gt;&lt;/sectoin&gt;</span>
+<span class="nt">&lt;/article&gt;</span>
+</pre></div>
+
+
+<p>Emmet 基本语法还是蛮容易上手的，官网自带教程。当然你使用它的前提是你知道 <code>H.T.M.L.</code> （How to meet lady）（大雾）怎么做（废话）。</p>
+<h3>EX：SCSS/SASS</h3>
+<blockquote>
+<p>http://sass-lang.com/</p>
+</blockquote>
+<p>不用人话说这玩意儿叫做 CSS 预处理器语言，这是一类长得像 CSS 却有很多 CSS 没有的功能的语言，比如可以在里面使用变量。写出来之后会被对应的处理器编译成普通的 CSS。同样的类型的技能还有 <code>LESS</code> 等等……</p>
+<p>当你写 <code>CSS</code> 的时候想到“为什么改个页面颜色的样式都要在 CSS 里面这里那里一点一点的替换啊，要死啦要死啦”的时候，你可以开始考虑投奔这家伙了，它可以让你容易地编写/管理 CSS 。与 Emmet 一样，都比较容易上手。类似你要使用的话至少你得知道 CSS 怎么写（废话）。</p>
+<hr />
+<p>这只是一个攻略性质的文章，具体的东西还是要具体的学的，否则你有碉堡的工具也无济于事，这就是巧锅难以无米煮饭吧。</p>
+<p>话说这地儿发东西跟 wiki 一样支持自动索引就好了……</p>
+<p>第一次写了这么长的内容，想想感觉好兴奋。</p>
+	</div>
+	
+		<div class="comments">
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+	   var disqus_identifier = "wang-ye-zhi-zuo-xiao-gong-lue.html";
+	   (function() {
+			var dsq = document.createElement('script');
+			dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = 'http://frantic1048.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] ||
+			 document.getElementsByTagName('body')[0]).appendChild(dsq);
+	  })();
+	</script>
+	</div>
+		       
+</div>
+
+		</div>
+		
+		<div class="sidebar">
+		<div class="sidebarcategory">
+<h4>Categories</h4>
+	<li><a href="http://frantic1048.com/category/blog.html">Blog</a></li>
+	<li><a href="http://frantic1048.com/category/life.html">Life</a></li>
+	<li><a href="http://frantic1048.com/category/linux.html">Linux</a></li>
+	<li><a href="http://frantic1048.com/category/misc.html">Misc</a></li>
+	<li><a href="http://frantic1048.com/category/web.html">Web</a></li>
+</div>
+
+<div class="sidebarpages">
+	<h4>Pages</h4>
+			<li><a href="http://frantic1048.com/pages/about.html">About</a></li>
+	</div>
+
+<div class="sidebarblogroll">
+<h4>Blogroll</h4>
+    <li><a href="http://www.linuxzen.com/" target="_blank">cold</a></li>
+    <li><a href="http://www.dongxf.com/" target="_blank">晓风</a></li>
+    <li><a href="http://www.pythontip.com/home" target="_blank">一人一python</a></li>
+</div>
+
+<div class="sidebarsocial">
+<h4>Social</h4>
+    <li><a href="http://frantle.deviantart.com/">deviantART</a></li>
+    <li><a href="https://github.com/frantic1048">Github</a></li>
+</div>		</div>
+		
+		<footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="http://getpelican.com/">Pelican</a>,
+                which takes great advantage of <a href="http://python.org">Python</a>,
+				Theme by <a href="http://frantic1048.com/">Frantic1048</a>.
+                </address><!-- /#about -->
+        </footer><!-- /#contentinfo -->
+</body>
+</html>
