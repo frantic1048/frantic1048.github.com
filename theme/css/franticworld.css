@@ -1,32 +1,31 @@
 @font-face{
-  font-family:"atomic age";
-  src:"../fonts/AtomicAge.woff" format("woff");
+  font-family:"Atomic Age";
+  src:url("../fonts/AtomicAge.woff") format("woff");
   font-weight:normal;
   font-style:normal;
 }
 @font-face{
-  font-family:"jim nightshade";
-  src:"../fonts/JimNightshade-Regular.woff" format("woff");
+  font-family:"Jim Nightshade";
+  src:url("../fonts/JimNightshade-Regular.woff") format("woff");
   font-weight:normal;
   font-style:normal;
 }
 @font-face{
-  font-family:"kelly slab";
-  src:"../fonts/KellySlab-Regular.woff" format("woff");
+  font-family:"Kelly Slab";
+  src:url("../fonts/KellySlab-Regular.woff") format("woff");
   font-weight:normal;
   font-style:normal;
 }
 @font-face{
-  font-family:"sourcecode pro";
-  src:"../fonts/SourceCodePro-Regular.woff" format("woff");
+  font-family:"SourceCode Pro";
+  src:url("../fonts/SourceCodePro-Regular.woff") format("woff");
   font-weight:normal;
   font-style:normal;
 }
 
 body{
 font-size:15px;
-font-family:arial;
-font-family:kelly slab;
+font-family:"Kelly Slab",sans-serif;
 }
 a{text-decoration:none}
 .nav-banner{
@@ -37,7 +36,7 @@ font-size:64px;
 margin-top:20px;
 margin-bottom:40px;
 text-align:center;
-font-family:jim nightshade;
+font-family:"Jim Nightshade";
 }
 .nav-banner>a{
 color:white;
@@ -206,7 +205,7 @@ font-weight:bold;
 }
 .sidebar li{list-style-type : none;}
 .sidebar a{
-font-family:atomic age;
+font-family:"Atomic Age";
 line-height:28px;
 color:#2fa0ff;
 font-size:16px;
@@ -231,13 +230,13 @@ background:rgba(140,203,255,1);
 border-radius:2px;
 padding:10px;
 color:#fff;
-font-family:jim nightshade;
+font-family:"Jim Nightshade";
 margin-top:-1em;
 text-align:center;
 font-size:2em;}
 .paginator>a{
 color:#2f99ff;
-font-family:kelly slab;
+font-family:"Kelly Slab";
 text-shadow:1px 1px 1px rgba(0,0,0,0.8),-1px -1px 1px rgba(0,0,0,0.8),1px -1px 1px rgba(0,0,0,0.8),-1px 1px 1px rgba(0,0,0,0.8);
 transition:text-shadow;
 -moz-transition:text-shadow 0.2s; /* Firefox 4 */
@@ -261,4 +260,4 @@ display:block;
 text-align:center;
 color:#ccc;
 }
-#about a{text-decoration:underline;color:#ccc;font-family:jim nightshade;}
+#about a{text-decoration:underline;color:#ccc;font-family:"Jim Nightshade";}
