@@ -1,4 +1,27 @@
-@import url(http://fonts.googleapis.com/css?family=Source+Code+Pro|Kelly+Slab|Atomic+Age|Jim+Nightshade);
+@font-face{
+  font-family:"atomic age";
+  src:"../fonts/AtomicAge.woff" format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face{
+  font-family:"jim nightshade";
+  src:"../fonts/JimNightshade-Regular.woff" format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face{
+  font-family:"kelly slab";
+  src:"../fonts/KellySlab-Regular.woff" format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
+@font-face{
+  font-family:"sourcecode pro";
+  src:"../fonts/SourceCodePro-Regular.woff" format("woff");
+  font-weight:normal;
+  font-style:normal;
+}
 
 body{
 font-size:15px;
