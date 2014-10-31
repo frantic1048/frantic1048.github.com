@@ -20,6 +20,3 @@ body { position: relative; min-height: 100vh; padding: 0; margin: 0; background-
 #kotori_svg_background { position: fixed; bottom: 0; right: 10vw; z-index: 1; padding: 0; max-width: 80vw; max-height: 80vh; }
 
 #kotori_svg_curve { fill: #282828; stroke: rgba(200, 200, 200, 0.2); stroke-width: 1; transition: all ease 0.5s; }
-
-@media all and (max-width: 1200px) { body { background: black; }
-  #tltle { font-size: 5em; } }
