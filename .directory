@@ -2,5 +2,8 @@
 Icon=/home/frantic/kde-theme/icon/discrete/beautiful_folders_by_reyhan06_by_reyhan06/PNG/Beautifull Folder 5.png
 
 [Dolphin]
-Timestamp=2014,4,17,12,34,23
+Timestamp=2014,10,31,22,22,56
 Version=3
+
+[Settings]
+HiddenFilesShown=true

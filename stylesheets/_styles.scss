@@ -1,0 +1,110 @@
+::-moz-selection{background:transparent;}
+::selection{background:transparent;}
+
+body{
+  position:relative;
+  min-height:100vh;
+  padding:0;
+  margin:0;
+  background:{
+    color:rgb(10,10,10);
+  }
+  font-size:18px;
+}
+#wrapper{
+  z-index:2;
+  position:fixed;
+  left:0;
+  bottom:0;
+}
+#title{
+  width:auto;
+  margin:0;
+  padding:{
+    left:10vw;
+    bottom:5vh;
+  }
+  line-height:1.5;
+  font:{
+    family:"SAO UI";
+    size:18vmin;
+  }
+  cursor:default;
+  color:#ddd;
+  text-shadow:
+    1px 1px 0px #ccc;
+  &>span{
+    display:inline-block;
+  }
+}
+#title>span{
+  &:nth-child(1){}
+  &:nth-child(2){}
+  &:nth-child(3){}
+  &:nth-child(4){}
+  &:nth-child(5){}
+  &:nth-child(6){}
+  &:nth-child(7){}
+  &:nth-child(8){}
+  &:nth-child(9){}
+  &:nth-child(9){}
+  &:nth-child(10){}
+  &:nth-child(11){}
+}
+
+#nav-links{
+  padding-left:10vw;
+  &>a{
+    display:inline-block;
+    padding:{
+      right:1em;
+    }
+    font:{
+      family:"Alospell";
+      size:7vmin;
+    }
+    text-decoration:none;
+    transition:text-shadow cubic-bezier(.46,15,0,-1) .5s ,
+               transform ease .3s;
+    &:link,
+    &:visited{
+      color:hsla(0,0%,70%,1);
+      @include transform(scale(1));
+      text-shadow:
+        0 0 1px clr-link-middle(0),
+        0 0 2px clr-link-middle(.5),
+        0 0 5px clr-link-light(0);
+    }
+    &:hover{
+      color:clr-link-middle(1);
+      @include transform(scale(1.05));
+      text-shadow:
+        0 0 1px clr-link-middle(0.9),
+        0 0 2px clr-link-middle(0.7),
+        0 0 5px clr-link-light(0.3);
+    }
+    &:active{
+      color:clr-link-middle(1);
+      @include transform(scale(1.1));
+      text-shadow:
+        0 0 1px clr-link-middle(0.9),
+        0 0 2px clr-link-middle(0.7),
+        0 0 5px clr-link-light(0.3);
+    }
+  }
+}
+#kotori_svg_background{
+  position:fixed;
+  bottom:0;
+  right:10vw;
+  z-index:1;
+  padding:0;
+  max-width:80vw;
+  max-height:80vh;
+}
+#kotori_svg_curve{
+  fill:rgba(40,40,40,1);
+  stroke:rgba(200,200,200,0.2);
+  stroke-width:1;
+  transition:all ease 0.5s;
+}

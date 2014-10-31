@@ -1,0 +1,17 @@
+@font-face{
+  font-family:'Alospell';
+  src:url('../fonts/Alospell-Oblique.otf') format('OpenType');
+}
+@font-face{
+  font-family:'SAO UI';
+  src:url('../fonts/SAOUI-Regular.otf') format('OpenType');
+}
+
+@mixin transform($args...){
+  -webkit-transform:$args;
+  transform:$args;
+}
+
+@function clr-link-middle($alpha) { @return hsla( 196, 71%, 52%, $alpha ) }
+@function clr-link-light($alpha) { @return hsla( 196, 58%, 66%, $alpha ) }
+@function clr-link-dark($alpha) { @return hsla( 196, 66%, 40%, $alpha ) }
