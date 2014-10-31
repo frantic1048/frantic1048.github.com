@@ -6,7 +6,7 @@
 
 body { position: relative; min-height: 100vh; padding: 0; margin: 0; background-color: #0a0a0a; font-size: 18px; }
 
-#wrapper { z-index: 2; position: fixed; left: 0; bottom: 0; }
+#wrapper { z-index: 2; position: fixed; left: 0; bottom: 0; padding-bottom: 5vh; }
 
 #title { width: auto; margin: 0; padding-left: 10vw; padding-bottom: 5vh; line-height: 1.5; font-family: "SAO UI"; font-size: 18vmin; cursor: default; color: #ddd; text-shadow: 1px 1px 0px #ccc; }
 #title > span { display: inline-block; }
