@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <title>实验:霍尔效应及其参数测定 计算器</title>
+  <meta name="author" content="frantic048">
+  <meta name="description" content="calculator for Hall experiment report">
+  <link rel="stylesheet" href="kirei.css" type="text/css">
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}
+    });
+  </script>
+  <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+</head>
+<body>
+  <noscript>没有javascript人家怎么计算结果嘛，哦尼酱真坏</noscript>
+  <form action="javascript:function(){}" name="form_hall" id="form_hall">
+  <fieldset>
+    <legend>实验:霍尔效应及其参数测定 计算器</legend>
+    <p>计算结果都是以SI表示，输入数据的单位是和实验单一致的（均已经注明），实验预置数据也已经注明。</p>
+    <p>输入过程中会自动计算，你只需要输入数据就好了。</p>
+    <p>少输了数据？</p>
+    <p>如果你看到了“呜喵”而不是结果数据，这属于RP问题，对身边最近的人温柔地叫三次呜喵就能够看到结果了。</p>
+    <p>输入框变成红的了？那说明你的数据实在是太正确了。</p>
+    <p>吐槽请到页面底部参与。</p>
+    <fieldset id="UH-IS">
+      <legend>表2：测$U_H-I_S$关系数据</legend>
+      <p>$I_M = 0.4 A$</p>
+      <p>电压都使用正值（不要负号），小数如$0.3$可以简写为$.3$，表3同理</p>
+      <table>
+        <thead>
+        <tr><td>$I_S/mA$</td><td>$V_1/mV$</td><td>$V_2/mV$</td><td>$V_3/mV$</td><td>$V_4/mV$</td><td>$U_{(H)}/mV$</td></tr>
+        </thead>
+        <tbody>
+        <!--tr.V2UH*10>td{$.00}+td*4>input[type=text]^+td.result-->
+        <tr class="V2UH">
+          <td>1.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>2.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>3.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>4.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>5.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>6.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>7.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>8.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>9.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        <tr class="V2UH">
+          <td>10.00</td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td><input type="text"></td>
+          <td class="result"></td>
+        </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset id="UH-IM">
+      <legend>表3：测$U_H-I_M$关系数据</legend>
+      <p>$I_S = 4 mA$</p>
+      <!--tbody>tr.V2UH*10>td{$.00}+td*4>input[type=text]^+td.result-->
+      <table>
+        <thead>
+          <tr><td>$I_M/mA$</td><td>$V_1/mV$</td><td>$V_2/mV$</td><td>$V_3/mV$</td><td>$V_4/mV$</td><td>$U_{(H)}/mV$</td></tr>
+        </thead>
+        <tbody>
+          <tr class="V2UH">
+            <td>1.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>2.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>3.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>4.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>5.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>6.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>7.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>8.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>9.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+          <tr class="V2UH">
+            <td>10.00</td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td><input type="text"></td>
+            <td class="result"></td>
+          </tr>
+        </tbody>
+      </table>
+    </fieldset>
+    <fieldset id="KH-RH-N">
+      <legend>表4：霍尔灵敏度$K_H$，霍尔系数$R_H$及载流子浓度$n$数据</legend>
+      <p>有效数字看着取吧……</p>
+      <p>$U_{(CA)}/mV=$<input type="text" id="UCA">,$B_{(I_M = 0.4 A)} / mT =$<input type="text" id="B"></p>
+      <table>
+        <thead>
+        <tr>
+          <td>$I_S/mA$</td>
+          <td>1.00</td>
+          <td>2.00</td>
+          <td>3.00</td>
+          <td>4.00</td>
+          <td>5.00</td>
+          <td>6.00</td>
+          <td>7.00</td>
+          <td>8.00</td>
+          <td>9.00</td>
+          <td>10.00</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr id="UH_feedup">
+          <td>$U_H/mV$</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="KH_feedup">
+          <td>$K_H$</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="RH_feedup">
+          <td>$R_H$</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="n_feedup">
+          <td>$n$</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr id="KHM_feedup">
+          <td>$\overline{K_H}$</td>
+          <td></td>
+        </tr>
+        <tr id="RHM_feedup">
+          <td>$\overline{R_H}$</td>
+          <td></td>
+        </tr>
+        <tr id="nM_feedup">
+          <td>$\overline{n}$</td>
+          <td></td>
+        </tr>
+        </tbody>
+      </table>
+    </fieldset>
+  </fieldset>
+  <fieldset>
+    <legend>${\sigma}$ and ${\mu}$</legend>
+    <p>霍尔片属性：$b = 4 mm, L = 3 mm, d = 0.5 mm, I_S = 0.2 mA, U_{CA} = $<span id="UCA_feedup"></span>$V$</p>
+    <p>${\sigma} =$<span id="Sigma_feedup"></span>, ${\mu} =$<span id="Mu_feedup"></span></p>
+  </fieldset>
+  </form>
+  <script type="text/javascript" src="korewa.js"></script>
+  <script type="text/javascript">
+    iyaaa.da();
+  </script>
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'frantic1048'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function() {
+            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </body>
+</html>
