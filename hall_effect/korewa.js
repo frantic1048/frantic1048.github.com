@@ -23,7 +23,8 @@
        inputPattern = '^(([0-9]*)|([0-9]*[.][0-9]+))$';//2,2.2,.2
 
   var hya = function (ooo) {
-    if(isNaN(ooo) || ooo === 0 || ooo === '') {return '呜喵';}
+    //(isNaN(ooo) || ooo === 0 || ooo === '')
+    if (!ooo || !isFinite(ooo)) {return '呜喵';}
     else {return ooo};
   };
   var getFeedUps = function () {
