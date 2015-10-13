@@ -1,22 +1,131 @@
-@font-face { font-family: 'Alospell'; src: url("../fonts/Alospell-Oblique.otf") format("OpenType"); }
-@font-face { font-family: 'SAO UI'; src: url("../fonts/SAOUI-Regular.otf") format("OpenType"); }
+@charset "utf-8";
 ::-moz-selection { background: transparent; }
-
 ::selection { background: transparent; }
+* { box-sizing: border-box; }
 
-body { position: relative; min-height: 100vh; padding: 0; margin: 0; background-color: #0a0a0a; font-size: 18px; }
+body,
+h2,
+a{
+  font-family: "Source Han Sans SC", "WenQuanYi Micro Hei", "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-weight:lighter;
+}
 
-#wrapper { z-index: 2; position: fixed; left: 0; bottom: 0; padding-bottom: 5vh; }
+body {
+  min-height: 100vh;
+  padding: 0;
+  margin: 0;
+  font-size: 18px;
+  background-color: rgba(255, 255, 255, 1);
+  transition: opacity 1.5s 0.2s ease,
+              box-shadow 1s 1.2s ease;
+  opacity: 0;
+  box-shadow: inset 0 0 0px black;
+}
 
-#title { width: auto; margin: 0; padding-left: 10vw; padding-bottom: 5vh; line-height: 1.5; font-family: "SAO UI"; font-size: 18vmin; cursor: default; color: #ddd; text-shadow: 1px 1px 0px #ccc; }
-#title > span { display: inline-block; }
+body.loaded {
+  background-color:rgba(233, 233, 233, 0.6);
+  box-shadow: inset 0 0 25px black;
+  opacity: 1;
+}
 
-#nav-links { padding-left: 10vw; }
-#nav-links > a { display: inline-block; padding-right: 1em; font-family: "Alospell"; font-size: 7vmin; text-decoration: none; transition: text-shadow cubic-bezier(0.46, 15, 0, -1) 0.5s, transform ease 0.3s; }
-#nav-links > a:link, #nav-links > a:visited { color: #b3b3b3; -webkit-transform: scale(1); transform: scale(1); text-shadow: 0 0 1px rgba(46, 173, 220, 0), 0 0 2px rgba(46, 173, 220, 0.5), 0 0 5px rgba(118, 192, 219, 0); }
-#nav-links > a:hover { color: #2eaddc; -webkit-transform: scale(1.05); transform: scale(1.05); text-shadow: 0 0 1px rgba(46, 173, 220, 0.9), 0 0 2px rgba(46, 173, 220, 0.7), 0 0 5px rgba(118, 192, 219, 0.3); }
-#nav-links > a:active { color: #2eaddc; -webkit-transform: scale(1.1); transform: scale(1.1); text-shadow: 0 0 1px rgba(46, 173, 220, 0.9), 0 0 2px rgba(46, 173, 220, 0.7), 0 0 5px rgba(118, 192, 219, 0.3); }
+header{
+  position:fixed;
+  top: 10vh;
+  max-width: 100vw;
+  padding: 5vh 3vw;
+  text-align: center;
+}
 
-#kotori_svg_background { position: fixed; bottom: 0; right: 10vw; z-index: 1; padding: 0; max-width: 80vw; max-height: 80vh; }
+header img{
+  max-width: 100%;
+  max-height: 40vh;
+  transition: opacity ease-out 0.5s 1.7s,
+              transform ease-out 0.5s 1.5s;
+  opacity: 0;
+  transform: translateY(0.5em);
+}
 
-#kotori_svg_curve { fill: #282828; stroke: rgba(200, 200, 200, 0.2); stroke-width: 1; transition: all ease 0.5s; }
+body.loaded header img{
+  opacity: 1;
+  transform: translateY(0em);
+}
+
+header>h2::before{
+  display: block;
+  height:3px;
+  margin:0  auto;
+  content:"\200b";
+  background:red;
+  transform: translateY(-0.6em);
+  box-shadow: 0 0 5px red;
+  transition: opacity ease 0.8s 1.2s,
+              width ease 0.7s 1.2s;
+  width:0%;
+  opacity: 0;
+}
+
+body.loaded header>h2::before{
+  width:100%;
+  opacity: 1;
+}
+
+h2 {
+  transition: color ease-out 0.9s 1.5s,
+              transform ease-out 0.9s 1.2s;
+  color: rgba(0, 0, 0, 0);
+  transform: translateY(-1em);
+}
+body.loaded h2{
+  color: rgba(0, 0, 0, 1);
+  transform: translateY(0em);
+}
+
+nav{
+  transition: opacity ease-out 0.4s 2.2s,
+              transform ease 0.5s 2s;
+  opacity: 0;
+  transform: translateY(-2em) scale(0.2);
+}
+
+body.loaded nav{
+  opacity: 1;
+  transform: translateY(0em) scale(1);
+}
+
+nav>a{
+  color: unset;
+  padding: 0.1em 0.6em;
+  margin:auto 0.4em;
+  text-decoration: none;
+  box-shadow: 0 0 0px 1px black,
+              0 0 2px transparent;
+  transition: all ease 0.3s;
+}
+
+nav>a:hover{
+  color: #fff;
+  background: red;
+  box-shadow: 0 0 0px 1px red,
+              0 0 2px red;
+}
+
+#kotori_svg_background {
+  position: fixed;
+  bottom: -1px;
+  right: 5vw;
+  z-index: -1;
+  padding: 0;
+  max-width: 80vw;
+  max-height: 80vh;
+}
+
+#kotori_svg_curve {
+  fill: rgba(0, 0, 0, 0);
+  stroke: rgba(200, 200, 200, 0.2);
+  stroke-width: 1;
+  transition: all ease 3s 3.5s;
+}
+
+body.loaded #kotori_svg_curve{
+  fill: rgba(0, 0, 0, 0.2);
+}
