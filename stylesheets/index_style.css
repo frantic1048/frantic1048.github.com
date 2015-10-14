@@ -99,7 +99,8 @@ nav>a:visited{
   padding: 0.1em 0.6em;
   margin:auto 0.4em;
   text-decoration: none;
-  box-shadow: 0 0 0px 2px #666,
+  border-bottom: 1px solid #444;
+  box-shadow: 0 0 0px 0px transparent,
               0 0 2px transparent;
   transition: all ease 0.3s;
 }
@@ -107,6 +108,7 @@ nav>a:visited{
 nav>a:hover{
   color: #fff;
   background: red;
+  border-color: red;
   box-shadow: 0 0 0px 1px red,
               0 0 2px red;
 }
