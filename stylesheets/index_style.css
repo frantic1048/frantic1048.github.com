@@ -17,14 +17,14 @@ body {
   font-size: 18px;
   background-color: rgba(255, 255, 255, 1);
   transition: opacity 1.5s 0.2s ease,
-              box-shadow 1s 1.2s ease;
+              box-shadow 1s 3.8s ease;
   opacity: 0;
   box-shadow: inset 0 0 0px black;
 }
 
 body.loaded {
   background-color:rgba(233, 233, 233, 0.6);
-  box-shadow: inset 0 0 25px black;
+  box-shadow: inset 0 0 28px black;
   opacity: 1;
 }
 
@@ -92,12 +92,14 @@ body.loaded nav{
   transform: translateY(0em) scale(1);
 }
 
-nav>a{
+nav>a,
+nav>a:link,
+nav>a:visited{
   color: unset;
   padding: 0.1em 0.6em;
   margin:auto 0.4em;
   text-decoration: none;
-  box-shadow: 0 0 0px 1px black,
+  box-shadow: 0 0 0px 2px #666,
               0 0 2px transparent;
   transition: all ease 0.3s;
 }
@@ -107,6 +109,13 @@ nav>a:hover{
   background: red;
   box-shadow: 0 0 0px 1px red,
               0 0 2px red;
+}
+
+nav>a:active{
+  color: #fff;
+  background: red;
+  box-shadow: 0 0 0px 1px red,
+              0 0 5px red;
 }
 
 #kotori_svg_background {
@@ -127,5 +136,5 @@ nav>a:hover{
 }
 
 body.loaded #kotori_svg_curve{
-  fill: rgba(0, 0, 0, 0.2);
+  fill: rgba(0, 0, 0, 0.1);
 }
