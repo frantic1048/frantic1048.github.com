@@ -14,7 +14,7 @@ body {
   min-height: 100vh;
   padding: 0;
   margin: 0;
-  font-size: 18px;
+  font-size: 22px;
   background-color: rgba(255, 255, 255, 1);
   transition: opacity 1.5s 0.2s ease,
               box-shadow 1s 3.8s ease;
@@ -96,7 +96,6 @@ nav>a,
 nav>a:link,
 nav>a:visited{
   color: unset;
-  padding: 0.1em 0.6em;
   margin:auto 0.4em;
   text-decoration: none;
   border-bottom: 1px solid #444;
@@ -105,19 +104,28 @@ nav>a:visited{
   transition: all ease 0.3s;
 }
 
-nav>a:hover{
+nav>a rt{
+  transition: all ease 0.3s;
+  text-align: center;
+  box-shadow: 0 0 0px 0px transparent,
+              0 0 2px transparent;
+}
+
+nav>a:hover,
+nav>a:hover rt{
   color: #fff;
   background: red;
   border-color: red;
   box-shadow: 0 0 0px 1px red,
-              0 0 2px red;
+              0 0 0px  8px red;
 }
 
-nav>a:active{
+nav>a:active,
+nav>a:active rt{
   color: #fff;
   background: red;
   box-shadow: 0 0 0px 1px red,
-              0 0 5px red;
+              0 0 1px 6px red;
 }
 
 #kotori_svg_background {
