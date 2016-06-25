@@ -1,3 +1,4 @@
+==================================================================
 https://keybase.io/frantic1048
 --------------------------------------------------------------------
 
@@ -5,16 +6,18 @@ I hereby claim:
 
   * I am an admin of https://frantic1048.com
   * I am frantic1048 (https://keybase.io/frantic1048) on keybase.
-  * I have a public key ASAg9zPFcuAAabq5YBWlUPbcqFOn5xnA-RaYt2v1o8nScwo
+  * I have a public key with fingerprint A9BF 94CA F98B D56F CF2A  D787 2CA8 2B73 73E0 0C1E
 
 To do so, I am signing this object:
 
 {
     "body": {
         "key": {
-            "eldest_kid": "012020f733c572e00069bab96015a550f6dca853a7e719c0f91698b76bf5a3c9d2730a",
+            "eldest_kid": "01012818c2229fc7fe25ff5219dec96c7637f1849bd0793c4137397b2db7d82f278f0a",
+            "fingerprint": "a9bf94caf98bd56fcf2ad7872ca82b7373e00c1e",
             "host": "keybase.io",
-            "kid": "012020f733c572e00069bab96015a550f6dca853a7e719c0f91698b76bf5a3c9d2730a",
+            "key_id": "2ca82b7373e00c1e",
+            "kid": "01012818c2229fc7fe25ff5219dec96c7637f1849bd0793c4137397b2db7d82f278f0a",
             "uid": "f03ae85ae2f77d9dec27da2c32576a19",
             "username": "frantic1048"
         },
@@ -25,27 +28,46 @@ To do so, I am signing this object:
         "type": "web_service_binding",
         "version": 1
     },
-    "client": {
-        "name": "keybase.io go client",
-        "version": "1.0.16"
-    },
-    "ctime": 1466852240,
-    "expire_in": 504576000,
-    "merkle_root": {
-        "ctime": 1466852153,
-        "hash": "985eb137ee05a15723baea3fa2d8e78229896290bdf1ac347078dcd1b9776ebe77226f104e1f6a856d66af3fd2d2a1a8eb46cf1a5d1df1887403f87a85958632",
-        "seqno": 498401
-    },
-    "prev": "70c0deb7c94bab7e2d7f5254dd484012e46d4849cf98c46274ea2c4e63bd85a6",
-    "seqno": 9,
+    "ctime": 1467086710,
+    "expire_in": 157680000,
+    "prev": "b2529971d73e37a1922ac72beb80873f4ed49aa09650c9939154ef3d45bf86f1",
+    "seqno": 47,
     "tag": "signature"
 }
 
 which yields the signature:
 
-hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgIPczxXLgAGm6uWAVpVD23KhTp+cZwPkWmLdr9aPJ0nMKp3BheWxvYWTFAvp7ImJvZHkiOnsia2V5Ijp7ImVsZGVzdF9raWQiOiIwMTIwMjBmNzMzYzU3MmUwMDA2OWJhYjk2MDE1YTU1MGY2ZGNhODUzYTdlNzE5YzBmOTE2OThiNzZiZjVhM2M5ZDI3MzBhIiwiaG9zdCI6ImtleWJhc2UuaW8iLCJraWQiOiIwMTIwMjBmNzMzYzU3MmUwMDA2OWJhYjk2MDE1YTU1MGY2ZGNhODUzYTdlNzE5YzBmOTE2OThiNzZiZjVhM2M5ZDI3MzBhIiwidWlkIjoiZjAzYWU4NWFlMmY3N2Q5ZGVjMjdkYTJjMzI1NzZhMTkiLCJ1c2VybmFtZSI6ImZyYW50aWMxMDQ4In0sInNlcnZpY2UiOnsiaG9zdG5hbWUiOiJmcmFudGljMTA0OC5jb20iLCJwcm90b2NvbCI6Imh0dHBzOiJ9LCJ0eXBlIjoid2ViX3NlcnZpY2VfYmluZGluZyIsInZlcnNpb24iOjF9LCJjbGllbnQiOnsibmFtZSI6ImtleWJhc2UuaW8gZ28gY2xpZW50IiwidmVyc2lvbiI6IjEuMC4xNiJ9LCJjdGltZSI6MTQ2Njg1MjI0MCwiZXhwaXJlX2luIjo1MDQ1NzYwMDAsIm1lcmtsZV9yb290Ijp7ImN0aW1lIjoxNDY2ODUyMTUzLCJoYXNoIjoiOTg1ZWIxMzdlZTA1YTE1NzIzYmFlYTNmYTJkOGU3ODIyOTg5NjI5MGJkZjFhYzM0NzA3OGRjZDFiOTc3NmViZTc3MjI2ZjEwNGUxZjZhODU2ZDY2YWYzZmQyZDJhMWE4ZWI0NmNmMWE1ZDFkZjE4ODc0MDNmODdhODU5NTg2MzIiLCJzZXFubyI6NDk4NDAxfSwicHJldiI6IjcwYzBkZWI3Yzk0YmFiN2UyZDdmNTI1NGRkNDg0MDEyZTQ2ZDQ4NDljZjk4YzQ2Mjc0ZWEyYzRlNjNiZDg1YTYiLCJzZXFubyI6OSwidGFnIjoic2lnbmF0dXJlIn2jc2lnxECLRMnhk/q3u71Y8MMFjgUjDHxOXO/e7lTDEzb3FATw7JmQwcMs/1bSqwXURFS/T9X7pejF2j0JpNbehCYPNXwAqHNpZ190eXBlIKRoYXNogqR0eXBlCKV2YWx1ZcQgs/+KYaZihE8CLIH+2gx7D2MTQsOcgD9B3fHaRwgvIlyjdGFnzQICp3ZlcnNpb24B
+-----BEGIN PGP MESSAGE-----
+Version: GnuPG v2
+
+owGtkn9QFGUYx+/0MINTGSlGQZMWnAgZ2n13997dI/mR6SVaU1CEg3nsj3dhO9g9
+7o7TG0LIEueEsQxvJkNKIAWEsplgBhnIRnOEGHBspMJoMHIckVR0QLoIbJepv+rP
+3n/eed/n+/283+eZ9/1liw1LjYnNG9zua+YnjP3jvOH14hlfKcarog+zlmIOtLCh
+QhG5PXaHLGJWDCdwAjAEIwAAWEmAEgK0JNGAYEUksBYBWkgoEQzF8iIOWVKgCBKS
+LOSByEORARKAjIRzWCImyUo+cjldsuLRsBzLSywlcBLL8CJtkQQJcCJkIBA4BvBQ
+YyAcFwikGQtUt+7QwvGcGyXJqnanHewL8f5D/z/nLlnASTjJIYbmEJAgFHUGgCIH
+BBLQ0MIRrC50I5fCFSFd7eIUjywQOMVgZYmYVvDKAtJnqzfzb1GSoBZpBKdL9aiC
+WqgVCzwep9uqmz0+p67ejXj73xw7LyuiNk3N4UUut6wqmJXQlIJH1sEEZYE4Y4EE
+noihPU7ZheyyrtCCMri29HeQV0PydkADloWEqE2PhFoXAHACBDziGZyBpEQhkWI5
+DmctNC6wLMkSNIUkUqRoXmIsEoHprRUrKmaloBaUy9egbjlf4TwlLoSVhfoXrTEZ
+jEsNS0IW6R/NEPpo+D+/z7Qp3NDXfc9JKk1XQ2+ixi/7zry1/7mB2RSla2CPL+p2
+1dnETR2x/V5HX0xCVGfOFubi9N3IPntd2ye/WG+ZGcv3NW02kzk6JFWmM4Pq1MRG
+bzR/J8z84o70+p6I2Q5fq2NLrLdZSlgz+PybeaN0Y0IXI2W1H2GTq+Z8Xc7LNvFI
+dcmul59uzD1QeNSVsjeVCVyZr9mWlzX4ww1htaEy+92PklbOqPGBjK0j07UDrpa6
+l6ZHza9NhdTbqtPf2DlxPsq+/899gZtzDz8M+k/M7LthXnts+7pn6spGVhwN1KSt
+b/tOON5rcJyvGDu72m88XtVQ8kLB8l111KXrijkuplmYvPDzQbo2q82RZsCv3Q97
+0tbwcHjzp7gppzfn0sY/0qqoD8ovRgWKV2VvwOcrkifHug5/u3JRbulgmJ3sfOzQ
++t9H5id+Sr5wa133b4bqr/3e1ODhSsvnsW5b2OOLTz5ovex9dklTV0zPbK8jGBXx
+zaHg2tzlvlPjLR7Cf3oy1PrUaeN0kI5ekZEeUb7q3OZt7VOZca8mt1R6v5g4ObbT
+fuqr+9vZM0oRUX59b314pLFz8p30q8saGooLYtTQudp4W2bF8Gh++1DPwd3DjZ/t
+GCqZT3n7kSYmszPH31pBZMfe5j7uiIkbx0a670zYXvnxRO2596hfH/Tfi8s24ZFX
+eoa2BvIyTMfi79b+BQ==
+=72/e
+-----END PGP MESSAGE-----
 
 And finally, I am proving ownership of this host by posting or
 appending to this document.
 
 View my publicly-auditable identity here: https://keybase.io/frantic1048
+
+==================================================================
